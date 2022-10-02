@@ -36,6 +36,7 @@ Note that the Content-Type header is included twice.
 | System version | FPD version |
 | --- | --- |
 | 11.15.0 | 15 |
+| 11.16.0 | 16 |
 
 ## Actions
 All form values are encoded with a custom base64 character set, where `+/=` are replaced by `.-*` respectively. This applies to both the request and the response.
