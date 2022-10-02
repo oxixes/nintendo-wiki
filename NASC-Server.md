@@ -122,6 +122,7 @@ Sometimes, `returncd` is set to `null` instead of an error code.
 | `102` | Device is banned |
 | `109` | Missing or malformed parameter in request |
 | `110` | Game server is no longer available |
+| `119` | FPD version is invalid |
 | `121` | Device certificate is invalid |
 | `122` | PID HMAC is invalid |
 | `125` | Game id is invalid |
