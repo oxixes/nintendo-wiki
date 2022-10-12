@@ -3,6 +3,7 @@
 
 | URL |
 | --- |
+| `/v1/contents_authorization_token_for_aauth/issue` |
 | `/v1/debug/edge_token/issue` |
 | `/v1/edge_token/issue` |
 | `/v1/edge_token/issuable_titles` |
