@@ -147,7 +147,7 @@ A challenge was added and the format of the system version parameter was changed
 | system_version | [System version digest](https://switchbrew.org/wiki/System_Version_Title) |
 | mac | Base64-encoded AES-CMAC of all previous fields in form-encoding |
 
-The key for the AES-CMAC is calculated as follows:
+The key for the AES-CMAC is calculated as follows, using AES-ECB:
 1. The `aes_kek_generation_source` is decrypted with the master key.
 2. The dauth key source is decrypted with the key from step 1.
 3. The key from the `data` field of the challenge is decrypted with the key from step 2.
