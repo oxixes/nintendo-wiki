@@ -64,6 +64,7 @@ The following methods return an application token as JWT:
 | 1.0.0 - 4.1.0 | v1 |
 | 5.0.0 - 8.1.1 | v2 |
 | 9.0.0 - 14.1.2 | v3 |
+| 15.0.0 | v4 |
 
 #### API Changes
 | API | Changelog |
@@ -71,6 +72,7 @@ The following methods return an application token as JWT:
 | v1 | Initial version. |
 | v2 | The API path is obfuscated with a random hex string. The `environment` parameter was removed. The online play policy was added. For digital titles, the certificate is encrypted with a random key. The `NO_CERT` media type was added. |
 | v3 | The API path is no longer obfuscated. The challenge was added for gamecards. |
+| v4 | The `cert_key` parameter was removed for digital titles. A token from dragons is now required. |
 
 ## Time Request
 This method is unrelated to aauth. It returns a `text/plain` document that contains two lines:
