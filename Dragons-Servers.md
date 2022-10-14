@@ -56,10 +56,10 @@ If the error code is `invalid_parameter`, the response may contain more details 
 | 403 | `system_update_required` | | |
 | 404 | `license_archive_not_found` | | |
 | 404 | `license_not_found` | | |
-| 404 | `page_not_found` | | |
+| 404 | `page_not_found` | Page not found | |
 | 404 | `promotion_policy_not_found` | | |
 | 404 | `title_not_found` | | |
-| 405 | `method_now_allowed` | | |
+| 405 | `method_now_allowed` | Method now allowed | |
 | 406 | `not_acceptable` | | |
 | 415 | `unsupported_media_type` | | |
 | 500 | `delete_record_failed` | | |
