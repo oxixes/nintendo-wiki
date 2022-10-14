@@ -202,7 +202,7 @@ A challenge is now required if the media type is `GAMECARD`:
 The `gvt` parameter is calculated with <code><a href="https://switchbrew.org/wiki/Lotus3#ChallengeCardExistence">ChallengeCardExistence</a></code>. I have no idea how this works.
 
 ### Version 4
-For digitial titles, the Switch no longer sends the application certificate to the server. Instead, it requests a contents authorization token from the [dragons server](Dragons-Server).
+For digitial titles, the Switch no longer sends the application certificate to the server. Instead, it requests a contents authorization token from the [dragons server](Dragons-Servers).
 
 | Param | Description |
 | --- | --- |
