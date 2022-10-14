@@ -270,11 +270,12 @@ Most errors use HTTP status code 400. The only known exception is error 0009, wh
 | --- | --- |
 | 0004 | The device certificate belongs to a different environment. |
 | 0007 | A system update is required. |
-| 0008 | The device certificate is banned. |
+| 0008 | The device is banned permanently. |
 | 0009 | An internal server error has occurred. |
 | 0014 | Generic error. |
 | 0015 | The challenge has expired. |
 | 0016 | The MAC is wrong. |
+| 0017 | The device is banned. |
 
 ## Examples
 Note that the client must always use a valid device certificate as the client certificate. If the client does not provide a certificate, the nginx server rejects the request:
