@@ -32,6 +32,7 @@
 | --- |
 | `/v1/devices/<id>/notification_token/register` |
 | `/v1/devices/hac/unlink` |
+| `/v1/my/devices` |
 | `/v1/my/devices/hac/unlink_all` |
 
 ### pearljam
