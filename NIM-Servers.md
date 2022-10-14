@@ -33,7 +33,9 @@
 | `/v1/devices/<id>/notification_token/register` |
 | `/v1/devices/hac/unlink` |
 | `/v1/my/devices` |
+| `/v1/my/devices/hac/link` |
 | `/v1/my/devices/hac/unlink_all` |
+| `/v1/my/membership/free_trial_availability` |
 
 ### pearljam
 | URL |
