@@ -36,6 +36,7 @@ The aauth server takes form-encoded requests and responds with json-encoding. It
 | 13.0.0 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.3.0.0; Add-on 13.3.0.0)` |
 | 13.1.0 - 13.2.1 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.4.0.0; Add-on 13.4.0.0)` |
 | 14.0.0 - 14.1.2 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 14.3.0.0; Add-on 14.3.0.0)` |
+| 15.0.0 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 15.3.0.0; Add-on 15.3.0.0)` |
 
 ## Methods
 The following method returns a timestamp and your ip address:
@@ -49,6 +50,7 @@ In API version 3, one must solve a cryptographic challenge to prove that the gam
 | Method | Path |
 | --- | --- |
 | POST | [`/v3/challenge`](#challenge-request) |
+| POST | [`/v4/challenge`](#challenge-request) |
 
 The following methods return an application token as JWT:
 
@@ -57,6 +59,7 @@ The following methods return an application token as JWT:
 | POST | [`/v1/application_auth_token`](#application-token-request) |
 | POST | [`/v2-44cd4221f90742b5f37a4948b37dacf024d0bb14dde86db0af20ec300a36a0fe/application_auth_token`](#application-token-request) |
 | POST | [`/v3/application_auth_token`](#application-token-request) |
+| POST | [`/v4/application_auth_token`](#application-token-request) |
 
 #### System Versions
 | System | API |
@@ -197,6 +200,17 @@ A challenge is now required if the media type is `GAMECARD`:
 | cert | Base64-encoded gamecard certificate (512 bytes) |
 
 The `gvt` parameter is calculated with <code><a href="https://switchbrew.org/wiki/Lotus3#ChallengeCardExistence">ChallengeCardExistence</a></code>. I have no idea how this works.
+
+### Version 4
+For digitial titles, the Switch no longer sends the application certificate to the server. Instead, it requests a contents authorization token from the [dragons server](Dragons-Server).
+
+| Param | Description |
+| --- | --- |
+| application_id | Title id (`%016x`) |
+| application_version | Title version (`%08x`) |
+| device_auth_token | Device token from [dauth server](DAuth-Server) |
+| media_type | `DIGITAL` |
+| cert | Token from dragons server |
 
 ## Errors
 On error, the server sends the following response:
