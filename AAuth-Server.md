@@ -22,7 +22,7 @@ The aauth server takes form-encoded requests and responds with json-encoding. It
 | Host | `aauth-lp1.ndas.srv.nintendo.net` |
 | User-Agent | [User agent](#user-agents) |
 | Accept | `*/*` |
-| X-Nintendo-PowerState | `FA` (fully awake) or `HA` (half awake). This header is only sent in the <code><a href="#post-v3application_auth_token">/v3/application_auth_token</a></code> request. |
+| X-Nintendo-PowerState | `FA` (fully awake) or `HA` (half awake). This header is only sent in the [application token request](#application-token-request). |
 | Content-Length | Content length |
 | Content-Type | `application/x-www-form-urlencoded` |
 
