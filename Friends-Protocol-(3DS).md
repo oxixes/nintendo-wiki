@@ -10,22 +10,22 @@ Official name: NintendoFriendPresenceProtocol
 | 5 | [UpdatePreference](#5-updatepreference) |
 | 6 | [GetFriendMii](#6-getfriendmii) |
 | 7 | [GetFriendMiiList](#7-getfriendmiilist) |
-| 8 | IsActiveGame |
-| 9 | GetPrincipalIDByLocalFriendCode |
+| 8 | [IsActiveGame](#8-isactivegame) |
+| 9 | [GetPrincipalIDByLocalFriendCode](#9-getprincipalidbylocalfriendcode) |
 | 10 | [GetFriendRelationships](#10-getfriendrelationships) |
 | 11 | [AddFriendByPrincipalID](#11-addfriendbyprincipalid) |
-| 12 | AddFriendBylstPrincipalID |
-| 13 | RemoveFriendByLocalFriendCode |
-| 14 | RemoveFriendByPrincipalID |
+| 12 | [AddFriendBylstPrincipalID](#12-addfrendbylstprincipalid) |
+| 13 | [RemoveFriendByLocalFriendCode](#13-removefriendbylocalfriendcode) |
+| 14 | [RemoveFriendByPrincipalID](#14-removefriendbyprincipalid) |
 | 15 | [GetAllFriends](#15-getallfriends) |
-| 16 | UpdateBlackList |
+| 16 | [UpdateBlackList](#16-updateblacklist) |
 | 17 | [SyncFriend](#17-syncfriend) |
 | 18 | [UpdatePresence](#18-updatepresence) |
 | 19 | [UpdateFavoriteGameKey](#19-updatefavoritegamekey)  |
 | 20 | [UpdateComment](#20-updatecomment) |
-| 21 | UpdatePicture |
+| 21 | [UpdatePicture](#21-updatepicture) |
 | 22 | [GetFriendPresence](#22-getfriendpresence) |
-| 23 | GetFriendComment |
+| 23 | [GetFriendComment](#23-getfriendcomment) |
 | 24 | [GetFriendPicture](#24-getfriendpicture) |
 | 25 | [GetFriendPersistentInfo](#25-getfriendpersistentinfo) |
 | 26 | [SendInvitation](#sendinvitation) |
@@ -81,7 +81,7 @@ This method does not return anything
 ## Request
 | Type | Description |
 | --- | --- |
-| [List]&lt;[FriendMiiRequest](#friendmiirequest)&gt; | Friends |
+| [List]&lt;[FriendInfo](#friendinfo)&gt; | Friends |
 
 ## response
 | Type | Description |
@@ -92,12 +92,36 @@ This method does not return anything
 ## Request
 | Type | Description |
 | --- | --- |
-| [List]&lt;[FriendMiiRequest](#friendmiirequest)&gt; | Friends |
+| [List]&lt;[FriendInfo](#friendinfo)&gt; | Friends |
 
 ## Response
 | Type | Description |
 | --- | --- |
 | [List]&lt;[FriendMiiList](#friendmiilist)&gt; | Mii lists |
+
+# (8) IsActiveGame
+## Request
+| Type | Description |
+| --- | --- |
+| [List]&lt;Uint32&gt; | Unknown |
+| [GameKey](#gamekey) | Game key |
+
+## Response
+| Type | Description |
+| --- | --- |
+| [List]&lt;Uint32&gt; | Unknown |
+
+# (9) GetPrincipalIDByLocalFriendCode
+## Request
+| Type | Description |
+| --- | --- |
+| Uint64 | Unknown |
+| [List]&lt;Uint64&gt; | Unknown |
+
+## Response
+| Type | Description |
+| --- | --- |
+| [List]&lt;[FriendRelationship](#friendrelationship)&gt; | Friend relationships |
 
 # (10) GetFriendRelationships
 ## Request
@@ -115,12 +139,42 @@ This method does not return anything
 | Type | Description |
 | --- | --- |
 | Uint64 | Unknown |
-| Uint32 | Principal id |
+| [PID] | Principal id |
 
 ## Response
 | Type | Description |
 | --- | --- |
 | [FriendRelationship](#friendrelationship) | Friend relationship |
+
+# (12) AddFriendBylstPrincipalID
+## Request
+| Type | Description |
+| --- | --- |
+| Uint64 | Unknown |
+| [List]&lt;[PID]&gt; | Principal ids |
+
+## Response
+| Type | Description |
+| --- | --- |
+| [List]&lt;[FriendRelationship](#friendrelationship)&gt; | Friend relationships |
+
+# (13) RemoveFriendByLocalFriendCode
+## Request
+| Type | Description |
+| --- | --- |
+| Uint64 | Local friend code |
+
+## Response
+This method does not return anything.
+
+# (14) RemoveFriendByPrincipalID
+## Request
+| Type | Description |
+| --- | --- |
+| [PID] | Principal id |
+
+## Response
+This method does not return anything.
 
 # (15) GetAllFriends
 ## Request
@@ -130,6 +184,15 @@ This method does not take any parameters.
 | Type | Description |
 | --- | --- |
 | [List]&lt;[FriendRelationship](#friendrelationship)&gt; | Friend relationships |
+
+# (16) UpdateBlackList
+## Request
+| Type | Description |
+| --- | --- |
+| [List]&lt;Uint32&gt; | Unknown |
+
+## Response
+This method does not return anything.
 
 # (17) SyncFriend
 ## Request
@@ -172,6 +235,16 @@ This method does not return anything.
 ## Response
 This method does not return anything
 
+# (21) UpdatePicture
+## Request
+| Type | Description |
+| --- | --- |
+| Uint32 | Unknown |
+| [Buffer] | Picture |
+
+## Response
+This method does not return anything
+
 # (22) GetFriendPresence
 ## Request
 | Type | Description |
@@ -182,6 +255,17 @@ This method does not return anything
 | Type | Description |
 | --- | --- |
 | [List]&lt;[FriendPresence](#friendpresence)&gt; | Friend presence list |
+
+# (23) GetFriendComment
+## Request
+| Type | Description |
+| --- | --- |
+| [List]&lt;[FriendInfo](#friendinfo)&gt; | Friend info |
+
+## Response
+| Type | Description |
+| --- | --- |
+| [List]&lt;[FriendComment](#friendcomment)&gt; | Comments |
 
 # (24) GetFriendPicture
 ## Request
@@ -215,6 +299,12 @@ This method does not return anything
 This method does not return anything
 
 # Types
+## FriendInfo
+| Type | Description |
+| --- | --- |
+| Uint32 | Unknown |
+| [DateTime] | Unknown |
+
 ## FriendMii
 | Type | Description |
 | --- | --- |
@@ -227,12 +317,6 @@ This method does not return anything
 | --- | --- |
 | Uint32 | Unknown |
 | [MiiList](#miilist) | Mii list |
-| [DateTime] | Unknown |
-
-## FriendMiiRequest
-| Type | Description |
-| --- | --- |
-| Uint32 | Unknown |
 | [DateTime] | Unknown |
 
 ## FriendPersistentInfo
