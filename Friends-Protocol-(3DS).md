@@ -299,6 +299,13 @@ This method does not return anything
 This method does not return anything
 
 # Types
+## FriendComment
+| Type | Description |
+| --- | --- |
+| Uint32 | Unknown |
+| [String] | Comment |
+| [DateTime] | Unknown |
+
 ## FriendInfo
 | Type | Description |
 | --- | --- |
