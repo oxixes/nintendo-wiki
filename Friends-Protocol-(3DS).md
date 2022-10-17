@@ -299,34 +299,46 @@ This method does not return anything
 This method does not return anything
 
 # Types
-## FriendComment
+## FriendComment ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [String] | Comment |
 | [DateTime] | Unknown |
 
-## FriendInfo
+## FriendInfo ([Structure])
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [DateTime] | Unknown |
 
-## FriendMii
+## FriendMii ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [Mii](#mii) | Mii |
 | [DateTime] | Unknown |
 
-## FriendMiiList
+## FriendMiiList ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [MiiList](#miilist) | Mii list |
 | [DateTime] | Unknown |
 
-## FriendPersistentInfo
+## FriendPersistentInfo ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | [PID] | User id |
@@ -341,33 +353,48 @@ This method does not return anything
 | [DateTime] | Friended at |
 | [DateTime] | Unknown |
 
-## FriendPicture
+## FriendPicture ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [Buffer] | Data |
 | [DateTime] | Date time |
 
-## FriendPresence
+## FriendPresence ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | [NintendoPresence](#nintendopresence) | Nintendo presence |
 
-## FriendRelationship
+## FriendRelationship ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint32 | Unknown |
 | Uint64 | Unknown |
 | Uint8 | Unknown |
 
-## GameKey
+## GameKey ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint64 | Title id |
 | Uint16 | Title version |
 
-## Mii
+## Mii ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | [String] | Unknown |
@@ -375,7 +402,10 @@ This method does not return anything
 | Uint8 | Unknown |
 | [Buffer] | Mii data |
 
-## MiiList
+## MiiList ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | [String] | Unknown |
@@ -383,7 +413,10 @@ This method does not return anything
 | Uint8 | Unknown |
 | [List]&lt;[Buffer]&gt; | Mii data list |
 
-## MyProfile
+## MyProfile ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | Uint8 | Region |
@@ -395,7 +428,10 @@ This method does not return anything
 | [String] | Unknown |
 | [String] | Unknown |
 
-## NintendoPresence
+## NintendoPresence ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Name |
 | --- | --- |
 | Uint32 | m_changedBitFlag |
@@ -409,12 +445,17 @@ This method does not return anything
 | Uint32 | m_joinGroupID |
 | [Buffer] | m_applicationArg |
 
-## PlayedGame
+## PlayedGame ([Structure])
+| This structure inherits from [Data] |
+| --- |
+
 | Type | Description |
 | --- | --- |
 | [GameKey](#gamekey) | Game key |
 | [DateTime] | Date time |
 
+[Structure]: NEX-Common-Types#structure
+[Data]: NEX-Common-Types#data-structure
 [String]: NEX-Common-Types#string
 [List]: NEX-Common-Types#list
 [Buffer]: NEX-Common-Types#buffer
