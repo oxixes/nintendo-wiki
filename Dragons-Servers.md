@@ -5,7 +5,7 @@ These servers take JSON-encoded requests and respond with JSON-encoding.
 
 | URL |
 | --- |
-| `/v1/contents_authorization_token_for_aauth/issue` |
+| [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
 | `/v1/debug/edge_token/issue` |
 | `/v1/edge_token/issue` |
 | `/v1/edge_token/issuable_titles` |
@@ -22,6 +22,18 @@ These servers take JSON-encoded requests and respond with JSON-encoding.
 | `/v1/rights/available_elicenses` |
 | `/v1/rights/publish_device_linked_elicenses` |
 | `/v1/rights/publish_elicenses` |
+
+## POST /v1/contents_authorization_token_for_aauth/issue
+| Field | Format | Description |
+| --- | --- | --- |
+| elicense_id | `\p{XDigit}{32}` | E-license id |
+| na_id | `\p{XDigit}{16}` | Nintendo account id |
+
+Response on success:
+
+| Field | Description |
+| --- | --- |
+| contents_authorization_token | The token |
 
 ## Errors
 On error, the server sends the following response:
@@ -59,7 +71,7 @@ If the error code is `invalid_parameter`, the response may contain more details 
 | 404 | `page_not_found` | Page not found | |
 | 404 | `promotion_policy_not_found` | | |
 | 404 | `title_not_found` | | |
-| 405 | `method_now_allowed` | Method now allowed | |
+| 405 | `method_not_allowed` | Method not allowed | |
 | 406 | `not_acceptable` | | |
 | 415 | `unsupported_media_type` | | |
 | 500 | `delete_record_failed` | | |
