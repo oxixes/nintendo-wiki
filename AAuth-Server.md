@@ -163,7 +163,7 @@ If the media type is `DIGITAL`:
 | cert | Encrypted ticket (base64) |
 | cert_key | Encrypted key (base64) |
 
-For digital titles, the ticket is no longer sent to the server in plain text. Instead, it is encrypted with AES-CBC with a random key. The key itself is then encrypted with RSA-OAEP with SHA256.
+For digital titles, the ticket is no longer sent to the server in plain text. Instead, it is encrypted with AES-CBC with a random key (the IV is filled with zeroes). The key itself is then encrypted with RSA-OAEP with SHA256.
 
 Public exponent: `65537`
 
