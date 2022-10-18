@@ -211,6 +211,7 @@ A `vendor_id` parameter was added:
 | `41f4a6491028e3c4` | Pushmo and Tagaya | Yes |
 | `67bf9945b45248c6` | BCAT | Yes |
 | `6ac5a6873fe5f68c` | SATA storage | No |
+| `75fe236362ff5f8b` | ? | No |
 | `81333c548b2e876d` | [Account server](Account-Server-(Switch)) | No |
 | `83b72b05dc3278d7` | NPNS | No |
 | `8f849b5d34778d8e` | [AAuth](AAuth-Server) and [BaaS](BAAS-Server) | No |
