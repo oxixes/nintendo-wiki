@@ -45,7 +45,7 @@ The following method returns a timestamp and your ip address:
 | --- | --- |
 | GET | [`/v1/time`](#time-request) |
 
-In API version 3, one must solve a cryptographic challenge to prove that the gamecard is inserted. This is not required for digital titles.
+In API version 3 and later, one must solve a cryptographic challenge to prove that the gamecard is inserted. This is not required for digital titles.
 
 | Method | Path |
 | --- | --- |
