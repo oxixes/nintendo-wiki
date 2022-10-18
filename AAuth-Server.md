@@ -119,7 +119,7 @@ If the media type is `GAMECARD` or `DIGITAL`:
 
 | Param | Description |
 | --- | --- |
-| cert | Base64-encoded application certificate |
+| cert | Base64-encoded application certificate (512 bytes) |
 
 Response on success:
 
