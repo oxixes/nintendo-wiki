@@ -9,7 +9,7 @@ Based on system version 13.2.0.
 | `acc:u0` | `ns` | nn::account::IAccountServiceForAppliation |
 | `acc:u1` | `ns` | nn::account::IAccountServiceForSystemService |
 | `acc:su` | `ns` | nn::account::IAccountServiceForAdministrator |
-| `dauth:0` | `account` | |
+| `dauth:0` | `account` | nn::dauth::detail::IService |
 | `aoc:u` | `ns` | nn::aocsrv::detail::IAddOnContentManager |
 | `apm` | `am` | nn::apm::IManager |
 | `apm:am` | `ptm` | |
