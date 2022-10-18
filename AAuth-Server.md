@@ -196,7 +196,11 @@ A challenge is now required if the media type is `GAMECARD`:
 
 | Param | Description |
 | --- | --- |
-| gvt | Base64-encoded challenge reply, based on the seed and value from [`/v3/challenge`](#challenge-request) (88 bytes) |
+| application_id | Title id (`%016x`) |
+| application_version | Title version (`%08x`) |
+| device_auth_token | Device token from [dauth server](DAuth-Server) |
+| media_type | `GAMECARD` |
+| gvt | Base64-encoded challenge reply, based on the seed and value from the [challenge](#challenge-request) (88 bytes) |
 | cert | Base64-encoded gamecard certificate (512 bytes) |
 
 The `gvt` parameter is calculated with <code><a href="https://switchbrew.org/wiki/Lotus3#ChallengeCardExistence">ChallengeCardExistence</a></code>. I have no idea how this works.
@@ -210,7 +214,7 @@ For digitial titles, the Switch no longer sends the application certificate to t
 | application_version | Title version (`%08x`) |
 | device_auth_token | Device token from [dauth server](DAuth-Server) |
 | media_type | `DIGITAL` |
-| cert | Token from dragons server |
+| cert | Contents authorization token from [dragons server](Dragons-Servers) |
 
 ## Errors
 On error, the server sends the following response:
