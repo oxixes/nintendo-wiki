@@ -265,14 +265,24 @@ These errors are related to the [Switch account server](BAAS-Server).
 | 2155-8191 | Curl multi returned an invalid error code |
 
 # DAuth Error Codes
-These errors are related to [device authentication](DAuth-Server).
+These errors are related to [device](DAuth-Server) and [application](AAuth-Server) authentication.
 
 | Error code | Description |
 | --- | --- |
-| 2181-0100 | Server returned invalid error code |
-| 2181-3100 | Server returned invalid response |
+| 4000 - 4099 | [DAuth (device authentication)](#dauth-errors-dauth) |
+| 4100 - 4199 | [AAuth (application authentication)](#dauth-errors-aauth) |
+| 4500 - 4599 | [Dragons (e-license management)](#dauth-errors-dragons) |
+| Other | [General errors](#ndas-errors-general) |
 
-The following errors are shown when the DAuth server returns an error code:
+## DAuth Errors (General)
+| Error code | Description |
+| --- | --- |
+| 2181-3100 | NDAS server returned invalid response |
+| 2181-3101 | Dragons server returned invalid response |
+
+## DAuth Errors (DAuth)
+
+The following errors are shown when the [DAuth server](DAuth-Server) returns an error code:
 
 | Dialog | Code | Description |
 | --- | --- | --- |
@@ -301,6 +311,63 @@ The following errors are shown when the DAuth server returns an error code:
 | 2181-4029 | 0029 | |
 | 2181-4030 | 0030 | |
 | 2181-4031 | 0031 | |
+
+## DAuth Errors (AAuth)
+
+The following errors are shown when the [AAuth server](AAuth-Server) returns an error code:
+
+| Dialog | Code | Description |
+| --- | --- | --- |
+| 2181-4103 | 0103 | Device token expired. |
+| 2181-4105 | 0105 | ROM ID has been banned. |
+| 2181-4106 | 0106 | Unauthorized application. |
+| 2181-4107 | 0107 | |
+| 2181-4108 | 0108 | |
+| 2181-4109 | 0109 | Service closed. |
+| 2181-4110 | 0110 | |
+| 2181-4112 | 0112 | Internal Server Error. |
+| 2181-4113 | 0113 | |
+| 2181-4118 | 0118 | Invalid parameter in request. |
+| 2181-4120 | 0120 | |
+| 2181-4121 | 0121 | Region mismatch. |
+
+## DAuth Errors (Dragons)
+
+The following errors are shown when the [dragons server](Dragons-Servers) returns an error code:
+
+| Error Code | Description |
+| --- | --- |
+| 2181-4501 | `400/invalid_parameter` |
+| 2181-4502 | `401/authentication_required` |
+| 2181-4503 | `403/invalid_token` |
+| 2181-4506 | `404/license_not_found` |
+| 2181-4507 | `403/license_inactive` |
+| 2181-4508 | `503/abort_retry` |
+| 2181-4511 | `400/invalid_device_certificate` |
+| 2181-4512 | `401/account_id_required` |
+| 2181-4513 | `403/license_archive_not_allowed` |
+| 2181-4514 | `403/license_not_grantable` |
+| 2181-4515 | `403/rights_policy_not_allowed` |
+| 2181-4516 | `403/system_update_required` |
+| 2181-4517 | `404/license_archive_not_found` |
+| 2181-4518 | `404/page_not_found` |
+| 2181-4519 | `405/method_not_allowed` |
+| 2181-4520 | `406/not_acceptable` |
+| 2181-4521 | `415/unsupported_media_type` |
+| 2181-4522 | `500/delete_record_failed` |
+| 2181-4523 | `500/insert_record_failed` |
+| 2181-4524 | `500/shogun_error` |
+| 2181-4525 | `500/unexpected_error` |
+| 2181-4526 | `503/service_unavailable` |
+| 2181-4528 | `500/op2_error` |
+| 2181-4529 | `503/op2_maintenance` |
+| 2181-4532 | `400/duplicate_rights_id` |
+| 2181-4533 | `400/invalid_eticket_template` |
+| 2181-4534 | `403/edge_token_not_grantable` |
+| 2181-4535 | `404/promotion_policy_not_found` |
+| 2181-4536 | `404/title_not_found` |
+| 2181-4537 | `500/update_record_failed` |
+| 2181-4538 | `500/unknown_issuer` |
 
 # NEX Error Codes
 | Error code | Name |
