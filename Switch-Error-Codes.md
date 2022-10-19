@@ -40,23 +40,57 @@
 | 2123-1530 | `SSL_ERROR_BAD_CERT_HASH_VALUE_ALERT` |
 
 # Account Error Codes
+These errors are related to account services.
+
 | Error Codes | Description |
 | --- | --- |
-| 4600-4799 | [AAuth (application authentication)](#aauth-errors) |
-| 5000-5249 | [BaaS (backend as a service)](#baas-errors) |
-| 6000-6249 | [Account server errors](#account-server-errors) |
-| 7000-7499 | [HTTP status errors](#http-errors) |
-| Other | [Other account errors](#general-account-errors) |
+| 4500 - 4599 | [DAuth (device authentication)](#account-errors-dauth) |
+| 4600 - 4799 | [AAuth (application authentication)](#account-errors-aauth) |
+| 5000 - 5249 | [BAAS (backend as a service)](#account-errors-baas) |
+| 6000 - 6249 | [Account server errors](#account-errors-nas) |
+| 7000 - 7499 | [HTTP status errors](#account-errors-http) |
+| Other | [Other account errors](#account-errors-general) |
 
-## General Account Errors
-| Error code | Description |
+## Account Errors (General)
+| Error Code | Description |
 | --- | --- |
 | 2124-0010 | BaaS or account server returned invalid error code |
 | 2124-3001 | AAuth server returned error 0111 ("Application update is required.") |
 | 2124-3120 | AAuth server returned invalid response but http status indicates success |
 | 2124-3121 | BaaS server returned invalid response but http status indicates success |
 
-## AAuth Errors
+## Account Errors (DAuth)
+The following errors are shown when the [DAuth server](DAuth-Server) returns an error code:
+
+| Dialog | Code | Description |
+| --- | --- | --- |
+| 2124-4504 | 0004 | Unauthorized device. |
+| 2124-4507 | 0007 | System update is required. |
+| 2124-4508 | 0008 | Device has been banned. |
+| 2124-4509 | 0009 | Internal Server Error. |
+| 2124-4510 | 0010 | |
+| 2124-4511 | 0011 | |
+| 2124-4513 | 0013 | |
+| 2124-4514 | 0014 | Invalid parameter in request. |
+| 2124-4515 | 0015 | Invalid parameter in request. |
+| 2124-4516 | 0016 | Invalid parameter in request. |
+| 2124-4517 | 0017 | This device might be broken. |
+| 2124-4518 | 0018 | |
+| 2124-4519 | 0019 | |
+| 2124-4520 | 0020 | |
+| 2124-4521 | 0021 | |
+| 2124-4522 | 0022 | |
+| 2124-4523 | 0023 | |
+| 2124-4524 | 0024 | |
+| 2124-4525 | 0025 | |
+| 2124-4526 | 0026 | |
+| 2124-4527 | 0027 | |
+| 2124-4528 | 0028 | |
+| 2124-4529 | 0029 | |
+| 2124-4530 | 0030 | |
+| 2124-4531 | 0031 | |
+
+## Account Errors (AAuth)
 These errors are shown when the [AAuth server](AAuth-Server) returns an error code.
 
 | Dialog | Code | Description |
@@ -75,10 +109,10 @@ These errors are shown when the [AAuth server](AAuth-Server) returns an error co
 | 2124-4621 | 0121 | Region mismatch. |
 | 2124-4799 | Other | AAuth server returned invalid error code |
 
-## BaaS Errors
+## Account Errors (BAAS)
 These errors are related to the [Switch account server](BAAS-Server).
 
-| Error code | Description |
+| Error Code | Description |
 | --- | --- |
 | 2124-5000 | `invalid_params` |
 | 2124-5001 | `invalid_request` |
@@ -109,15 +143,15 @@ These errors are related to the [Switch account server](BAAS-Server).
 | 2124-5210 | `could_not_confirm_membership` |
 | 2124-5249 | `under_maintenance` |
 
-## Account Server Errors
-| Error codes | Request path |
+## Account Errors (NAS)
+| Error Codes | Request path |
 | --- | --- |
-| 6000-6099 | [`/connect/1.0.0/authorize`](#account-server-errors-(authorization-request)) |
-| 6100-6199 | [`/connect/1.0.0/api/token`](#account-server-errors-(token-request)) |
-| 6200-6249 | - [`/api/1.0.0/users/<id>/qrcode_param`](#account-server-errors-user-info-request)<br>- [`/2.0.0/users/me`](#account-server-errors-user-info-request) |
+| 6000-6099 | [`/connect/1.0.0/authorize`](#account-errors-(nas-authorization-request)) |
+| 6100-6199 | [`/connect/1.0.0/api/token`](#account-errors-(nas-token-request)) |
+| 6200-6249 | - [`/api/1.0.0/users/<id>/qrcode_param`](#account-errors-(nas-user-request))<br>- [`/2.0.0/users/me`](#account-errors-(nas-user-request)) |
 
-### Account Server Errors (Authorization Request)
-| Error codes | Name | Detail |
+### Account Errors (NAS Authorization Request)
+| Error Codes | Name | Detail |
 | --- | --- | --- |
 | 2124-6000 | `unauthorized_client` | |
 | 2124-6001 | `access_denied` | |
@@ -137,8 +171,8 @@ These errors are related to the [Switch account server](BAAS-Server).
 | 2124-6034 | `interaction_required` | `user_terms_agreement_required` |
 | 2124-6099 | `under_maintenance` | |
 
-### Account Server Errors (Token Request)
-| Error codes | Name | Detail |
+### Account Errors (NAS Token Request)
+| Error Codes | Name | Detail |
 | --- | --- | --- |
 | 2124-6100 | `invalid_request` | |
 | 2124-6101 | `invalid_client` | |
@@ -157,15 +191,15 @@ These errors are related to the [Switch account server](BAAS-Server).
 | 2124-6132 | `server_error` | |
 | 2124-6199 | `under_maintenance` | |
 
-### Account Server Errors (User Info Request)
-| Error codes | Name |
+### Account Errors (NAS User Request)
+| Error Codes | Name |
 | --- | --- |
 | 2124-6200 | `invalid_token` |
 | 2124-6201 | `insufficient_scope` |
 | 2124-6249 | `under_maintenance` |
 
-## HTTP Errors
-| Error code | HTTP status |
+## Account Errors (HTTP)
+| Error Code | HTTP status |
 | --- | --- |
 | 2124-7000 | Invalid |
 | 2124-7001 | Invalid (4xx) |
@@ -195,7 +229,69 @@ These errors are related to the [Switch account server](BAAS-Server).
 | 2124-7505 | 505 (HTTP Version Not Supported) |
 
 # Curl Error Codes
-| Error code | Description |
+| Error Codes | Description |
+| --- | --- |
+| 0100 - 0599 | [HTTP errors](#curl-errors-http) |
+| 8000 - 8199 | [Curl errors](#curl-errors-curl) |
+
+## Curl Errors (HTTP)
+| Error Code | HTTP status |
+| --- | --- |
+| 2155-0100 | 100 (Continue) |
+| 2155-0101 | 101 (Switchting Protocols) |
+| 2155-0102 | 102 (Processing) |
+| 2155-0300 | 300 (Multiple Choices) |
+| 2155-0301 | 301 (Moved Permanently) |
+| 2155-0302 | 302 (Found) |
+| 2155-0303 | 303 (See Other) |
+| 2155-0304 | 304 (Not Modified) |
+| 2155-0305 | 305 (Use Proxy) |
+| 2155-0306 | 306 (Switch Proxy) |
+| 2155-0307 | 307 (Temporary Redirect) |
+| 2155-0308 | 308 (Permanent Redirect) |
+| 2155-0400 | 400 (Bad Request) |
+| 2155-0401 | 401 (Unauthorized) |
+| 2155-0402 | 402 (Payment Required) |
+| 2155-0403 | 403 (Forbidden) |
+| 2155-0404 | 404 (Not Found) |
+| 2155-0405 | 405 (Method Not Allowed) |
+| 2155-0406 | 406 (Not Acceptable) |
+| 2155-0407 | 407 (Proxy Authentication Required) |
+| 2155-0408 | 408 (Request Timeout) |
+| 2155-0409 | 409 (Conflict) |
+| 2155-0410 | 410 (Gone) |
+| 2155-0411 | 411 (Length Required) |
+| 2155-0412 | 412 (Precondition Failed) |
+| 2155-0413 | 413 (Payload Too Large) |
+| 2155-0414 | 414 (URI Too Long) |
+| 2155-0415 | 415 (Unsupported Media Type) |
+| 2155-0416 | 416 (Requested Range Not Satisfiable) |
+| 2155-0417 | 417 (Expectation Failed) |
+| 2155-0418 | 418 (I'm a Teapot) |
+| 2155-0422 | 422 (Unprocessable Entity) |
+| 2155-0423 | 423 (Locked) |
+| 2155-0424 | 424 (Failed Dependency) |
+| 2155-0426 | 426 (Upgrade Required) |
+| 2155-0429 | 429 (Too Many Requests) |
+| 2155-0451 | 451 (Unavailable For Legal Reasons) |
+| 2155-0498 | Invalid (4xx) |
+| 2155-0500 | 500 (Internal Server Error) |
+| 2155-0501 | 501 (Not Implemented) |
+| 2155-0502 | 502 (Bad Gateway) |
+| 2155-0503 | 503 (Service Unavailable) |
+| 2155-0504 | 504 (Gateway Timeout) |
+| 2155-0505 | 505 (HTTP Version Not Supported) |
+| 2155-0506 | 506 (Variant Also Negotiates) |
+| 2155-0507 | 507 (Insufficient Storage) |
+| 2155-0508 | 508 (Loop Detected) |
+| 2155-0509 | 509 (Bandwidth Limit Exceeded) |
+| 2155-0510 | 510 (Not Extended) |
+| 2155-0511 | 511 (Network Authentication Required) |
+| 2155-0598 | Invalid (5xx) |
+| 2155-0599 | Invalid |
+
+## Curl Errors (Curl)
+| Error Code | Description |
 | --- | --- |
 | 2155-8001 | CURLE_UNSUPPORTED_PROTOCOL |
 | 2155-8002 | CURLE_FAILED_INIT |
@@ -272,12 +368,12 @@ These errors are related to [device](DAuth-Server) and [application](AAuth-Serve
 | 4000 - 4099 | [DAuth (device authentication)](#dauth-errors-dauth) |
 | 4100 - 4199 | [AAuth (application authentication)](#dauth-errors-aauth) |
 | 4500 - 4599 | [Dragons (e-license management)](#dauth-errors-dragons) |
-| Other | [General errors](#ndas-errors-general) |
+| Other | [General errors](#dauth-errors-general) |
 
 ## DAuth Errors (General)
 | Error code | Description |
 | --- | --- |
-| 2181-3100 | NDAS server returned invalid response |
+| 2181-3100 | DAuth or AAuth server returned invalid response |
 | 2181-3101 | Dragons server returned invalid response |
 
 ## DAuth Errors (DAuth)
