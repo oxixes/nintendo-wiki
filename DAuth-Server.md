@@ -239,33 +239,33 @@ For more detailed descriptions, see below.
 
 Most errors use HTTP status code 400. The only known exception is error 0009, which uses status code 500.
 
-| Code | Dialog | Message |
-| --- | --- | --- |
-| 0004 | 2181-4004 | Unauthorized device. |
-| 0007 | 2181-4007 | System update is required. |
-| 0008 | 2181-4008 | Device has been banned. |
-| 0009 | 2181-4009 | Internal Server Error. |
-| 0010 | 2181-4010 | ? |
-| 0011 | 2181-4011 | ? |
-| 0013 | 2181-4013 | ? |
-| 0014 | 2181-4014 | Invalid parameter in request. |
-| 0015 | 2181-4015 | Invalid parameter in request. |
-| 0016 | 2181-4016 | Invalid parameter in request. |
-| 0017 | 2181-4017 | This device might be broken. |
-| 0018 | 2181-4018 | ? |
-| 0019 | 2181-4019 | ? |
-| 0020 | 2181-4020 | ? |
-| 0021 | 2181-4021 | ? |
-| 0022 | 2181-4022 | ? |
-| 0023 | 2181-4023 | ? |
-| 0024 | 2181-4024 | ? |
-| 0025 | 2181-4025 | ? |
-| 0026 | 2181-4026 | ? |
-| 0027 | 2181-4027 | ? |
-| 0028 | 2181-4028 | ? |
-| 0029 | 2181-4029 | ? |
-| 0030 | 2181-4030 | ? |
-| 0031 | 2181-4031 | ? |
+| Code | Message |
+| --- | --- |
+| 0004 | Unauthorized device. |
+| 0007 | System update is required. |
+| 0008 | Device has been banned. |
+| 0009 | Internal Server Error. |
+| 0010 | ? |
+| 0011 | ? |
+| 0013 | ? |
+| 0014 | Invalid parameter in request. |
+| 0015 | Invalid parameter in request. |
+| 0016 | Invalid parameter in request. |
+| 0017 | This device might be broken. |
+| 0018 | ? |
+| 0019 | ? |
+| 0020 | ? |
+| 0021 | ? |
+| 0022 | ? |
+| 0023 | ? |
+| 0024 | ? |
+| 0025 | ? |
+| 0026 | ? |
+| 0027 | ? |
+| 0028 | ? |
+| 0029 | ? |
+| 0030 | ? |
+| 0031 | ? |
 
 | Code | Description |
 | --- | --- |
