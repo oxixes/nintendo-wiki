@@ -10,6 +10,7 @@ Depending on the method, this server takes form or json encoded requests. The se
 * [Headers](#headers)
 * [Methods](#methods)
 * [Errors](#errors)
+* [Environments](#environments)
 
 ## Headers
 | Header | Description |
@@ -399,3 +400,14 @@ On error, the server sends the following response:
 | 500 | internal_server_error | Internal Server Error | Internal Server Error |
 | 502 | could_not_confirm_membership | ? | ? |
 | 503 | under_maintenance | ? | ? |
+
+## Environments
+| Environment | Prefix |
+| --- | --- |
+| `dd1` | [`e97b8a9d672e4ce4845ec6947cd66ef6-sb`](https://e97b8a9d672e4ce4845ec6947cd66ef6-sb.baas.nintendo.com) |
+| `dp1` | [`d9c8ea0e17f68bdeab8674c59f6fabda-sb`](https://d9c8ea0e17f68bdeab8674c59f6fabda-sb.baas.nintendo.com) |
+| `jd1` | [`d78dbb1c550d43c6af49bf04c56bc094-sb`](https://d78dbb1c550d43c6af49bf04c56bc094-sb.baas.nintendo.com) |
+| `lp1` | [`e0d67c509fb203858ebcb2fe3f88c2aa`](https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com) |
+| `sd1` | [`96130dc402837b377c07719e6c9514de-sb`](https://96130dc402837b377c07719e6c9514de-sb.baas.nintendo.com) |
+| `sp1` | [`dc219b6b3aa8e06873733fda1def0e03-sb`](https://dc219b6b3aa8e06873733fda1def0e03-sb.baas.nintendo.com) |
+| `td1` | [`e03a97819c9711e59510d820a52f298a-sb`](https://e03a97819c9711e59510d820a52f298a-sb.baas.nintendo.com) |
