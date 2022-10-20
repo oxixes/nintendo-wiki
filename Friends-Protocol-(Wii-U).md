@@ -283,8 +283,6 @@ This method does not take any parameters.
 | This structure inherits from [Data] |
 | --- |
 
-| This structure inherits from [Data] |
-| --- |
 | Type | Description |
 | --- | --- |
 | [PrincipalBasicInfo] | Principal basic info |
