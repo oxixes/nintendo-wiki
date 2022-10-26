@@ -102,6 +102,7 @@ These errors are shown when the [AAuth server](AAuth-Server) returns an error co
 | 2124-4608 | 0108 | |
 | 2124-4609 | 0109 | Service closed. |
 | 2124-4610 | 0110 | |
+| 2124-4611 | 0111 | Application update is required. |
 | 2124-4612 | 0112 | Internal Server Error. |
 | 2124-4613 | 0113 | |
 | 2124-4618 | 0118 | Invalid parameter in request. |
@@ -421,6 +422,7 @@ The following errors are shown when the [AAuth server](AAuth-Server) returns an 
 | 2181-4108 | 0108 | |
 | 2181-4109 | 0109 | Service closed. |
 | 2181-4110 | 0110 | |
+| 2181-4111 | 0111 | Application update is required. |
 | 2181-4112 | 0112 | Internal Server Error. |
 | 2181-4113 | 0113 | |
 | 2181-4118 | 0118 | Invalid parameter in request. |
