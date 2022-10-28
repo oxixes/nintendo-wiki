@@ -7,6 +7,7 @@ https://dragons.hac.lp1.dragons.nintendo.net:
 
 | URL |
 | --- |
+| `/quickTEST` |
 | `/v1/contents_authorization_token/issue` |
 | [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
 | `/v1/elicense_archives/publish` |
@@ -27,12 +28,14 @@ https://tigers.hac.lp1.dragons.nintendo.net:
 
 | URL |
 | --- |
+| `/quickTEST` |
 | `/v1/etickets/publish` |
 
 https://dragonst.hac.lp1.dragons.nintendo.net:
 
 | URL |
 | --- |
+| `/quickTEST` |
 | `/v1/debug/edge_token/issue` |
 | `/v1/edge_token/issuable_titles` |
 | `/v1/edge_token/issue` |
