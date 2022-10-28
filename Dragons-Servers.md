@@ -1,7 +1,9 @@
 [Switch Server](Server-List#switch) > eLicenses
 ---
 
-These servers take JSON-encoded requests and respond with JSON-encoding.
+The dragons servers are responsible for managing e-licenses on the Nintendo Switch. An e-license carries the right to play a game, and is obtained by purchasing the game on the Nintendo eShop.
+
+The dragons servers take JSON-encoded requests and respond with JSON-encoding.
 
 https://dragons.hac.lp1.dragons.nintendo.net:
 
