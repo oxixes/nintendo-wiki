@@ -1,27 +1,41 @@
-[[Server List]] > eLicenses
+[Switch Server](Server-List#switch) > eLicenses
 ---
 
 These servers take JSON-encoded requests and respond with JSON-encoding.
 
+https://dragons.hac.lp1.dragons.nintendo.net:
+
 | URL |
 | --- |
+| `/v1/contents_authorization_token/issue` |
 | [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
-| `/v1/debug/edge_token/issue` |
-| `/v1/edge_token/issue` |
-| `/v1/edge_token/issuable_titles` |
+| `/v1/elicense_archives/publish` |
+| `/v1/elicense_archives/<id>/report` |
 | `/v1/elicenses/eticket_token` |
 | `/v1/elicenses/exercise` |
 | `/v1/elicenses/extend` |
-| `/v1/elicenses/inactivated_reason` |
 | `/v1/elicenses/report` |
+| `/v1/elicenses/revoke` |
 | `/v1/elicenses/revoke_all` |
-| `/v1/elicense_archives/publish` |
-| `/v1/elicense_archives/<id>/report` |
-| `/v1/etickets/publish` |
+| `/v1/elicenses/inactivated_reason` |
 | `/v1/notification_token` |
 | `/v1/rights/available_elicenses` |
 | `/v1/rights/publish_device_linked_elicenses` |
 | `/v1/rights/publish_elicenses` |
+
+https://tigers.hac.lp1.dragons.nintendo.net:
+
+| URL |
+| --- |
+| `/v1/etickets/publish` |
+
+https://dragonst.hac.lp1.dragons.nintendo.net:
+
+| URL |
+| --- |
+| `/v1/debug/edge_token/issue` |
+| `/v1/edge_token/issuable_titles` |
+| `/v1/edge_token/issue` |
 
 ## POST /v1/contents_authorization_token_for_aauth/issue
 | Field | Format | Description |
