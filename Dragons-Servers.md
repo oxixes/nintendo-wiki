@@ -5,6 +5,44 @@ The dragons servers are responsible for managing e-licenses on the Nintendo Swit
 
 The dragons servers take JSON-encoded requests and respond with JSON-encoding.
 
+* [Header](#headers)
+* [Methods](#methods)
+* [Errors](#errors)
+
+## Headers
+The following headers are always present:
+
+| Header | Description |
+| --- | --- |
+| Host | One of the dragons servers |
+| Accept | `*/*` |
+| User-Agent | User agent |
+| DeviceAuthorization | `Bearer ` + [device token](DAuth-Server) |
+
+The following headers are optional and depend on the method and device type:
+
+| Header | Description |
+| --- | --- |
+| AccountAuthorization | `Bearer ` + [account token](Account-Server-(Switch)) |
+| Nintendo-Account-Id | Nintendo account id (`%016llx`) |
+| Nintendo-Application-Id | Title id (`%016llx`) |
+| Nintendo-Nsa-Id-Token | `Bearer ` + id token |
+| Nintendo-ReferToVirtualDeviceLink | Only present on kiosk and development hardware. If present, always `true`. |
+
+If the request body is empty, the following headers are sent:
+
+| Header | Description |
+| --- | --- |
+| Content-Length | 0 |
+| Content-Type | `application/x-www-form-urlencoded` |
+
+Otherwise, the following headers are sent:
+
+| Header | Description |
+| --- | --- |
+| Content-Type | `application/json` |
+| Content-Length | Content length |
+
 ## Methods
 
 https://dragons.hac.lp1.dragons.nintendo.net:
