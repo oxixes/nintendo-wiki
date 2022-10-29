@@ -216,6 +216,7 @@ A `vendor_id` parameter was added:
 | `83b72b05dc3278d7` | NPNS | No |
 | `8f849b5d34778d8e` | [AAuth](AAuth-Server) and [BaaS](BAAS-Server) | No |
 | `93af0acb26258de9` | Beach and Bugyo | Yes |
+| `bad8156f44ac935a` | ? | No |
 | `d5b6cac2c1514c56` | Dragons | No |
 | `dc656ea03b63cf68` | Parental controls | No |
 | `df51c436bc01c437` | Prepo | No |
