@@ -43,6 +43,8 @@ Otherwise, the following headers are sent:
 | Content-Type | `application/json` |
 | Content-Length | Content length |
 
+There is one exception. In [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue),  the headers are ordered as follows: `Host`, `User-Agent`, `Accept`, `Content-Type`, `DeviceAuthorization`, `Nintendo-Application-Id` and `Content-Length`. The reason is that this request is performed by the account sysmodule instead of nim.
+
 ## Methods
 
 https://dragons.hac.lp1.dragons.nintendo.net:
