@@ -5,6 +5,8 @@ The dragons servers are responsible for managing e-licenses on the Nintendo Swit
 
 The dragons servers take JSON-encoded requests and respond with JSON-encoding.
 
+## Methods
+
 https://dragons.hac.lp1.dragons.nintendo.net:
 
 | URL |
