@@ -92,6 +92,8 @@ https://dragonst.hac.lp1.dragons.nintendo.net:
 | `/v1/edge_token/issue` |
 
 ## POST /v1/contents_authorization_token_for_aauth/issue
+Note that the Switch sends the [headers](#headers) for this method in a different order and uses a different [user agent](#user-agents).
+
 | Field | Format | Description |
 | --- | --- | --- |
 | elicense_id | `\p{XDigit}{32}` | E-license id |
