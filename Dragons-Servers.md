@@ -3,7 +3,7 @@
 
 The dragons servers are responsible for managing e-licenses on the Nintendo Switch. An e-license carries the right to play a game, and is obtained by purchasing the game on the Nintendo eShop.
 
-The dragons servers take JSON-encoded requests and respond with JSON-encoding.
+The dragons servers take JSON-encoded requests and respond with JSON-encoding. The dragons servers only accept connections with a valid device certificate.
 
 * [Header](#headers)
 * [Methods](#methods)
@@ -16,7 +16,7 @@ The following headers are always present:
 | --- | --- |
 | Host | One of the dragons servers |
 | Accept | `*/*` |
-| User-Agent | User agent |
+| User-Agent | [User agent](#user-agents) |
 | DeviceAuthorization | `Bearer ` + [device token](DAuth-Server) |
 
 The following headers are optional and depend on the method and device type:
@@ -44,6 +44,13 @@ Otherwise, the following headers are sent:
 | Content-Length | Content length |
 
 There is one exception. In [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue),  the headers are ordered as follows: `Host`, `User-Agent`, `Accept`, `Content-Type`, `DeviceAuthorization`, `Nintendo-Application-Id` and `Content-Length`. The reason is that this request is performed by the account sysmodule instead of nim.
+
+### User Agents
+The user agent looks as follows: `NintendoSDK Firmware/<firmware version>-<revision> (platform:NX; did:<device id>; eid:lp1)`. The firmware version and revision number are obtained from the [system version title](https://switchbrew.org/wiki/System_Version_Title).
+
+Here is an example: `NintendoSDK Firmware/15.0.0-4.0 (platform:NX; did:6265ca40780b1c0d; eid:lp1)`
+
+There is one exception: for [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue), the [dauth user agent](DAuth-Server) is used instead.
 
 ## Methods
 
