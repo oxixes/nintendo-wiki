@@ -225,6 +225,7 @@ This method updates the given user. The following JSON patch paths are known to 
 * `/country`
 * `/birthday`
 * `/thumbnailUrl`
+* `/extras/self/nxAccount`
 * `/permissions/personalAnalytics`
 * `/permissions/personalNotification`
 * `/permissions/friendRequestReception`
