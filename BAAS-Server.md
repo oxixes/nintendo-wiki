@@ -44,50 +44,50 @@ The user agents below are taken from the account sysmodule. If the request is ma
 ## Methods
 The following methods do not require an access token:
 
-| Method | URL |
-| --- | --- |
-| POST | [`/1.0.0/application/token`](#post-100applicationtoken) |
-| GET | <code><a href="#get-100certificates">/1.0.0/certificates</a></code> |
-| GET | <code><a href="#get-100internal_certificates">/1.0.0/internal_certificates</a></code> |
+| Module | Method | URL |
+| --- | --- | --- |
+| Account | POST | [`/1.0.0/application/token`](#post-100applicationtoken) |
+| None | GET | <code><a href="#get-100certificates">/1.0.0/certificates</a></code> |
+| None | GET | <code><a href="#get-100internal_certificates">/1.0.0/internal_certificates</a></code> |
 
 The following methods require an anonymous access token:
 
-| Method | URL |
-| --- | --- |
-| POST | <code><a href="#post-100login">/1.0.0/login</a></code> |
-| POST | <code><a href="#post-100federation">/1.0.0/federation</a></code> |
-| POST | <code><a href="#post-100users">/1.0.0/users</a></code> |
+| Module | Method | URL |
+| --- | --- | --- |
+| Account | POST | <code><a href="#post-100login">/1.0.0/login</a></code> |
+| Account | POST | <code><a href="#post-100federation">/1.0.0/federation</a></code> |
+| Account | POST | <code><a href="#post-100users">/1.0.0/users</a></code> |
 
 The following methods require a user access token:
 
-| Method | URL |
-| --- | --- |
-| GET | `/1.0.0/users` |
-| GET | [`/1.0.0/users/<id>`](#get-100usersid) |
-| PATCH | [`/1.0.0/users/<id>`](#patch-100usersid) |
-| DELETE | [`/1.0.0/users/<id>/device_accounts/<id>`](#delete-100usersiddevice_accountsid) |
-| POST | [`/1.0.0/users/<id>/generate_code`](#post-100usersidgenerate_code) |
-| POST | `/1.0.0/image_upload` |
+| Module | Method | URL |
+| --- | --- | --- |
+| Friends | GET | `/1.0.0/users` |
+| Both | GET | [`/1.0.0/users/<id>`](#get-100usersid) |
+| Both | PATCH | [`/1.0.0/users/<id>`](#patch-100usersid) |
+| Account | DELETE | [`/1.0.0/users/<id>/device_accounts/<id>`](#delete-100usersiddevice_accountsid) |
+| Friends | POST | [`/1.0.0/users/<id>/generate_code`](#post-100usersidgenerate_code) |
+| Account | POST | `/1.0.0/image_upload` |
 
 The following methods need more research:
 
-| Method | URL |
-| --- | --- |
-| PATCH | `/1.0.0/users/<id>/device_accounts/<id>` |
-| POST | `/1.0.0/users/<id>/link` |
-| POST | `/1.0.0/users/<id>/unlink` |
-| GET | `/1.0.0/users/<id>/blocks` |
-| POST | `/1.0.0/users/<id>/blocks` |
-| DELETE | `/1.0.0/users/<id>/blocks/<id>` |
-| PUT | `/1.0.0/push_channels/<id>/<id>` |
-| POST | `/2.0.0/friend_requests` |
-| PATCH | `/2.0.0/friend_requests/<id>` |
-| GET | `/2.0.0/users/<id>/friends` |
-| PATCH | `/2.0.0/users/<id>/friends/<id>` |
-| DELETE | `/2.0.0/users/<id>/friends/<id>` |
-| GET | `/2.0.0/users/<id>/friend_requests/inbox` |
-| GET | `/2.0.0/users/<id>/friend_requests/outbox` |
-| GET | `/2.0.0/users/<id>/relationships/<id>` |
+| Module | Method | URL |
+| --- | --- | --- |
+| Friends | PATCH | `/1.0.0/users/<id>/device_accounts/<id>` |
+| Account | POST | `/1.0.0/users/<id>/link` |
+| Account | POST | `/1.0.0/users/<id>/unlink` |
+| Friends | GET | `/1.0.0/users/<id>/blocks` |
+| Friends | POST | `/1.0.0/users/<id>/blocks` |
+| Friends | DELETE | `/1.0.0/users/<id>/blocks/<id>` |
+| Account | PUT | `/1.0.0/push_channels/<id>/<id>` |
+| Friends | POST | `/2.0.0/friend_requests` |
+| Friends | PATCH | `/2.0.0/friend_requests/<id>` |
+| Friends | GET | `/2.0.0/users/<id>/friends` |
+| Friends | PATCH | `/2.0.0/users/<id>/friends/<id>` |
+| Friends | DELETE | `/2.0.0/users/<id>/friends/<id>` |
+| Friends | GET | `/2.0.0/users/<id>/friend_requests/inbox` |
+| Friends | GET | `/2.0.0/users/<id>/friend_requests/outbox` |
+| Friends | GET | `/2.0.0/users/<id>/relationships/<id>` |
 
 ### POST /1.0.0/application/token
 This method provides an anonymous access token.
