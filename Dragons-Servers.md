@@ -105,6 +105,37 @@ Response on success:
 | --- | --- |
 | contents_authorization_token | The token |
 
+Example:
+
+```
+POST /v1/contents_authorization_token_for_aauth/issue HTTP/1.1
+Host: dragons.hac.lp1.dragons.nintendo.net
+User-Agent: libcurl (nnDauth; 16f4553f-9eee-4e39-9b61-59bc7c99b7c8; SDK 15.3.0.0)
+Accept: */*
+Content-Type: application/json
+DeviceAuthorization: Bearer eyJqa3UiOiJodHRwczovL2RjZXJ0LWxwMS5uZGFzLnNydi5uaW50ZW5kby5uZXQva2V5cyIsImtpZCI6ImNhOTdhNTIwLTA2NWItNGEwZC1iOGU4LTlhYzQ5OWFlNjkzZCIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MjY1OTY2MWUzZmRmZTExIiwiaXNzIjoiZGF1dGgtbHAxLm5kYXMuc3J2Lm5pbnRlbmRvLm5ldCIsImF1ZCI6ImQ1YjZjYWMyYzE1MTRjNTYiLCJleHAiOjE2NjczMzQ4NjMsImlhdCI6MTY2NzI0ODQ2MywianRpIjoiYjMyYmIzYzYtMjQwNy00NGUzLWIwZjUtYjkzODljMGJmODNmIiwibmludGVuZG8iOnsic24iOiJYQUo3MDEyMzQ1Njc4OSIsInBjIjoiSEFDIiwiZHQiOiJOWCBQcm9kIDEiLCJpc3QiOmZhbHNlfX0.j7Iah1gCA1N5jnAOQnUFgowK3VlrjJi3wxzvM_F6KJLK23nYYNqg0Nn-pATZZ-yV7KJWkuyD07anxWErcYI47nsV4L_sYHvsnw_gXTwD7hlc02_VO1MEnG_CDUsVgrLhDFasQJgcya4vLDgPZpuf-VnpX_H9ZM8JYDusT0uCrv9x_5Ad_o6mpHZK9R56BJ6AoSV0JrRP7cJv2X-cYlDQCnat6CKZxxmNrd5_IrfP8dUBWI4w3wFsJWA2euOQr8pwn2hwG666VU_u4r-PUti8mzbLGFjI9dkvaSKkVwECL_27Xpqw5KxP70z3NhIFmguFo8AwzFLDR0Zvpt3y_tajiQ
+Nintendo-Application-Id: 010040600c5ce000
+Content-Length: 77
+
+{"elicense_id":"337c8aaef372df9c2c239ebaaf49f723","na_id":"72b0f0bdb31753d5"}
+```
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 951
+Server: nginx
+X-Content-Type-Options: nosniff
+Expires: Mon, 31 Oct 2022 19:34:39 GMT
+Cache-Control: max-age=0, no-cache, no-store
+Pragma: no-cache
+Date: Mon, 17 Oct 2022 08:31:43 GMT
+x-nintendo-akamai-reference-id: 0.38ac1666.1667248479.7ecea70
+Connection: keep-alive
+
+{"contents_authorization_token":"eyJqa3UiOiJodHRwczpcL1wvcHVia2V5LmxwMS5kcmFnb25zLm5pbnRlbmRvLm5ldFwvY2F0YVwvdjFcL2p3a3MiLCJraWQiOiI2YzI2MjRkOC0zMGQ0LTRlYjgtYWJjOC0wNmZiODMzYzhjNGIiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTAwNDA2MDBjNWNlMDAwIiwiZGV2aWNlX2lkIjoiNjI2NTk2NjFlM2ZkZmUxMSIsImlzcyI6ImxwMS5kcmFnb25zLm5pbnRlbmRvLm5ldCIsImV4cCI6MTY2NzMzNDg3OSwiaWF0IjoxNjY3MjQ4NDc5LCJqdGkiOiI0ZGYyZTY1Ni04ZTk2LTQwOWEtOGE3ZS1iZDFkZDFiYmM1NzIiLCJjb250ZW50Ijp7InRpdGxlX2lkIjoiMDEwMDQwNjAwYzVjZTAwMCIsIm5hX2lkIjoiNzJiMGYwYmRiMzE3NTNkNSIsInRpY2tldF9pZCI6NzIyMTI4OTQzNDk2MDQ5MzksImlzX293bmVkX3JpZ2h0cyI6dHJ1ZX19.MqMnkyEWuVp9TOtbpPhRJGcHRd-fCK_8rGa7rO0HeiC6pkIn7qafBzpc-TD1Xf_DYN_C0m9OXjlX0rVs0vosIzXsoqVDQodB6XAteRWfDNUc6odpW-rgqOiNpbIBymcpbRYOsdJh41zQjl_hpdM44UOR6ZgvL1hKoQVaw7XVz5NANig-WlKyNDVCcSsWhycyBuRkZOPb9OblTbvRkIzluRTFG9lxHCDnwczxGiaLoZjEgUrqIcWQJBUyOxB2UiL5sitK53GsHhFHxVZqTwjM7wl7nzrQaVDsp_Zc26hkIrUeuvDTBZHWXNPrte-nja5CZ-lN-UNIwe2j9N61baD9YQ"}
+```
+
 ## Errors
 On error, the server sends the following response:
 
