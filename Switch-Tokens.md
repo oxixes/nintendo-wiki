@@ -8,6 +8,7 @@ Details on specific kinds of token:
 * [BaaS access tokens](#baas-access-tokens)
 * [BaaS user tokens](#baas-user-tokens)
 * [ID tokens](#id-tokens)
+* [Contents authorization token for aauth](#contents-authorization-token-for-aauth)
 
 ### Header
 The first part contains metadata about the JWT, such as the signature algorithm that is used.
@@ -307,5 +308,46 @@ Payload fields:
     "iat": 1644756194,
     "bs:did": "2ded458f5e0beee2",
     "jti": "164eea2b-508c-47d0-9d48-9eca1cac0f56"
+}
+```
+
+## Contents Authorization Token for AAuth
+| Field | Value |
+| --- | --- |
+| `jku` | [`https:\/\/pubkey.lp1.dragons.nintendo.net\/cata\/v1\/jwks`](https://pubkey.lp1.dragons.nintendo.net/cata/v1/jwks) |
+
+Payload fields:
+
+| Field | Description |
+| --- | --- |
+| `aud` | Title id (`%016x`) |
+| `device_id` | Device id (`%016x`) |
+| `iss` | `lp1.dragons.nintendo.net` |
+| `typ` | Always `id_token` |
+| `content` | [Application information](#application-information-2) |
+
+### Application Information
+| Field | Description |
+| --- | --- |
+| `title_id` | Title id (`%016x`) |
+| `na_id` | Nintendo account id (`%016x`) |
+| `ticket_id` | Ticket id (integer) |
+| `is_owned_rights` | Boolean |
+
+### Example
+```json
+{
+    "aud": "010040600c5ce000",
+    "device_id": "62659661e3fdfe11",
+    "iss": "lp1.dragons.nintendo.net",
+    "exp": 1667334879,
+    "iat": 1667248479,
+    "jti": "4df2e656-8e96-409a-8a7e-bd1dd1bbc572"
+    "content": {
+        "title_id": "010040600c5ce000",
+        "na_id": "72b0f0bdb31753d5",
+        "ticket_id": 72212894349604939,
+        "is_owned_rights": true
+    }
 }
 ```
