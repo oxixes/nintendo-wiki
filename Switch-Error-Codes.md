@@ -12,15 +12,66 @@
 | 2815-XXXX | [Coral (voice chat)](#coral-error-codes) |
 
 # SSL Error Codes
+| Error Codes | Description |
+| --- | --- |
+| 0000 - 0199 | [General errors](#ssl-errors-general) |
+| 0200 - 0299 | [PR errors](#ssl-errors-pr) |
+| 0300 - 0399 | [SSL errors](#ssl-errors-ssl) |
+| 1500 - 1599 | [SSL alert errors](#ssl-errors-ssl-alert) |
+
+## SSL Errors (General)
+| Error Code | Description |
+| --- | --- |
+| 2123-0011 | An I/O error has occurred |
+| 2123-0013 | A library returned an unexpected error code |
+| 2123-0102 | Some kind of resource was exhausted (e.g. out of memory) |
+| 2123-0116 | Invalid file descriptor |
+
+## SSL Errors (PR)
+| Error Code | Description |
+| --- | --- |
+| 2123-0204 | `PR_WOULD_BLOCK_ERROR` |
+| 2123-0205 | `PR_IO_TIMEOUT_ERROR` |
+| 2123-0206 | `PR_OPERATION_ABORTED_ERROR` |
+| 2123-0208 | `PR_NOT_CONNECTED_ERROR` |
+| 2123-0209 | `PR_CONNECT_RESET_ERROR` |
+| 2123-0210 | `PR_CONNECT_ABORTED_ERROR` |
+| 2123-0211 | `PR_SOCKET_SHUTDOWN_ERROR` |
+| 2123-0212 | `PR_NETWORK_DOWN_ERROR` |
+
+## SSL Errors (SSL)
+| Error Code | Description |
+| --- | --- |
+| 2123-0301 | `SSL_ERROR_BAD_CERT_DOMAIN` |
+| 2123-0302 | `SSL_ERROR_NO_CERTIFICATE` |
+| 2123-0310 | Received record/message with unknown discriminant. |
+| 2123-0311 | Received a malformed (too long or short) SSL handshake. |
+| 2123-0312 | Received an SSL handshake that was inappropriate for the state we're in. |
+| 2123-0313 | Received an SSL record that was inappropriate for the state we're in. |
+| 2123-0314 | `SSL_ERROR_RX_RECORD_TOO_LONG` |
+| 2123-0315 | `SSL_ERROR_RX_UNEXPECTED_HELLO_VERIFY_REQUEST` |
+| 2123-0316 | `SSL_ERROR_RX_UNEXPECTED_CERT_STATUS` |
+| 2123-0317 | `SSL_ERROR_INCORRECT_SIGNATURE_ALGORITHM` |
+| 2123-0318 | `SSL_ERROR_WEAK_SERVER_*_KEY` |
+| 2123-0319 | `SSL_ERROR_EXPIRED_CERT_ALERT` |
+| 2123-0321 | `SSL_ERROR_*_DIGEST_FAILURE` |
+| 2123-0322 | `SSL_ERROR_MAC_COMPUTATION_FAILURE` |
+| 2123-0330 | `SSL_ERROR_DECOMPRESSION_FAILURE` |
+
+## SSL Errors (SSL Alert)
 | Error Code | Description |
 | --- | --- |
 | 2123-1501 | `SSL_ERROR_CLOSE_NOTIFY_ALERT` |
 | 2123-1502 | `SSL_ERROR_HANDSHAKE_UNEXPECTED_ALERT` |
+| 2123-1503 | `SSL_ERROR_BAD_MAC_ALERT` |
 | 2123-1504 | `SSL_ERROR_DECRYPTION_FAILED_ALERT` |
 | 2123-1505 | `SSL_ERROR_RECORD_OVERFLOW_ALERT` |
 | 2123-1506 | `SSL_ERROR_DECOMPRESSION_FAILURE_ALERT` |
 | 2123-1507 | `SSL_ERROR_HANDSHAKE_FAILURE_ALERT` |
+| 2123-1509 | `SSL_ERROR_BAD_CERT_ALERT` |
 | 2123-1510 | `SSL_ERROR_UNSUPPORTED_CERT_ALERT` |
+| 2123-1511 | `SSL_ERROR_REVOKED_CERT_ALERT` |
+| 2123-1512 | `SSL_ERROR_EXPIRED_CERT_ALERT` |
 | 2123-1513 | `SSL_ERROR_CERTIFICATE_UNKNOWN_ALERT` |
 | 2123-1514 | `SSL_ERROR_ILLEGAL_PARAMETER_ALERT` |
 | 2123-1515 | `SSL_ERROR_UNKNOWN_CA_ALERT` |
@@ -31,6 +82,7 @@
 | 2123-1520 | `SSL_ERROR_PROTOCOL_VERSION_ALERT` |
 | 2123-1521 | `SSL_ERROR_INSUFFICIENT_SECURITY_ALERT` |
 | 2123-1522 | `SSL_ERROR_INTERNAL_ERROR_ALERT` |
+| 2123-1523 | `SSL_ERROR_INAPPROPRIATE_FALLBACK_ALERT` |
 | 2123-1524 | `SSL_ERROR_USER_CANCELED_ALERT` |
 | 2123-1525 | `SSL_ERROR_NO_RENEGOTIATION_ALERT` |
 | 2123-1526 | `SSL_ERROR_UNSUPPORTED_EXTENSION_ALERT` |
