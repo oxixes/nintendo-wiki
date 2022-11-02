@@ -376,6 +376,7 @@ These errors are related to [device](DAuth-Server) and [application](AAuth-Serve
 | --- | --- |
 | 2181-3100 | DAuth or AAuth server returned invalid response |
 | 2181-3101 | Dragons server returned invalid response |
+| 2181-3200 | Failed to load device token from cache |
 
 ## DAuth Errors (DAuth)
 
