@@ -374,6 +374,7 @@ These errors are related to [device](DAuth-Server) and [application](AAuth-Serve
 ## DAuth Errors (General)
 | Error code | Description |
 | --- | --- |
+| 2181-0200 | DAuth service is busy (too many async requests at the same time) |
 | 2181-3100 | DAuth or AAuth server returned invalid response |
 | 2181-3101 | Dragons server returned invalid response |
 | 2181-3200 | Failed to load device token from cache |
