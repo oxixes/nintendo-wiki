@@ -23,7 +23,7 @@
 | Error Code | Description |
 | --- | --- |
 | 2123-0011 | An I/O error has occurred |
-| 2123-0013 | A library returned an unexpected error code |
+| 2123-0013 | An unexpected error has occurred |
 | 2123-0102 | Some kind of resource was exhausted (e.g. out of memory) |
 | 2123-0116 | Invalid file descriptor |
 
