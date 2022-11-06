@@ -92,6 +92,10 @@ https://dragonst.hac.lp1.dragons.nintendo.net:
 | `/v1/edge_token/issue` |
 
 ## POST /v1/contents_authorization_token_for_aauth/issue
+**This method was added in system version 15.0.0.**
+
+Starting with system version 15.0.0, a contents authorization token is required for digital [application authentication](AAuth-Server). This method returns such a token.
+
 Note that the Switch sends the [headers](#headers) for this method in a different order and uses a different [user agent](#user-agents).
 
 | Field | Format | Description |
