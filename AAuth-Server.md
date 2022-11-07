@@ -36,7 +36,7 @@ The aauth server takes form-encoded requests and responds with json-encoding. It
 | 13.0.0 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.3.0.0; Add-on 13.3.0.0)` |
 | 13.1.0 - 13.2.1 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.4.0.0; Add-on 13.4.0.0)` |
 | 14.0.0 - 14.1.2 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 14.3.0.0; Add-on 14.3.0.0)` |
-| 15.0.0 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 15.3.0.0; Add-on 15.3.0.0)` |
+| 15.0.0 - 15.0.1 | `libcurl (nnHttp; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 15.3.0.0; Add-on 15.3.0.0)` |
 
 ## Methods
 The following method returns a timestamp and your ip address:
@@ -67,7 +67,7 @@ The following methods return an application token as JWT:
 | 1.0.0 - 4.1.0 | v1 |
 | 5.0.0 - 8.1.1 | v2 |
 | 9.0.0 - 14.1.2 | v3 |
-| 15.0.0 | v4 |
+| 15.0.0 - 15.0.1 | v4 |
 
 #### API Changes
 | API | Changelog |
