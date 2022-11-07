@@ -11,10 +11,10 @@ Replace '%' by one of the following:
 | - ctest.cdn.nintendo.net<br>- ctest-ul-%.cdn.nintendo.net<br>- ctest-dl-%.cdn.nintendo.net | [Connection test](Connection-Test) |
 | - dauth-%.ndas.srv.nintendo.net | [Device authentication](DAuth-Server) |
 | - aauth-%.ndas.srv.nintendo.net | [Application authentication](AAuth-Server) |
-| - dcert-%.ndas.srv.nintendo.net<br>- acert-%.ndas.srv.nintendo.net | [JWK servers](Switch-Tokens) |
 | - e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb.baas.nintendo.com<br>- cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com<br>- cdn-image-e97b8a9d672e4ce4845ec6947cd66ef6-sb.baas.nintendo.com | [Switch accounts](BAAS-Server) |
 | - accounts.nintendo.com<br>- cdn.accounts.nintendo.com<br>- api.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb-api.accounts.nintendo.com | [Nintendo accounts](Account-Server-(Switch)) |
 | - dragons.hac.%.dragons.nintendo.net<br>- dragonst.hac.%.dragons.nintendo.net<br>- tigers.hac.%.dragons.nintendo.net | [eLicenses](Dragons-Servers) |
+| - dcert-%.ndas.srv.nintendo.net<br>- acert-%.ndas.srv.nintendo.net<br>- pubkey.%.dragons.nintendo.net | [JWK servers](Switch-Tokens) |
 | - t-&lt;game id&gt;-%.%.t.npln.srv.nintendo.net | [Game servers (NPLN)](NPLN-Servers) |
 | - g&lt;game server id&gt;-%.s.n.srv.nintendo.net | [Game servers (NEX)](NEX-Overview-(Game-Servers)) |
 | - g&lt;game server id&gt;-%.r.n.srv.nintendo.net | P2P relay |
