@@ -56,11 +56,16 @@ There is one exception: for [`/v1/contents_authorization_token_for_aauth/issue`]
 
 https://dragons.hac.lp1.dragons.nintendo.net:
 
+| Method | Path |
+| --- | --- |
+| POST | [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
+
+Need more research:
+
 | URL |
 | --- |
 | `/quickTEST` |
 | `/v1/contents_authorization_token/issue` |
-| [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
 | `/v1/elicense_archives/publish` |
 | `/v1/elicense_archives/<id>/report` |
 | `/v1/elicenses/eticket_token` |
