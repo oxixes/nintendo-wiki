@@ -178,7 +178,7 @@ Fields that are not present are copied from the previous message.
 | Bytes | Payload (protocol-specific) |
 | | Padding |
 
-*5.27 - 6.16:*
+*5.27 - 6.23:*
 
 Fields that are not present are copied from the previous message.
 
