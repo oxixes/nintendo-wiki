@@ -172,7 +172,7 @@ If the error code is `invalid_parameter`, the response may contain more details 
 | 403 | `edge_token_not_grantable` | | |
 | 403 | `invalid_token` | Token is invalid | |
 | 403 | `license_archive_not_allowed` | | |
-| 403 | `license_inactive` | | |
+| 403 | `license_inactive` | ELicense is inactive | |
 | 403 | `license_not_grantable` | | |
 | 403 | `rights_policy_not_allowed` | | |
 | 403 | `system_update_required` | | |
