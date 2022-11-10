@@ -14,6 +14,7 @@ Also, the clone protocol used to be single protocol, but was split into several 
 | 0x0300 | 0x24 | [[Local Protocol]] |
 |        | 0x28 | Direct Protocol |
 |        | 0x2C | Net Protocol |
+|        | 0x30 | Turn Protocol |
 | 0x0400 | 0x34 | [NAT Traversal Protocol](NAT-Traversal-Protocol-(Pia)) |
 | 0x0410 |      | Gateway Protocol |
 | 0x0500 | 0x54 | Bandwidth Checker Protocol |
