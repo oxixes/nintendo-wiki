@@ -1,31 +1,41 @@
 [[Pia Protocols]] > NAT Traversal
 ---
 
+Up to Pia version 5.10, the protocol port was used to determine the message type.
+
 | Protocol Port | Description |
 | --- | --- |
 | 1 | [Probe request](#probe-request) |
 | 2 | [Probe reply](#probe-reply) |
 | 3 | [Dummy packet](#dummy-packet) |
 
-# Probe request
+In Pia version 5.11 and later, all packets are sent through port 0 and always contain the [NatProbeData](#natprobedata) structure.
+
+## Probe request
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 16 | [NatProbeData](#natprobedata) |
 
-# Probe reply
+## Probe reply
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 16 | [NatProbeData](#natprobedata) |
 
-# Dummy packet
+## Dummy packet
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 5 | "Dummy" |
 
-# NatProbeData
+## NatProbeData
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 4 | Connection id (from [SecureConnection.Register](https://github.com/Kinnay/NintendoClients/wiki/Secure-Protocol#1-register)) |
-| 0x4 | 1 | Probe type (0=request 1=response) |
+| 0x4 | 1 | Probe type (0=request 1=reply, 255=dummy) |
 | 0x5 | 3 | Padding |
 | 0x8 | 8 | System time (OSGetSystemTime on Wii U, nn::os::GetSystemTick on Switch) |
+
+*5.11 and later:*
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x10 | 4 | Variable id |
