@@ -17,7 +17,7 @@ Version numbers for [connection request](#connection-request) and [response](#co
 
 | Version | Pia Version |
 | --- | --- |
-| 2 | 3.6 |
+| 2 | 3.3 - 3.6 |
 | 3 | 3.9 - 3.10 |
 | 5 | 4.8 - 4.10 |
 | 7 | 5.2 - 5.3 |
