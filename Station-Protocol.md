@@ -19,7 +19,7 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | --- | --- |
 | 2 | 3.3 - 3.6 |
 | 3 | 3.9 - 3.10 |
-| 5 | 4.8 - 4.10 |
+| 5 | 4.5 - 4.10 |
 | 7 | 5.2 - 5.3 |
 | 8 | 5.9 |
 | 9 | 5.10 - 5.18 |
