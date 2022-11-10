@@ -24,7 +24,8 @@ Also, the clone protocol used to be single protocol, but was split into several 
 | 0x2100 | 0x6C | Round Robin Unreliable Protocol |
 | 0x2400 | 0x73 / 0x74 | Clone Protocol |
 |        | 0x74 | Clone Protocol (atomic) |
-|        | 0x76 | Clone Protocol (event) |
+|        | 0x75 | Clone Protocol (event) |
+|        | 0x76 | Clone Protocol (broadcast event) |
 |        | 0x77 | Clone Protocol (clock) |
 | 0x2800 | 0x78 | Voice Protocol |
 | 0x3000 | 0x7C | [[Reliable Protocol]] |
