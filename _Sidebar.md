@@ -57,7 +57,7 @@
   * [Pia Services](Pia-Protocols)
     * [Mesh](Mesh-Protocol)
     * [Monitoring Data](Monitoring-Data-Protocol)
-    * [NAT Traversal](NAT-Traversal-Protocol)
+    * [NAT Traversal](NAT-Traversal-Protocol-(Pia))
     * [Reliable](Reliable-Protocol)
     * [RTT](RTT-Protocol)
     * [Station](Station-Protocol)
