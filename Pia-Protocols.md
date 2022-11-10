@@ -1,6 +1,6 @@
 This page lists all protocols that are part of the [[Pia protocol]].
 
-All Switch games that use Pia version 5.6 or newer use the new protocol ids. All Wii U games and older Switch games use the old protocol ids.
+All games that use Pia version 5.6 or newer use the new protocol ids. Older games use the old protocol ids.
 
 Also, the clone protocol used to be single protocol, but was split into several protocols around Pia version 5.14. Before the split, the id of the clone protocol was 0x74. After the split, the id of the main clone protocol became 0x73, and 0x74 was assigned to the atomic clone protocol.
 
