@@ -1,7 +1,9 @@
 [[Pia Protocols]] > Station Protocol
 ---
 
-| Protocol Port | Description |
+All messages are sent through protocol port 0. The first byte of each packet indicates the message type.
+
+| Message Type | Description |
 | --- | --- |
 | 1 | [Connection request](#connection-request) |
 | 2 | [Connection response (denying)](#connection-response-denying)<br>[Connection response (accepted)](#connection-response-accepted) |
