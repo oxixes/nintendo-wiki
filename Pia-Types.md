@@ -4,8 +4,8 @@
 1. [InetAddress](#inetaddress)
 2. [StationAddress](#stationaddress)
 3. [StationLocation](#stationlocation)
-4. [StationInfo](#stationinfo)
-5. [StationConnectionInfo](#stationconnectioninfo)
+4. [StationConnectionInfo](#stationconnectioninfo)
+5. [StationInfo](#stationinfo)
 
 ## InetAddress
 In version 5.11, a new encoding was introduced that is capable of representing IPv6 addresses. Even later Pia version still use the old encoding sometimes. Which encoding is used depends on the context.
@@ -110,6 +110,12 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | Uint8 | probeinit |
 | Uint8 | Is private address available |
 
+## StationConnectionInfo
+| Type | Description |
+| --- | --- |
+| [StationLocation](#stationlocation) | Public station location |
+| [StationLocation](#stationlocation) | Local station location |
+
 ## StationInfo
 *Up to 5.9:*
 
@@ -126,9 +132,3 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | 0x0 | 0x3E | [StationLocation](#stationlocation). If it takes up less than 0x3E bytes the remaining bytes are filled with 0's. |
 | 0x3E | 1 | Station index |
 | 0x3F | 1 | Padding |
-
-## StationConnectionInfo
-| Type | Description |
-| --- | --- |
-| [StationLocation](#stationlocation) | Public station location |
-| [StationLocation](#stationlocation) | Local station location |
