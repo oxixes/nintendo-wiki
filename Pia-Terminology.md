@@ -18,7 +18,7 @@ The constant id uniquely identifies a station, and never changes, even across se
 * **LDN:** The constant id is generated from your MAC address: `mac[2] << 56 | mac[4] << 48 | mac[5] << 40 | mac[3] << 32 | mac[1] << 24 | mac[0] << 16`.
 
 ## Variable ID
-The variable id uniquely identifies a station in the current session. Unlike the [constant id](#constant-id), it may change across sessions.
+The variable id uniquely identifies a station in the current session. Unlike the [constant id](#constant-id), it may change across sessions. The variable id is just a random number that is generated at the start of the session.
 
 ## Service Variable ID
 Like the [variable id](#variable-id), the service variable id uniquely identifies a station in the current session but may change across sessions. The service variable id depends on the network type:
