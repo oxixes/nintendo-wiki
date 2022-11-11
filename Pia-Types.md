@@ -3,9 +3,9 @@
 
 1. [InetAddress](#inetaddress)
 2. [StationAddress](#stationaddress)
-3. [StationInfo](#stationinfo)
-4. [StationConnectionInfo](#stationconnectioninfo)
-5. [StationLocation](#stationlocation)
+3. [StationLocation](#stationlocation)
+4. [StationInfo](#stationinfo)
+5. [StationConnectionInfo](#stationconnectioninfo)
 
 ## InetAddress
 In version 5.11, a new encoding was introduced that is capable of representing IPv6 addresses. Even later Pia version still use the old encoding sometimes. Which encoding is used depends on the context.
