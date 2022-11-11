@@ -1,9 +1,16 @@
 [[Pia Protocols]] > Station Protocol
 ---
 
-All messages are sent through protocol port 0. The first byte of each packet indicates the message type.
+The difference between the reliable and unreliable protocol is that the reliable protocol wraps messages in a reliable sliding window. The reliable protocol is not used by Pia however, and support for it was removed in version *5.6*.
 
-| Message Type | Description |
+| Port | Description |
+| --- | --- |
+| 0 | Unreliable |
+| 1 | Reliable |
+
+The first byte of each packet indicates the message type.
+
+| Type | Description |
 | --- | --- |
 | 1 | [Connection request](#connection-request) |
 | 2 | [Connection response (denying)](#connection-response-denying)<br>[Connection response (accepted)](#connection-response-accepted) |
@@ -20,8 +27,8 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | 2 | 3.3 - 3.6 |
 | 3 | 3.9 - 3.10 |
 | 5 | 4.5 - 4.10 |
-| 7 | 5.2 - 5.3 |
-| 8 | 5.9 |
+| 7 | 5.2 - 5.6 |
+| 8 | 5.7 - 5.9 |
 | 9 | 5.10 - 5.18 |
 
 # Connection request
