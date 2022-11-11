@@ -1,13 +1,41 @@
 [[Pia Protocols]] > Types
 ---
 
-| Table of Contents |
-| --- |
-| [StationInfo](#stationinfo) |
-| [StationConnectionInfo](#stationconnectioninfo) |
-| [StationLocation](#stationlocation) |
-| [StationAddress](#stationaddress) |
-| [InetAddress](#inetaddress) |
+1. [InetAddress](#inetaddress)
+2. [StationAddress](#stationaddress)
+3. [StationInfo](#stationinfo)
+4. [StationConnectionInfo](#stationconnectioninfo)
+5. [StationLocation](#stationlocation)
+
+## InetAddress
+In version 5.11, a new encoding was introduced that is capable of representing IPv6 addresses. Even later Pia version still use the old encoding sometimes. Which encoding is used depends on the context.
+
+#### Old version
+This structure can only represent IPv4 addresses.
+
+| Offset | Size | Description |
+| --- | -- | --- |
+| 0x0 | 4 | Address |
+| 0x4 | 2 | Port |
+
+#### New version
+This structure can represent both IPv4 and IPv6 addresses.
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 16 | Address |
+| 0x10 | 2 | Port |
+
+## StationAddress
+| Type | Description |
+| --- | --- |
+| [InetAddress](#inetaddress) | Address |
+
+*Only present in version 3.x and 4.x:*
+
+| Type | Description |
+| --- | --- |
+| Uint16 | Extension id |
 
 ## StationInfo
 *Wii U and Switch (up to 5.9):*
@@ -83,28 +111,3 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | Uint8 | type |
 | Uint8 | probeinit |
 | Uint8 | Is local |
-
-## StationAddress
-| Type | Description |
-| --- | --- |
-| [InetAddress](#inetaddress) | Address |
-| Uint16 | Extension id. *Only present on Wii U.* |
-
-## InetAddress
-A new encoding was introduced in Pia 5.11 that's capable of representing IPv6 addresses. Even in games using Pia 5.11 or later, sometimes the old encoding is still used. Which encoding is used depends on the context.
-
-#### Old version
-This structure can only represent IPv4 addresses.
-
-| Offset | Size | Description |
-| --- | -- | --- |
-| 0x0 | 4 | Address |
-| 0x4 | 2 | Port |
-
-#### New version
-This structure can represent both IPv4 and IPv6 addresses.
-
-| Offset | Size | Description |
-| --- | --- | --- |
-| 0x0 | 16 | Address |
-| 0x10 | 2 | Port |
