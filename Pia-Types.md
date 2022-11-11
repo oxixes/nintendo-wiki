@@ -27,18 +27,91 @@ This structure can represent both IPv4 and IPv6 addresses.
 | 0x10 | 2 | Port |
 
 ## StationAddress
+In version 5.x, which [InetAddress](#inetaddress) encoding is used depends on the context. In version 6.x, the new encoding is always used.
+
+*Up to 4.10:*
+
+| Type | Description |
+| --- | --- |
+| [InetAddress](#inetaddress) | Address |
+| Uint16 | Extension id |
+
+*5.2 - 6.23:*
+
 | Type | Description |
 | --- | --- |
 | [InetAddress](#inetaddress) | Address |
 
-*Only present in version 3.x and 4.x:*
+## StationLocation
+This structure holds fields that are directly taken from a [StationURL](NEX-Common-Types#stationurl).
+
+*Up to 4.10:*
 
 | Type | Description |
 | --- | --- |
-| Uint16 | Extension id |
+| [StationAddress](#stationaddress) | Station address |
+| Uint32 | PID |
+| Uint32 | CID |
+| Uint32 | RVCID |
+| Uint8 | Url type (1=prudp 2=prudps 3=udp) |
+| Uint8 | sid |
+| Uint8 | stream |
+| Uint8 | natm |
+| Uint8 | natf |
+| Uint8 | type |
+| Uint8 | probeinit |
+
+*5.2 - 5.9:*
+
+| Type | Description |
+| --- | --- |
+| [StationAddress](#stationaddress) | Station address |
+| Uint64 | PID |
+| Uint32 | CID |
+| Uint32 | RVCID |
+| Uint8 | Url type (1=prudp 2=prudps 3=udp) |
+| Uint8 | sid |
+| Uint8 | stream |
+| Uint8 | natm |
+| Uint8 | natf |
+| Uint8 | type |
+| Uint8 | probeinit |
+| [InetAddress](#inetaddress) | Relay address |
+
+*5.10:*
+
+| Type | Description |
+| --- | --- |
+| [InetAddress](#inetaddress) | Public address |
+| [InetAddress](#inetaddress) | Private address |
+| [InetAddress](#inetaddress) | Relay address |
+| Uint64 | PID |
+| Uint32 | CID |
+| Uint32 | RVCID |
+| Uint8 | `0x3`: natf<br>`0xC`: natm |
+| Uint8 | type |
+| Uint8 | probeinit |
+| Uint8 | Is private address available |
+
+*5.11 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Size of public address |
+| Uint8 | Size of local address |
+| [InetAddress](#inetaddress) | Public address (encoding depends on size) |
+| [InetAddress](#inetaddress) | Private address (encoding depends on size) |
+| [InetAddress](#inetaddress) | Relay address (old encoding) |
+| Uint64 | PID |
+| Uint32 | CID |
+| Uint32 | RVCID |
+| Uint8 | `0x3`: natf<br>`0xC`: natm |
+| Uint8 | type |
+| Uint8 | probeinit |
+| Uint8 | Is private address available |
 
 ## StationInfo
-*Wii U and Switch (up to 5.9):*
+*Up to 5.9:*
 
 | Type | Description |
 | --- | --- |
@@ -46,7 +119,7 @@ This structure can represent both IPv4 and IPv6 addresses.
 | Uint8 | Station index |
 | | Padding such that the size becomes a multiple of 4 bytes. |
 
-*Wii U and Switch (5.10 and later):*
+*5.10 and later:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -59,55 +132,3 @@ This structure can represent both IPv4 and IPv6 addresses.
 | --- | --- |
 | [StationLocation](#stationlocation) | Public station location |
 | [StationLocation](#stationlocation) | Local station location |
-
-## StationLocation
-This structure holds fields that are directly taken from a [StationURL](NEX-Common-Types#stationurl).
-
-*Wii U and Switch (up to 5.9):*
-
-| Type | Description |
-| --- | --- |
-| [StationAddress](#stationaddress) | Station address |
-| [PID](NEX-Common-Types#pid) | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
-| Uint8 | Url type (1=prudp 2=prudps 3=udp) |
-| Uint8 | sid |
-| Uint8 | stream |
-| Uint8 | natm |
-| Uint8 | natf |
-| Uint8 | type |
-| Uint8 | probeinit |
-| [InetAddress](#inetaddress) | Relay address. *Only present on Nintendo Switch.* |
-
-*Switch (5.10):*
-
-| Type | Description |
-| --- | --- |
-| [InetAddress](#inetaddress) | Public address |
-| [InetAddress](#inetaddress) | Local address |
-| [InetAddress](#inetaddress) | Relay address |
-| [PID](NEX-Common-Types#pid) | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
-| Uint8 | `0x3`: natf<br>`0xC`: natm |
-| Uint8 | type |
-| Uint8 | probeinit |
-| Uint8 | Is local |
-
-*Switch (5.11 and later):*
-
-| Type | Description |
-| --- | --- |
-| Uint8 | Size of public address |
-| Uint8 | Size of local address |
-| [InetAddress](#inetaddress) | Public address (encoding depends on size) |
-| [InetAddress](#inetaddress) | Local address (encoding depends on size) |
-| [InetAddress](#inetaddress) | Relay address (old encoding) |
-| [PID](NEX-Common-Types#pid) | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
-| Uint8 | `0x3`: natf<br>`0xC`: natm |
-| Uint8 | type |
-| Uint8 | probeinit |
-| Uint8 | Is local |
