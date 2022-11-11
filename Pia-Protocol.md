@@ -55,8 +55,8 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | --- | --- | --- |
 | 0x0 | 4 | Magic number: `32 AB 98 64` |
 | 0x4 | 1 | This byte consists of two parts:<br>`0x80`: Encryption enabled<br>`0x7F`: [Version number](#version) (9) |
-| 0x5 | 4 | Destination [variable id](#variable-id) |
-| 0x9 | 4 | Source [variable id](#variable-id) |
+| 0x5 | 4 | Destination [variable id](Pia-Terminology#variable-id) |
+| 0x9 | 4 | Source [variable id](Pia-Terminology#variable-id) |
 | 0xD | 2 | [Packet id](#packet-id) |
 | 0xF | 1 | Footer size |
 | 0x10 | 8 | [AES-GCM nonce](#encryption) |
@@ -68,8 +68,8 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | --- | --- | --- |
 | 0x0 | 4 | Magic number: `32 AB 98 64` |
 | 0x4 | 1 | This byte consists of two parts:<br>`0x80`: Encryption enabled<br>`0x7F`: [Version number](#version) (11) |
-| 0x5 | 2 | Destination [variable id](#variable-id) |
-| 0x7 | 2 | Source [variable id](#variable-id) |
+| 0x5 | 2 | Destination [variable id](Pia-Terminology#variable-id) |
+| 0x7 | 2 | Source [variable id](Pia-Terminology#variable-id) |
 | 0x9 | 2 | [Packet id](#packet-id) |
 | 0xB | 1 | Footer size |
 | 0xC | 8 | [AES-GCM nonce](#encryption) |
@@ -89,9 +89,6 @@ During connection establishment, both consoles generate a random number between 
 
 ### Packet ID
 If the connection id is 0, the packet id is also 0. If the connection id is not 0, the packet id is an incrementing number starting at 1.
-
-### Variable ID
-The variable id is a random number per station.
 
 ### RTT Calculation
 The session timer contains the number of milliseconds since the start of the session. Every client has its own session timer (they are independent from each other). Aside from its own session timer, every client also keeps track of the session timers of all other clients. When A sends a packet to B the RTT timer is what A belives the session timer of B to be. Hopefully, an example will make this clear:
@@ -113,7 +110,7 @@ All messages are padded such that their size is a multiple of 4 bytes.
 | 0x1 | 1 | [Source station index](#station-index) |
 | 0x2 | 2 | Payload size |
 | 0x4 | 4 | [Destination](#destination) |
-| 0x8 | 4 | [Source constant id](#constant-id) |
+| 0x8 | 4 | [Source constant id](Pia-Terminology#constant-id) |
 | 0xC | 2 | [Protocol type](Pia-Protocols) |
 | 0xE | 2 | Protocol port (protocol-specific) |
 | 0x10 | 4 | Reserved (always 0) |
@@ -127,7 +124,7 @@ All messages are padded such that their size is a multiple of 4 bytes.
 | 0x0 | 1 | [Message flags](#message-flags) |
 | 0x1 | 2 | Payload size |
 | 0x3 | 8 | [Destination](#destination) |
-| 0xB | 8 | [Source constant id](#constant-id) |
+| 0xB | 8 | [Source constant id](Pia-Terminology#constant-id) |
 | 0x13 | 1 | [Protocol type](Pia-Protocols) |
 | 0x14 | 1 | Protocol port (protocol-specific) |
 | 0x15 | 3 | Padding (always 0) |
@@ -144,7 +141,7 @@ All messages are padded such that their size is a multiple of 4 bytes.
 | 0x4 | 1 | [Protocol type](Pia-Protocols) |
 | 0x5 | 1 | Protocol port (protocol-specific) |
 | 0x6 | 8 | [Destination](#destination) |
-| 0xE | 8 | [Source constant id](#constant-id) |
+| 0xE | 8 | [Source constant id](Pia-Terminology#constant-id) |
 | 0x16 | | Payload (protocol-specific) |
 | | | Padding |
 
@@ -158,7 +155,7 @@ All messages are padded such that their size is a multiple of 4 bytes.
 | 0x4 | 1 | [Protocol type](Pia-Protocols) |
 | 0x5 | 3 | Protocol port (protocol-specific) |
 | 0x8 | 8 | [Destination](#destination) |
-| 0x10 | 8 | [Source constant id](#constant-id) |
+| 0x10 | 8 | [Source constant id](Pia-Terminology#constant-id) |
 | 0x18 | | Payload (protocol-specific) |
 | | | Padding |
 
@@ -174,7 +171,7 @@ Fields that are not present are copied from the previous message.
 | Uint8 | [Protocol type](Pia-Protocols). *Only present if `flags & 4`.* |
 | Uint24 | Protocol port (protocol-specific). *Only present if `flags & 4`.* |
 | Uint64 | [Destination](#destination). *Only present if `flags & 8`.* |
-| Uint64 | [Source constant id](#constant-id). *Only present if `flags & 16`.* |
+| Uint64 | [Source constant id](Pia-Terminology#constant-id). *Only present if `flags & 16`.* |
 | Bytes | Payload (protocol-specific) |
 | | Padding |
 
@@ -208,11 +205,8 @@ Every console in a mesh gets its own station index. The following station index 
 * **254:** Represents the host of the mesh.
 * **255:** Used for broadcast messages.
 
-### Constant id
-The constant id never changes. In NEX mode, it is the principal id (pid). In LDN and LAN mode, it is generated based on the local address of the station.
-
 ### Destination
-The content of this field depends on the [multicast bit](#message-flags). If the multicast bit is cleared, this field contains the [constant id](#constant-id) of the destination console. If the multicast bit is set, this field contains a bitmap where each bit represents one destination console (the bit number of a console is its station index: `1 << station_index`).
+The content of this field depends on the [multicast bit](#message-flags). If the multicast bit is cleared, this field contains the [constant id](Pia-Terminology#constant-id) of the destination console. If the multicast bit is set, this field contains a bitmap where each bit represents one destination console (the bit number of a console is its station index: `1 << station_index`).
 
 ## Encryption
 Packets are encrypted and signed with the [session key](#session-key).
