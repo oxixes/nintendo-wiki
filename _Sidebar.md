@@ -53,6 +53,7 @@
 * [NPLN](NPLN-Servers)
   * [Resources](NPLN-Resources)
 * [Pia](Pia-Overview)
+  * [Terminology](Pia-Terminology)
   * [[Pia Protocol]]
   * [Pia Services](Pia-Protocols)
     * [Mesh](Mesh-Protocol)
@@ -68,6 +69,7 @@
   * [Application Authentication](AAuth-Server)
   * [Connection Test](Connection-Test)
   * [Device Authentication](DAuth-Server)
+  * [E-Licenses](Dragons-Servers)
   * [Game Servers (NEX)](NEX-Overview-(Game-Servers))
   * [Game Servers (NPLN)](NPLN-Servers)
   * [Nintendo Accounts](Account-Server-(Switch))
