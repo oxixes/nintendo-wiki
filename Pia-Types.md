@@ -1,5 +1,7 @@
-[[Pia Protocols]] > Types
+[Pia](Pia-Overview) > Types
 ---
+
+This page describes common data structures that are used by the Pia library.
 
 1. [InetAddress](#inetaddress)
 2. [StationAddress](#stationaddress)
