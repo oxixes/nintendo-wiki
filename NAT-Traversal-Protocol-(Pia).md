@@ -29,7 +29,7 @@ In Pia version 5.11 and later, all packets are sent through port 0 and always co
 ## NatProbeData
 | Offset | Size | Description |
 | --- | --- | --- |
-| 0x0 | 4 | Connection id (from [SecureConnection.Register](https://github.com/Kinnay/NintendoClients/wiki/Secure-Protocol#1-register)) |
+| 0x0 | 4 | [Service variable id](Pia-Terminology#service-variable-id) |
 | 0x4 | 1 | Probe type (0=request 1=reply, 255=dummy) |
 | 0x5 | 3 | Padding |
 | 0x8 | 8 | System time (OSGetSystemTime on Wii U, nn::os::GetSystemTick on Switch) |
@@ -38,4 +38,4 @@ In Pia version 5.11 and later, all packets are sent through port 0 and always co
 
 | Offset | Size | Description |
 | --- | --- | --- |
-| 0x10 | 4 | Variable id |
+| 0x10 | 4 | [Variable id](Pia-Terminology#variable-id) |
