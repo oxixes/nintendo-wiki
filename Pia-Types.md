@@ -45,16 +45,18 @@ In version 5.x, which [InetAddress](#inetaddress) encoding is used depends on th
 | [InetAddress](#inetaddress) | Address |
 
 ## StationLocation
-This structure holds fields that are directly taken from a [StationURL](NEX-Common-Types#stationurl).
+The station location holds information that allows Pia to connect to a given station.
+
+Up to Pia version 5.9, a station location contained either a public or a private address. In Pia 5.10 and later, it contains both.
 
 *Up to 4.10:*
 
 | Type | Description |
 | --- | --- |
 | [StationAddress](#stationaddress) | Station address |
-| Uint32 | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
+| Uint32 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint32 | [Service variable id] |
 | Uint8 | Url type (1=prudp 2=prudps 3=udp) |
 | Uint8 | sid |
 | Uint8 | stream |
@@ -68,9 +70,9 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | Type | Description |
 | --- | --- |
 | [StationAddress](#stationaddress) | Station address |
-| Uint64 | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint32 | [Service variable id] |
 | Uint8 | Url type (1=prudp 2=prudps 3=udp) |
 | Uint8 | sid |
 | Uint8 | stream |
@@ -87,9 +89,9 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | [InetAddress](#inetaddress) | Public address |
 | [InetAddress](#inetaddress) | Private address |
 | [InetAddress](#inetaddress) | Relay address |
-| Uint64 | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint32 | [Service variable id] |
 | Uint8 | `0x3`: natf<br>`0xC`: natm |
 | Uint8 | type |
 | Uint8 | probeinit |
@@ -104,19 +106,21 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | [InetAddress](#inetaddress) | Public address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Private address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Relay address (old encoding) |
-| Uint64 | PID |
-| Uint32 | CID |
-| Uint32 | RVCID |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint32 | [Service variable id] |
 | Uint8 | `0x3`: natf<br>`0xC`: natm |
 | Uint8 | type |
 | Uint8 | probeinit |
 | Uint8 | Is private address available |
 
 ## StationConnectionInfo
+Up to Pia 5.9, a [StationLocation](#stationlocation) contained either a public or private address. The StationConnectionInfo contains both. In Pia version 5.10, the StationConnectionInfo structure was removed, and a [StationLocation](#stationlocation) now contains both the public and private address of a station.
+
 | Type | Description |
 | --- | --- |
-| [StationLocation](#stationlocation) | Public station location |
-| [StationLocation](#stationlocation) | Local station location |
+| [StationLocation](#stationlocation) | Public location |
+| [StationLocation](#stationlocation) | Private location |
 
 ## StationInfo
 *Up to 5.9:*
@@ -134,3 +138,7 @@ This structure holds fields that are directly taken from a [StationURL](NEX-Comm
 | 0x0 | 0x3E | [StationLocation](#stationlocation). If it takes up less than 0x3E bytes the remaining bytes are filled with 0's. |
 | 0x3E | 1 | Station index |
 | 0x3F | 1 | Padding |
+
+[Constant id]: Pia-Terminology#constant-id
+[Variable id]: Pia-Terminology#variable-id
+[Service variable id]: Pia-Terminology#service-variable-id
