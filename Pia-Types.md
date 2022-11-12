@@ -115,7 +115,9 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | Uint8 | Is private address available |
 
 ## StationConnectionInfo
-Up to Pia 5.9, a [station location](#stationlocation) contained either a public or private address. The station connection info contains both. In Pia version 5.10, the station connection info structure was removed, and a [station location](#stationlocation) now contains both the public and private address of a station.
+Up to Pia 5.9, a [station location](#stationlocation) contained either a public or private address. The station connection info contains both.
+
+In Pia version 5.10, the station connection info structure was removed, and a single [station location](#stationlocation) contains both the public and private address of a station.
 
 | Type | Description |
 | --- | --- |
