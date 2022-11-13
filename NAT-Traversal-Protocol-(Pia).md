@@ -34,7 +34,7 @@ In Pia version 5.11 and later, all packets are sent through port 0 and always co
 | 0x5 | 3 | Padding |
 | 0x8 | 8 | System time (OSGetSystemTime on Wii U, nn::os::GetSystemTick on Switch) |
 
-*5.11 and later:*
+*5.11 - 5.43:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
