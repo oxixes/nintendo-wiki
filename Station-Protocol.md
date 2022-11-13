@@ -175,7 +175,9 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 
 | Pia Version | Version |
 | --- | --- |
-| 5.19 | 0 |
+| 5.19 - 5.23 | 0 |
+| 5.24 - 5.26 | 1 |
+| 5.27 - 5.43 | 2 |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
