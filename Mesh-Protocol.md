@@ -140,5 +140,23 @@ Because this message is sent through the reliable mesh protocol it does not need
 | 0xB | 1 | Always 0 |
 | 0xC | | [StationInfo] entries |
 
+# StationInfo
+*Up to 5.9:*
+
+| Type | Description |
+| --- | --- |
+| [StationConnectionInfo](#stationconnectioninfo) | Connection info |
+| Uint8 | Station index |
+| | Padding such that the size becomes a multiple of 4 bytes. |
+
+*5.10 and later:*
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 0x3E | [StationLocation](#stationlocation). If it takes up less than 0x3E bytes the remaining bytes are filled with 0's. |
+| 0x3E | 1 | Station index |
+| 0x3F | 1 | Padding |
+
+[StationInfo]: #stationinfo
+
 [StationAddress]: Pia-Types#stationaddress
-[StationInfo]: Pia-Types#stationinfo
