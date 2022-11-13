@@ -7,7 +7,6 @@ This page describes common data structures that are used by the Pia library.
 2. [StationAddress](#stationaddress)
 3. [StationLocation](#stationlocation)
 4. [StationConnectionInfo](#stationconnectioninfo)
-5. [StationInfo](#stationinfo)
 
 ## InetAddress
 In version 5.11, a new encoding was introduced that is capable of representing IPv6 addresses. Even later Pia version still use the old encoding sometimes. Which encoding is used depends on the context.
@@ -143,23 +142,6 @@ In Pia version 5.10, the station connection info structure was removed, and a si
 | --- | --- |
 | [StationLocation](#stationlocation) | Public location |
 | [StationLocation](#stationlocation) | Private location |
-
-## StationInfo
-*Up to 5.9:*
-
-| Type | Description |
-| --- | --- |
-| [StationConnectionInfo](#stationconnectioninfo) | Connection info |
-| Uint8 | Station index |
-| | Padding such that the size becomes a multiple of 4 bytes. |
-
-*5.10 and later:*
-
-| Offset | Size | Description |
-| --- | --- | --- |
-| 0x0 | 0x3E | [StationLocation](#stationlocation). If it takes up less than 0x3E bytes the remaining bytes are filled with 0's. |
-| 0x3E | 1 | Station index |
-| 0x3F | 1 | Padding |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
