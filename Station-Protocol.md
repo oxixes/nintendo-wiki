@@ -32,45 +32,56 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | 9 | 5.10 - 5.18 |
 
 # Connection request
+*Version 2 - 5:*
+
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
 | Uint8 | Version |
 | Uint8 | Is inverse connection request |
-| Bytes | Version-dependent data |
-| Uint32 | Ack id |
-
-*Version 2 - 5:*
-
-| Type | Description |
-| --- | --- |
 | [StationConnectionInfo] | Station connection info |
+| Uint32 | Ack id |
 
 *Version 7:*
 
 | Type | Description |
 | --- | --- |
-| Uint64 | NEX principal id (pid) |
+| Uint8 | Message type  (1) |
+| Uint8 | Connection id |
+| Uint8 | Version |
+| Uint8 | Is inverse connection request |
+| Uint64 | [Constant id] |
 | [StationConnectionInfo] | Station connection info |
+| Uint32 | Ack id |
 
 *Version 8:*
 
 | Type | Description |
 | --- | --- |
-| Uint64 | NEX principal id (pid) |
-| Uint32 | NEX connection id (cid) |
+| Uint8 | Message type  (1) |
+| Uint8 | Connection id |
+| Uint8 | Version |
+| Uint8 | Is inverse connection request |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id]
 | Uint8 | Inverse connection id |
 | [StationConnectionInfo] | Station connection info |
+| Uint32 | Ack id |
 
 *Version 9:*
 
 | Type | Description |
 | --- | --- |
-| Uint64 | NEX principal id (pid) |
-| Uint32 | NEX connection id (cid) |
+| Uint8 | Message type  (1) |
+| Uint8 | Connection id |
+| Uint8 | Version |
+| Uint8 | Is inverse connection request |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id]
 | Uint8 | Inverse connection id |
 | [StationLocation] | Station location |
+| Uint32 | Ack id |
 
 # Connection response (denying)
 
@@ -156,6 +167,9 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | 0x0 | 1 | Message type |
 | 0x1 | 3 | Padding |
 | 0x4 | 4 | Ack id |
+
+[Constant id]: Pia-Terminology#constant-id
+[Variable id]: Pia-Terminology#variable-id
 
 [StationConnectionInfo]: Pia-Types#stationconnectioninfo
 [StationLocation]: Pia-Types#stationlocation
