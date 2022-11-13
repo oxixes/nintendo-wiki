@@ -13,49 +13,38 @@ The first byte of each packet indicates the message type.
 | Type | Description |
 | --- | --- |
 | 1 | [Connection request](#connection-request) |
-| 2 | [Connection response (denying)](#connection-response-denying)<br>[Connection response (accepted)](#connection-response-accepted) |
+| 2 | [Connection response](#connection-response) |
 | 3 | [Disconnection request](#disconnection-request) |
 | 4 | [Disconnection response](#disconnection-response) |
 | 5 | [Ack](#ack) |
 | 6 | Relay connection request |
 | 7 | Relay connection response |
 
-Version numbers for [connection request](#connection-request) and [response](#connection-response):
-
-| Version | Pia Version |
-| --- | --- |
-| 2 | 3.3 - 3.6 |
-| 3 | 3.9 - 3.10 |
-| 5 | 4.5 - 4.10 |
-| 7 | 5.2 - 5.6 |
-| 8 | 5.7 - 5.9 |
-| 9 | 5.10 - 5.18 |
-
-# Connection request
-*Version 2 - 5:*
+## Connection request
+*3.3 - 4.10:*
 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | Version |
+| Uint8 | [Version number](#version-number) |
 | Uint8 | Is inverse connection request |
 | [StationConnectionInfo] | Station connection info |
 | Uint32 | Ack id |
 
-*Version 7:*
+*5.2 - 5.6:*
 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | Version |
+| Uint8 | [Version number](#version-number) |
 | Uint8 | Is inverse connection request |
 | Uint64 | [Constant id] |
 | [StationConnectionInfo] | Station connection info |
 | Uint32 | Ack id |
 
-*Version 8:*
+*5.7 - 5.9:*
 
 | Type | Description |
 | --- | --- |
@@ -69,7 +58,7 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | [StationConnectionInfo] | Station connection info |
 | Uint32 | Ack id |
 
-*Version 9:*
+*5.10 - 5.18:*
 
 | Type | Description |
 | --- | --- |
@@ -83,30 +72,10 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
-# Connection response (denying)
+## Connection response
+A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request.
 
-| Type | Description |
-| --- | --- |
-| Uint8 | Message type (2) |
-| Uint8 | [Reason](#connection-result) |
-| Uint8 | Version |
-| Uint8 | Always 0 |
-
-*Only present in version 8 and 9:*
-
-| Type | Description |
-| --- | --- |
-| Uint8 | Always 0 |
-| Uint64 | NEX principal id (pid) |
-| Uint32 | NEX connection id (cid) |
-
-### Connection result
-| Value | Description |
-| --- | --- |
-| 1 | Connection denied |
-| 2 | Incompatible version |
-
-# Connection response (accepted)
+### Connection response (accepted)
 
 | Type | Description |
 | --- | --- |
@@ -140,7 +109,7 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | Uint8 | Number of non-zero player infos |
 | [Player info](#player-info) (x4) | Player info |
 
-### Player info
+#### Player info
 | Type | Description |
 | --- | --- |
 | Bytes (80) | Player name |
@@ -151,22 +120,62 @@ Version numbers for [connection request](#connection-request) and [response](#co
 | Bytes (64) | Play history registration key |
 | Uint64 | Unknown |
 
-# Disconnection request
+### Connection response (denying)
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (2) |
+| Uint8 | [Reason](#connection-result) |
+| Uint8 | Version |
+| Uint8 | Always 0 |
+
+*Only present in version 8 and 9:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Always 0 |
+| Uint64 | NEX principal id (pid) |
+| Uint32 | NEX connection id (cid) |
+
+### Connection result
+| Value | Description |
+| --- | --- |
+| 0 | Accepted |
+| 1 | Connection denied |
+| 2 | Incompatible version |
+
+## Disconnection request
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 1 | Message type |
 
-# Disconnection response
+## Disconnection response
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 1 | Message type |
 
-# Ack
+## Ack
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 1 | Message type |
 | 0x1 | 3 | Padding |
 | 0x4 | 4 | Ack id |
+
+## Version numbers
+| Pia Version | Version |
+| --- | --- |
+| 3.3 - 3.6 | 2 |
+| 3.7 - 3.10 | 3 |
+| 4.5 - 4.10 | 5 |
+| 5.2 - 5.6 | 7 |
+| 5.7 - 5.9 | 8 |
+| 5.10 - 5.18 | 9 |
+
+In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and version numbers start at 0 again:
+
+| Pia Version | Version |
+| --- | --- |
+| 5.19 | 0 |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
