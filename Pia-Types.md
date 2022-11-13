@@ -102,7 +102,7 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | Type | Description |
 | --- | --- |
 | Uint8 | Size of public address |
-| Uint8 | Size of local address |
+| Uint8 | Size of private address |
 | [InetAddress](#inetaddress) | Public address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Private address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Relay address (old encoding) |
