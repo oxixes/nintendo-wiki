@@ -45,7 +45,7 @@ In version 5.x, which [InetAddress](#inetaddress) encoding is used depends on th
 | [InetAddress](#inetaddress) | Address |
 
 ## StationLocation
-The station location holds information that allows Pia to connect to a given station.
+The station location holds information that allows Pia to connect to a given station. Many fields are directly taken from a [station url](NEX-Common-Types#stationurl), when NEX is used.
 
 Up to Pia version 5.9, a station location contained either a public or a private address. In Pia 5.10 and later, it contains both.
 
@@ -54,10 +54,10 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | Type | Description |
 | --- | --- |
 | [StationAddress](#stationaddress) | Station address |
-| Uint32 | [Constant id] |
-| Uint32 | [Variable id] |
-| Uint32 | [Service variable id] |
-| Uint8 | Url type (1=prudp 2=prudps 3=udp) |
+| Uint32 | [Constant id] (PID) |
+| Uint32 | [Variable id] (CID) |
+| Uint32 | [Service variable id] (RVCID) |
+| Uint8 | [URL type](#url-type) |
 | Uint8 | sid |
 | Uint8 | stream |
 | Uint8 | natm |
@@ -70,10 +70,10 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | Type | Description |
 | --- | --- |
 | [StationAddress](#stationaddress) | Station address |
-| Uint64 | [Constant id] |
-| Uint32 | [Variable id] |
-| Uint32 | [Service variable id] |
-| Uint8 | Url type (1=prudp 2=prudps 3=udp) |
+| Uint64 | [Constant id] (PID) |
+| Uint32 | [Variable id] (CID) |
+| Uint32 | [Service variable id] (RVCID) |
+| Uint8 | [URL type](#url-type) |
 | Uint8 | sid |
 | Uint8 | stream |
 | Uint8 | natm |
@@ -89,9 +89,9 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | [InetAddress](#inetaddress) | Public address |
 | [InetAddress](#inetaddress) | Private address |
 | [InetAddress](#inetaddress) | Relay address |
-| Uint64 | [Constant id] |
-| Uint32 | [Variable id] |
-| Uint32 | [Service variable id] |
+| Uint64 | [Constant id] (PID) |
+| Uint32 | [Variable id] (CID) |
+| Uint32 | [Service variable id] (RVCID) |
 | Uint8 | `0x3`: natf<br>`0xC`: natm |
 | Uint8 | type |
 | Uint8 | probeinit |
@@ -106,13 +106,23 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | [InetAddress](#inetaddress) | Public address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Private address (encoding depends on size) |
 | [InetAddress](#inetaddress) | Relay address (old encoding) |
-| Uint64 | [Constant id] |
-| Uint32 | [Variable id] |
-| Uint32 | [Service variable id] |
+| Uint64 | [Constant id] (PID) |
+| Uint32 | [Variable id] (CID) |
+| Uint32 | [Service variable id] (RVCID) |
 | Uint8 | `0x3`: natf<br>`0xC`: natm |
 | Uint8 | type |
 | Uint8 | probeinit |
 | Uint8 | Is private address available |
+
+### URL Type
+The URL type depends on the scheme of the given station url. It is always 0 or 1 in practice.
+
+| Value | Scheme |
+| --- | --- |
+| 0 | Invalid |
+| 1 | `prudp` |
+| 2 | `prudps` |
+| 3 | `udp` |
 
 ## StationConnectionInfo
 Up to Pia 5.9, a [station location](#stationlocation) contained either a public or private address. The station connection info contains both.
