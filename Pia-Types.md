@@ -114,6 +114,16 @@ Up to Pia version 5.9, a station location contained either a public or a private
 | Uint8 | probeinit |
 | Uint8 | Is private address available |
 
+*6.16 - 6.23:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Address size |
+| [StationAddress](#stationaddress) | Address |
+| Uint64 | Unknown |
+| Uint16 | Unknown |
+| Uint8 | Unknown |
+
 ### URL Type
 The URL type depends on the scheme of the given station url. It is always 0 or 1 in practice.
 
