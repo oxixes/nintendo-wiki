@@ -72,6 +72,29 @@ The first byte of each packet indicates the message type.
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
+*5.19 - 5.26:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type  (1) |
+| Uint8 | Number of available protocols (N) |
+| Uint8 (N*2) | [Protocol list](#protocol-list) |
+| Uint8 | Connection id |
+| Uint8 | Is inverse connection request |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id]
+| Uint8 | Inverse connection id |
+| [StationLocation] | Station location |
+| Uint32 | Ack id |
+
+### Protocol List
+The protocol list contains the following for every available protocol.
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Protocol id |
+| Uint8 | Protocol version |
+
 ## Connection response
 A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request.
 
