@@ -11,6 +11,12 @@ Up to Pia version 5.10, the protocol port was used to determine the message type
 
 In Pia version 5.11 and later, all packets are sent through port 0 and always contain the [NatProbeData](#natprobedata) structure.
 
+The following version numbers are advertised during the [connection request](Station-Protocol):
+
+| Pia version | Version |
+| --- | --- |
+| 5.19 - 5.43 | 0 |
+
 ## Probe request
 | Offset | Size | Description |
 | --- | --- | --- |
