@@ -8,6 +8,11 @@
 | 0x13 | Start host migration |
 | 0x21 | Update session ack |
 
+### Version numbers
+| Pia version | Version |
+| --- | --- |
+| 5.19 - 5.43 | 0 |
+
 ## Local message header
 | Offset | Size | Description |
 | --- | --- | --- |
