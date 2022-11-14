@@ -8,7 +8,8 @@
 | 0x13 | Start host migration |
 | 0x21 | Update session ack |
 
-### Version numbers
+The following version numbers are advertised during the [connection request](Station-Protocol):
+
 | Pia version | Version |
 | --- | --- |
 | 5.19 - 5.43 | 0 |
