@@ -91,7 +91,7 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
-*5.19 - 5.26:*
+*5.19 - 5.23:*
 
 | Type | Description |
 | --- | --- |
@@ -115,7 +115,7 @@ The protocol list contains the following for every available protocol.
 | Uint8 | Protocol version |
 
 ## Connection response
-A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request.
+A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request. This is indicated by the [connection result](#connection-result).
 
 ### Connection response (accepted)
 
@@ -163,21 +163,48 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | Uint64 | Unknown |
 
 ### Connection response (denying)
+*3.3 - 5.6:*
 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type (2) |
-| Uint8 | [Reason](#connection-result) |
-| Uint8 | Version |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Always 0 |
 
-*Only present in version 8 and 9:*
+*5.7 - 5.18:*
 
 | Type | Description |
 | --- | --- |
+| Uint8 | Message type (2) |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Always 0 |
-| Uint64 | NEX principal id (pid) |
-| Uint32 | NEX connection id (cid) |
+| Uint8 | Always 0 |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+
+*5.19 - 5.23:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (2) |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | Protocol id that has unexpected protocol version |
+| Uint8 | Expected protocol version |
+| Uint16 | Always 0 |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+
+*5.27 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (2) |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | Always 0 |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
 
 ### Connection result
 | Value | Description |
