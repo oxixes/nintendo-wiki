@@ -27,7 +27,7 @@ The first byte of each packet indicates the message type.
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | [Version number](#version-number) |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Is inverse connection request |
 | [StationConnectionInfo] | Station connection info |
 | Uint32 | Ack id |
@@ -38,7 +38,7 @@ The first byte of each packet indicates the message type.
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | [Version number](#version-number) |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Is inverse connection request |
 | Uint64 | [Constant id] |
 | [StationConnectionInfo] | Station connection info |
@@ -50,7 +50,7 @@ The first byte of each packet indicates the message type.
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | Version |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Is inverse connection request |
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id]
@@ -64,7 +64,7 @@ The first byte of each packet indicates the message type.
 | --- | --- |
 | Uint8 | Message type  (1) |
 | Uint8 | Connection id |
-| Uint8 | Version |
+| Uint8 | [Version number](#version-numbers) |
 | Uint8 | Is inverse connection request |
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id]
