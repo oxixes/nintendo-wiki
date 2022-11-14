@@ -29,6 +29,15 @@
 | 0x80 | Connection report |
 | 0x81 | Relay route directions |
 
+The following version numbers are advertised during the [connection request](Station-Protocol):
+
+| Pia version | Version |
+| --- | --- |
+| 5.19 - 5.20 | 0 |
+| 5.21 - 5.27 | 1 |
+| 5.28 - 5.29 | 2 |
+| 5.30 - 5.43 | 3 |
+
 # Join request
 *Wii U and Switch (up to 5.10):*
 
