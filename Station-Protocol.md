@@ -20,6 +20,25 @@ The first byte of each packet indicates the message type.
 | 6 | Relay connection request |
 | 7 | Relay connection response |
 
+### Version numbers
+
+| Pia Version | Version |
+| --- | --- |
+| 3.3 - 3.6 | 2 |
+| 3.7 - 3.10 | 3 |
+| 4.5 - 4.10 | 5 |
+| 5.2 - 5.6 | 7 |
+| 5.7 - 5.9 | 8 |
+| 5.10 - 5.18 | 9 |
+
+In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and version numbers start at 0 again:
+
+| Pia Version | Version |
+| --- | --- |
+| 5.19 - 5.23 | 0 |
+| 5.24 - 5.26 | 1 |
+| 5.27 - 5.43 | 2 |
+
 ## Connection request
 *3.3 - 4.10:*
 
@@ -183,24 +202,6 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | 0x0 | 1 | Message type |
 | 0x1 | 3 | Padding |
 | 0x4 | 4 | Ack id |
-
-## Version numbers
-| Pia Version | Version |
-| --- | --- |
-| 3.3 - 3.6 | 2 |
-| 3.7 - 3.10 | 3 |
-| 4.5 - 4.10 | 5 |
-| 5.2 - 5.6 | 7 |
-| 5.7 - 5.9 | 8 |
-| 5.10 - 5.18 | 9 |
-
-In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and version numbers start at 0 again:
-
-| Pia Version | Version |
-| --- | --- |
-| 5.19 - 5.23 | 0 |
-| 5.24 - 5.26 | 1 |
-| 5.27 - 5.43 | 2 |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
