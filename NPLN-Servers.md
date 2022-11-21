@@ -59,6 +59,7 @@ Splatoon 3 also implements some custom services:
 | Monster Hunter Rise Demo | `f124d2cb` |
 | Monster Hunter Rise: Sunbreak Demo | `bc33b7d4` |
 | Pokemon Legends: Arceus | `e047112f` |
+| Pokemon Scarlet / Violet | `50e39f8f` |
 | Splatoon 3 | `dce9377b` |
 | Splatoon 3: Splatfest World Premiere | `156eef4e` |
 
