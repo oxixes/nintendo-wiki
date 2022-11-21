@@ -50,6 +50,11 @@ Splatoon 3 also implements some custom services:
 * `nn.npln.toyohr.v1.Schedule`
 * `nn.npln.toyohr.v1.UserScreening`
 
+Pokemon Scarlet and Violet implement custom services as well:
+
+* `nn.npln.timber.v1.CompetitionService`
+* `nn.npln.timber.v1.TradeBoxService`
+
 ## List of games
 * [SDK version table](https://kinnay.github.io/view.html?page=switch&sort=npln&npln=1)
 
