@@ -1,4 +1,4 @@
-[Switch Servers](Server-List#switch) > Application Authentication
+[Switch](Server-List#switch) > Application Authentication
 ---
 
 URL: https://aauth-lp1.ndas.srv.nintendo.net
