@@ -23,6 +23,8 @@ Depending on the method, this server takes form or json encoded requests. The se
 
 The following headers are only sent in POST, PUT, PATCH and DELETE requests.
 
+If the content type is `application/json-patch+json`, the `Content-Type` header appears **before** the `Authorization` header instead of below.
+
 | Header | Description |
 | --- | --- |
 | Content-Length | Content length |
