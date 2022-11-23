@@ -72,24 +72,19 @@ The following methods require a user access token:
 
 | Module | Method | URL |
 | --- | --- | --- |
+| Account | POST | `/1.0.0/image_upload` |
+| Account | PUT | `/1.0.0/push_channels/<id>/<id>` |
 | Friends | GET | `/1.0.0/users` |
 | Both | GET | [`/1.0.0/users/<id>`](#get-100usersid) |
 | Both | PATCH | [`/1.0.0/users/<id>`](#patch-100usersid) |
-| Account | DELETE | [`/1.0.0/users/<id>/device_accounts/<id>`](#delete-100usersiddevice_accountsid) |
-| Friends | POST | [`/1.0.0/users/<id>/generate_code`](#post-100usersidgenerate_code) |
-| Account | POST | `/1.0.0/image_upload` |
-
-The following methods need more research:
-
-| Module | Method | URL |
-| --- | --- | --- |
-| Friends | PATCH | `/1.0.0/users/<id>/device_accounts/<id>` |
-| Account | POST | `/1.0.0/users/<id>/link` |
-| Account | POST | `/1.0.0/users/<id>/unlink` |
 | Friends | GET | `/1.0.0/users/<id>/blocks` |
 | Friends | POST | `/1.0.0/users/<id>/blocks` |
 | Friends | DELETE | `/1.0.0/users/<id>/blocks/<id>` |
-| Account | PUT | `/1.0.0/push_channels/<id>/<id>` |
+| Friends | PATCH | `/1.0.0/users/<id>/device_accounts/<id>` |
+| Account | DELETE | [`/1.0.0/users/<id>/device_accounts/<id>`](#delete-100usersiddevice_accountsid) |
+| Friends | POST | [`/1.0.0/users/<id>/generate_code`](#post-100usersidgenerate_code) |
+| Account | POST | `/1.0.0/users/<id>/link` |
+| Account | POST | `/1.0.0/users/<id>/unlink` |
 | Friends | POST | `/2.0.0/friend_requests` |
 | Friends | PATCH | `/2.0.0/friend_requests/<id>` |
 | Friends | GET | `/2.0.0/users/<id>/friends` |
