@@ -23,12 +23,19 @@ Depending on the method, this server takes form or json encoded requests. The se
 
 The following headers are only sent in POST, PUT, PATCH and DELETE requests.
 
-If the content type is `application/json-patch+json`, the `Content-Type` header appears **before** the `Authorization` header instead of below.
-
 | Header | Description |
 | --- | --- |
 | Content-Length | Content length |
-| Content-Type | `application/x-www-form-urlencoded`, `application/json` or `application/json-patch+json` |
+| Content-Type | `application/x-www-form-urlencoded` |
+
+If the content type is changed, and the request is performed by the account sysmodule, the headers are swapped.
+
+| Header | Description |
+| --- | --- |
+| Content-Type | `application/json` or `application/json-patch+json` |
+| Content-Length | Content length |
+
+If the content type is changed, and the request is performed by the friends sysmodule, the `Content-Type` header appears between the `Accept` and `Authorization` headers instead.
 
 ### User Agents
 The user agents below are taken from the account sysmodule. If the request is made by the friends sysmodule replace `nnAccount` by `nnFriends`.
