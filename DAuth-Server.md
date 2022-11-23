@@ -1,4 +1,4 @@
-[Switch Servers](Server-List#switch) > Device Authentication
+[Switch](Server-List#switch) > Device Authentication
 ---
 
 URL: https://dauth-lp1.ndas.srv.nintendo.net
