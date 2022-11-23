@@ -31,6 +31,7 @@ For browser requests made during authorization:
 | System Version | User agent |
 | --- | --- |
 | 13.1.0 - 13.2.1 | `Mozilla/5.0 (Nintendo Switch; LoginApplet; Nintendo Switch) AppleWebKit/606.4 (KHTML, like Gecko) NF/6.0.1.19.3 NintendoBrowser/5.1.0.21761` |
+| 15.0.1 | `Mozilla/5.0 (Nintendo Switch; LoginApplet; Nintendo Switch) AppleWebKit/609.4 (KHTML, like Gecko) NF/6.0.2.21.5 NintendoBrowser/5.1.0.22497` |
 
 For API requests made by the account sysmodule:
 
@@ -42,6 +43,8 @@ For API requests made by the account sysmodule:
 | 12.0.0 - 12.1.0 | `libcurl (nnAccount; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 12.3.0.0; Add-on 12.3.0.0)` |
 | 13.0.0 | `libcurl (nnAccount; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.3.0.0; Add-on 13.3.0.0)` |
 | 13.1.0 - 13.2.1 | `libcurl (nnAccount; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 13.4.0.0; Add-on 13.4.0.0)` |
+| 14.0.0 - 14.1.2 | `libcurl (nnAccount; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 14.3.0.0; Add-on 14.3.0.0)` |
+| 15.0.0 - 15.0.1 | `libcurl (nnAccount; 789f928b-138e-4b2f-afeb-1acae821d897; SDK 15.3.0.0; Add-on 15.3.0.0)` |
 
 ## Methods
 **accounts.nintendo.com:**
