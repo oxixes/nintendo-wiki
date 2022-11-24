@@ -15,7 +15,7 @@ Replace '%' by one of the following:
 | - accounts.nintendo.com<br>- cdn.accounts.nintendo.com<br>- api.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb-api.accounts.nintendo.com | [Nintendo accounts](Account-Server-(Switch)) |
 | - dragons.hac.%.dragons.nintendo.net<br>- dragonst.hac.%.dragons.nintendo.net<br>- tigers.hac.%.dragons.nintendo.net | [eLicenses](Dragons-Servers) |
 | - dcert-%.ndas.srv.nintendo.net<br>- acert-%.ndas.srv.nintendo.net<br>- pubkey.%.dragons.nintendo.net | [JWK servers](Switch-Tokens) |
-| - t-&lt;game id&gt;-%.%.t.npln.srv.nintendo.net | [Game servers (NPLN)](NPLN-Servers) |
+| - t-&lt;tenant id&gt;-%.%.t.npln.srv.nintendo.net | [Game servers (NPLN)](NPLN-Servers) |
 | - g&lt;game server id&gt;-%.s.n.srv.nintendo.net | [Game servers (NEX)](NEX-Overview-(Game-Servers)) |
 | - g&lt;game server id&gt;-%.r.n.srv.nintendo.net | P2P relay |
 | - g&lt;game server id&gt;-%.p.srv.nintendo.net | [P2P monitoring](Monitoring-Data-Protocol) |
