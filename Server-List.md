@@ -15,6 +15,7 @@ Replace '%' by one of the following:
 | - accounts.nintendo.com<br>- cdn.accounts.nintendo.com<br>- api.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb-api.accounts.nintendo.com | [Nintendo accounts](Account-Server-(Switch)) |
 | - dragons.hac.%.dragons.nintendo.net<br>- dragonst.hac.%.dragons.nintendo.net<br>- tigers.hac.%.dragons.nintendo.net | [eLicenses](Dragons-Servers) |
 | - dcert-%.ndas.srv.nintendo.net<br>- acert-%.ndas.srv.nintendo.net<br>- pubkey.%.dragons.nintendo.net | [JWK servers](Switch-Tokens) |
+| - app.%.five.nintendo.net | [Online play invitations](Online-Play-Invitation-Server) |
 | - t-&lt;tenant id&gt;-%.%.t.npln.srv.nintendo.net | [Game servers (NPLN)](NPLN-Servers) |
 | - g&lt;game server id&gt;-%.s.n.srv.nintendo.net | [Game servers (NEX)](NEX-Overview-(Game-Servers)) |
 | - g&lt;game server id&gt;-%.r.n.srv.nintendo.net | P2P relay |
@@ -39,7 +40,6 @@ Replace '%' by one of the following:
 | - api.sect.srv.nintendo.net | |
 | - capi.%.op2.nintendo.net | [NSO membership verification](NSO-Verification-Server) |
 | - c-%.accounts.nintendo.com | |
-| - app.%.five.nintendo.net | [Online play invitations](Online-Play-Invitation-Server) |
 | - idbe-hac.cdn.nintendo.net | [Icon data](IDBE-Server) |
 | - %.nso.nintendo.net | NSO applet |
 | - mii-secure-%.cdn.nintendo.net | Mii images |
