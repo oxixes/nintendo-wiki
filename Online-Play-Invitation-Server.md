@@ -76,4 +76,4 @@ The error information is encoded like this:
 | 0007 | ? | ? |
 | 0008 | ? | ? |
 | 0009 | ? | ? |
-| 0010 | ? | ? |
+| 0010 | 404 | Resource not found. |
