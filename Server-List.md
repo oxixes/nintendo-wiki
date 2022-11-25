@@ -39,7 +39,7 @@ Replace '%' by one of the following:
 | - api.sect.srv.nintendo.net | |
 | - capi.%.op2.nintendo.net | [NSO membership verification](NSO-Verification-Server) |
 | - c-%.accounts.nintendo.com | |
-| - app.%.five.nintendo.net | [Invitations](Invitation-Server) |
+| - app.%.five.nintendo.net | [Friend invitations](Friend-Invitation-Server) |
 | - idbe-hac.cdn.nintendo.net | [Icon data](IDBE-Server) |
 | - %.nso.nintendo.net | NSO applet |
 | - mii-secure-%.cdn.nintendo.net | Mii images |
