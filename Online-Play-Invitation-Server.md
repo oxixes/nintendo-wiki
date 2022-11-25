@@ -77,3 +77,4 @@ The error information is encoded like this:
 | 0008 | ? | ? |
 | 0009 | ? | ? |
 | 0010 | 404 | Resource not found. |
+| 0011 | 400 | Application data is too large. |
