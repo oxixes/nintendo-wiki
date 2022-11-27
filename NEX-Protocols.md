@@ -43,6 +43,7 @@ See also: [[RMC Protocol]]
 | ID | Game | Protocol |
 | --- | --- | --- |
 | 200 | Pokemon Bank | [Shop](Shop-Protocol-(Pokemon-Bank)) |
+| 201 | Super Smash Bros. Ultimate | [Tournament](Tournament-Protocol-(SSBU)) |
 
 ## Not provided by NEX
 Ubisoft games always use the original Quazal Rendez-Vous library instead of NEX. The following protocols are not implemented by NEX, but may seen in Ubisoft games:
