@@ -52,6 +52,7 @@ Many client and server certificates that are used by Nintendo are issued by an i
 | `01:D7` | `capi.lp1.op2.nintendo.net` |
 | `02:0B` | `*.lp1.scsi.srv.nintendo.net` |
 | `02:0D` | `*.ndas.srv.nintendo.net` |
+| `02:51` | `SwitchShop` |
 | `02:5E` | `OP2 Devel` |
 | `02:AE` | `app.sandbox.five.nintendo.net` |
 | `02:B3` | `app.lp1.five.nintendo.net` |
