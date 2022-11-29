@@ -215,6 +215,11 @@ In NEX version 4.0, the revision number was set back to 0 and two more fields we
 | Uint16 | participationCount |
 | [List]&lt;[MatchmakeSessionSearchCriteria](#matchmakesessionsearchcriteria-structure)&gt; | lstSearchCriteria |
 | [List]&lt;Uint32&gt; | targetGids |
+
+*4.0 and later:*
+
+| Type | Name |
+| --- | --- |
 | [MatchmakeBlockListParam](#matchmakeblocklistparam-structure) | blockListParam |
 
 ## FindMatchmakeSessionByParticipantParam ([Structure])
