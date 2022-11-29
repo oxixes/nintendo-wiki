@@ -1,50 +1,137 @@
 ## Switch
-Replace '%' by one of the following:
+For development servers, lp1 is replaced by one of the following:
 
 | Environment | Description |
 | --- | --- |
 | lp1 | Live production |
-| dd1, jd1, sd1, sp1, dp1, td1, xd1 | Development |
+| dd1, dp1, jd1, sd1, sp1, td1, xd1, yd1, zd1 | Development |
 
-| Server | Description |
-| --- | --- |
-| - ctest.cdn.nintendo.net<br>- ctest-ul-%.cdn.nintendo.net<br>- ctest-dl-%.cdn.nintendo.net | [Connection test](Connection-Test) |
-| - dauth-%.ndas.srv.nintendo.net | [Device authentication](DAuth-Server) |
-| - aauth-%.ndas.srv.nintendo.net | [Application authentication](AAuth-Server) |
-| - e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com<br>- cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com | [Switch accounts](BAAS-Server) |
-| - accounts.nintendo.com<br>- cdn.accounts.nintendo.com<br>- api.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb.accounts.nintendo.com<br>- e97b8a9d672e4ce4845ec6947cd66ef6-sb-api.accounts.nintendo.com | [Nintendo accounts](Account-Server-(Switch)) |
-| - dragons.hac.%.dragons.nintendo.net<br>- dragonst.hac.%.dragons.nintendo.net<br>- tigers.hac.%.dragons.nintendo.net | [eLicenses](Dragons-Servers) |
-| - dcert-%.ndas.srv.nintendo.net<br>- acert-%.ndas.srv.nintendo.net<br>- pubkey.%.dragons.nintendo.net | [JWK servers](Switch-Tokens) |
-| - app.%.five.nintendo.net | [Online play invitations](Online-Play-Invitation-Server) |
-| - t-&lt;tenant id&gt;-%.%.t.npln.srv.nintendo.net | [Game servers (NPLN)](NPLN-Servers) |
-| - g&lt;game server id&gt;-%.s.n.srv.nintendo.net | [Game servers (NEX)](NEX-Overview-(Game-Servers)) |
-| - g&lt;game server id&gt;-%.r.n.srv.nintendo.net | P2P relay |
-| - g&lt;game server id&gt;-%.p.srv.nintendo.net | [P2P monitoring](Monitoring-Data-Protocol) |
-| - nncs1-%.n.n.srv.nintendo.net<br>- nncs2-%.n.n.srv.nintendo.net | [NAT check server](NAT-Check-Server) |
-| - api-%.znc.srv.nintendo.net<br>- web-%.znc.srv.ninendo.net | [Smartphone services](ZNC-Server) |
-| - api.hac.%.acbaa.srv.nintendo.net | <a href="https://github.com/Kinnay/NintendoClients/wiki/AC:NH-Server">Animal Crossing API</a> |
-| - d7d-&lt;server name&gt;.g.%.e.srv.nintendo.net | [Eagle (relay servers)](Eagle-Protocol) |
-| - fw-api.%.nso.nintendo.net | NSO rewards |
-| - storage.%.scsi.srv.nintendo.net<br>- migration.%.scsi.srv.nintendo.net<br>- storage.%.sata.srv.nintendo.net<br>- permission.%.sata.srv.nintendo.net<br>- pp.%.sata.srv.nintendo.net<br>- scsi-policy-%.cdn.nintendo.net | [Online save storage](OLSC-Servers) |
-| - ecs-%.hac.shop.nintendo.net<br>- ias-%.hac.shop.nintendo.net | [eShop services](REST-Services) |
-| - bugyo.hac.%.eshop.nintendo.net<br>- tagaya.hac.%.eshop.nintendo.net | [eShop applet](eShop-Applet-(Switch)) |
-| - api-%.frs.srv.nintendo.net | [Friends](Friends-API) |
-| - consumer.%.npns.srv.nintendo.net<br>- broker.%.npns.srv.nintendo.net<br>- provider-%.npns.srv.nintendo.net<br>- app-a03.%.npns.srv.nintendo.net<br>- app-b01.%.npns.srv.nintendo.net | [Push notifications](NPNS-Servers) |
-| - aqua.hac.%.d4c.nintendo.net<br>- atum.hac.%.d4c.nintendo.net<br>- atumn.hac.%.d4c.nintendo.net<br>- beach.hac.%.eshop.nintendo.net<br>- pearljam.hac.%.eshop.nintendo.net<br>- pushmo.hac.%.eshop.nintendo.net<br> - sun.hac.%.d4c.nintendo.net<br>- superfly.hac.%.d4c.nintendo.net | [Title installation](NIM-Servers) |
-| - receive-%.dg.srv.nintendo.net<br>- receive-%.er.srv.nintendo.net | [Telemetry](Telemetry-Servers) |
-| - bcat-topics-%.cdn.nintendo.net<br>- bcat-list-%.cdn.nintendo.net<br>- bcat-data-%.cdn.nintendo.net | [News](BCAT-Servers) |
-| - Service-status-%.cdn.nintendo.net | [Game server availability](Service-Status-Server) |
-| - api-%.pctl.srv.nintendo.net<br>- parentalcontrols-movie-%.cdn.nintendo.net | [Parental controls](Parental-Controls) |
-| - web-%.share.srv.nintendo.net | |
-| - bvc-hac-%.cdn.nintendo.net<br>- bvc-hac-%.cdn.n.nintendoswitch.cn | |
-| - api.sect.srv.nintendo.net | |
-| - capi.%.op2.nintendo.net | [NSO membership verification](NSO-Verification-Server) |
-| - c-%.accounts.nintendo.com | |
-| - idbe-hac.cdn.nintendo.net | [Icon data](IDBE-Server) |
-| - %.nso.nintendo.net | NSO applet |
-| - mii-secure-%.cdn.nintendo.net | Mii images |
-| - sprofile-%.cdn.nintendo.net | |
-| - veer.hac.%.d4c.nintendo.net | |
+#### Connection Test ([docs](Connection-Test))
+* http://ctest.cdn.nintendo.net
+* http://ctest-ul-lp1.cdn.nintendo.net
+* http://ctest-dl-lp1.cdn.nintendo.net
+
+#### Device Authentication ([docs](DAuth-Server))
+* https://dauth-lp1.ndas.srv.nintendo.net
+* https://dcert-lp1.ndas.srv.nintendo.net
+* https://dapi-lp1.ndas.srv.nintendo.net (internal)
+* https://dadmin-lp1.ndas.mng.nintendo.net (internal)
+
+#### Application Authentication ([docs](AAuth-Server))
+* https://aauth-lp1.ndas.srv.nintendo.net
+* https://acert-lp1.ndas.srv.nintendo.net
+* https://aapi-lp1.ndas.srv.nintendo.net (internal)
+* https://aadmin-lp1.ndas.mng.nintendo.net (internal)
+
+#### Switch Accounts ([docs](BAAS-Server))
+* https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com (lp1)
+* https://e97b8a9d672e4ce4845ec6947cd66ef6-sb.baas.nintendo.com (dd1)
+* https://d9c8ea0e17f68bdeab8674c59f6fabda-sb.baas.nintendo.com (dp1)
+* https://d78dbb1c550d43c6af49bf04c56bc094-sb.baas.nintendo.com (jd1)
+* https://96130dc402837b377c07719e6c9514de-sb.baas.nintendo.com (sd1)
+* https://dc219b6b3aa8e06873733fda1def0e03-sb.baas.nintendo.com (sp1)
+* https://e03a97819c9711e59510d820a52f298a-sb.baas.nintendo.com (td1)
+
+#### Nintendo Accounts ([docs](Account-Server-(Switch))
+* https://accounts.nintendo.com
+* https://cdn.accounts.nintendo.com
+* https://api.accounts.nintendo.com
+* https://c-lp1.accounts.nintendo.com
+
+#### eLicenses ([docs](Dragons-Servers))
+* https://dragons.hac.lp1.dragons.nintendo.net
+* https://dragonst.hac.lp1.dragons.nintendo.net
+* https://tigers.hac.lp1.dragons.nintendo.net
+* https://pubkey.lp1.dragons.nintendo.net
+
+#### Game Servers (NPLN) ([docs](NPLN-Servers))
+* `<tenant id>.lp1.t.npln.srv.nintendo.net` (game server)
+* `s01.lp1.s.npln.srv.nintendo.net` (STUN)
+* `s01.lp1.u.npln.srv.nintendo.net` (TURN)
+* `npln-lp1-latency-<region>-agones.lp1.t.npln.srv.nintendo.net` (latency measurement)
+* https://dashboard.d.npln.srv.nintendo.net (developer dashboard)
+
+#### Game Servers (NEX)
+* `g<game server id>-lp1.s.n.srv.nintendo.net` ([game server](NEX-Overview-(Game-Servers))
+* `g<game server id>-lp1.r.n.srv.nintendo.net` (P2P relay)
+* `g<game server id>-lp1.p.srv.nintendo.net` ([P2P monitoring](Monitoring-Data-Protocol))
+
+#### NAT Check ([docs](NAT-Check-Server))
+* `nncs1-lp1.n.n.srv.nintendo.net`
+* `nncs2-lp1.n.n.srv.nintendo.net`
+
+#### Eagle Relay ([docs](Eagle-Protocol))
+* `d7d-<server name>.g.lp1.e.srv.nintendo.net`
+
+#### Game Server Availability ([Service-Status-Server])
+* https://Service-status-lp1.cdn.nintendo.net
+
+#### Online Play Invitations ([docs](Online-Play-Invitation-Server))
+* https://app.lp1.five.nintendo.net
+
+#### Smartphone Services ([docs](ZNC-Server))
+* https://api-lp1.znc.srv.nintendo.net
+* https://web-lp1.znc.srv.nintendo.net
+
+#### Online Save Storage ([docs](OLSC-Servers))
+* https://storage.lp1.scsi.srv.nintendo.net
+* https://migration.lp1.scsi.srv.nintendo.net
+* https://storage.lp1.sata.srv.nintendo.net
+* https://permission.lp1.sata.srv.nintendo.net
+* https://pp.lp1.sata.srv.nintendo.net
+* https://scsi-policy-lp1.cdn.nintendo.net
+
+#### eShop Services ([docs](REST-Services))
+* https://ecs-lp1.hac.shop.nintendo.net
+* https://ias-lp1.hac.shop.nintendo.net
+
+#### eShop Applet ([docs](eShop-Applet-(Switch))
+* https://bugyo.hac.lp1.eshop.nintendo.net
+* https://tagaya.hac.lp1.eshop.nintendo.net
+
+#### Title Installation ([docs](NIM-Servers))
+* https://aqua.hac.lp1.d4c.nintendo.net
+* https://atum.hac.lp1.d4c.nintendo.net
+* https://atumn.hac.lp1.d4c.nintendo.net
+* https://beach.hac.lp1.eshop.nintendo.net
+* https://pearljam.hac.lp1.eshop.nintendo.net
+* https://pushmo.hac.lp1.eshop.nintendo.net
+* https://sun.hac.lp1.d4c.nintendo.net
+* https://superfly.hac.lp1.d4c.nintendo.net
+* https://veer.hac.%.d4c.nintendo.net
+
+#### Push Notifications ([docs](NPNS-Servers))
+* https://consumer.lp1.npns.srv.nintendo.net
+* https://broker.lp1.npns.srv.nintendo.net
+* https://provider-lp1.npns.srv.nintendo.net
+* https://app-a03.lp1.npns.srv.nintendo.net
+* https://app-b01.lp1.npns.srv.nintendo.net
+
+#### Telemetry ([docs](Telemetry-Servers))
+* https://receive-lp1.dg.srv.nintendo.net (play reports)
+* https://receive-lp1.er.srv.nintendo.net (error reports)
+* https://sprofile-lp1.cdn.nintendo.net
+
+#### News ([docs](BCAT-Servers))
+* https://bcat-topics-lp1.cdn.nintendo.net
+* https://bcat-list-lp1.cdn.nintendo.net
+* https://bcat-data-lp1.cdn.nintendo.net
+
+#### Parental Controls ([docs](Parental-Controls))
+* https://api-lp1.pctl.srv.nintendo.net
+* https://parentalcontrols-movie-lp1.cdn.nintendo.net
+
+#### Other Services
+* https://mii-secure-lp1.cdn.nintendo.net (mii images)
+* https://idbe-hac.cdn.nintendo.net ([icon data](IDBE-Server))
+* https://lp1.nso.nintendo.net (NSO applet)
+* https://fw-api.lp1.nso.nintendo.net (NSO rewards)
+* https://capi.lp1.op2.nintendo.net ([NSO membership verification](NSO-Verification-Server))
+* https://api-lp1.frs.srv.nintendo.net ([friends](Friends-API))
+* https://api.hac.lp1.acbaa.srv.nintendo.net ([Animal Crossing API](https://github.com/Kinnay/NintendoClients/wiki/AC:NH-Server))
+* https://web-lp1.share.srv.nintendo.net
+* https://bvc-hac-lp1.cdn.nintendo.net
+* https://api.sect.srv.nintendo.net
 
 ## Wii U
 | Server | Description |
