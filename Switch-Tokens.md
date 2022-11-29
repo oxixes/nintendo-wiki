@@ -9,16 +9,17 @@ Details on specific kinds of token:
 * [BaaS user tokens](#baas-user-tokens)
 * [ID tokens](#id-tokens)
 * [Contents authorization token for aauth](#contents-authorization-token-for-aauth)
+* [NPLN access tokens](#npln-access-tokens)
 
 ### Header
 The first part contains metadata about the JWT, such as the signature algorithm that is used.
 
 | Field | Description |
 | --- | --- |
+| `alg` | **Algorithm:** Usually `RS256`, but the NPLN server uses `ES256`. |
 | `jku` | **JWK Set URL:** The URL of a server that provides a [JWK set](#jwk-set). This server provides the public keys that are used to verify the signature of the JWT. |
 | `kid` | **Key ID:** Selects a key from the JWK set provided by the `jku` server. This is a uuid v4 on Nintendo's servers. |
-| `alg` | **Algorithm:** Always `RS256`. |
-| `typ` | **Type:** Always `JWT`. Not present in tokens returned by baas server. |
+| `typ` | **Type:** Always `JWT`. |
 
 Example:
 
@@ -32,18 +33,19 @@ Example:
 ```
 
 ### Payload
-The second part contains the information that's stored in the JWT, such as the user id. The content of the payload depends on the type of token, but the following fields are always present:
+The second part contains the information that's stored in the JWT, such as the user id. The content of the payload depends on the type of token, but the following fields are usually present:
 
 | Field | Description |
 | --- | --- |
 | `sub` | **Subject:** An id that identifies what the JWT is about, such as a user id. |
+| `aud` | **Audience:** An id that specifies the intended recipient of the JWT (which server). |
 | `exp` | **Expiration Time:** A timestamp that specifies the expiration date of the JWT. |
 | `iat` | **Issued At:** A timestamp that specifies the time at which the token was generated. |
 | `iss` | **Issuer:** The server that generated the JWT. |
 | `jti` | **JWT ID:** A unique id per generated JWT. |
 
 ### Signature
-The third part contains the signature. This prevents the JWT from being modified by anyone. Nintendo uses the RS256 algorithm everywhere, which is formally called RSASSA-PKCS1-v1_5.
+The third part contains the signature. This prevents the JWT from being modified by anyone. Nintendo uses the RS256 algorithm on most servers, but the NPLN server uses ES256 instead.
 
 The signature is calculated over both the [header](#header) and the [payload](#payload) in base64-encoded form with a dot in between. Only the server can generate the signature, because only the server knows the private keys. Anyone can verify the signature though, because anyone can download the public keys from the server that hosts the JWK set.
 
@@ -89,15 +91,21 @@ DEbSwdle5tph-ur01K91FhXhI6BA
 ## DAuth Tokens
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | https://dcert-lp1.ndas.srv.nintendo.net/keys |
+| `kid` | Key id |
+| `typ` | `JWT` |
 
 Payload fields:
 
 | Field | Description |
 | --- | --- |
 | `sub` | Device id |
-| `iss` | dauth-lp1.ndas.srv.nintendo.net |
 | `aud` | Client id |
+| `exp` | Expires at |
+| `iat` | Issued at |
+| `iss` | `dauth-lp1.ndas.srv.nintendo.net` |
+| `jti` | JWT id |
 | `nintendo` | [Device information](#device-information) |
 
 ### Device Information
@@ -112,8 +120,8 @@ Payload fields:
 ```json
 {
     "sub": "68337aca28815cbb",
-    "iss": "dauth-lp1.ndas.srv.nintendo.net",
     "aud": "8f849b5d34778d8e",
+    "iss": "dauth-lp1.ndas.srv.nintendo.net",
     "exp": 1632763301,
     "iat": 1632676901,
     "jti": "e59a0b0e-94e1-44aa-b5db-0fc0cf502ada",
@@ -129,14 +137,20 @@ Payload fields:
 ## AAuth Tokens
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | https://acert-lp1.ndas.srv.nintendo.net/keys |
+| `kid` | Key id |
+| `typ` | `JWT` |
 
 Payload fields:
 
 | Field | Description |
 | --- | --- |
 | `sub` | Title id (`%016x`) |
-| `iss` | aauth-lp1.ndas.srv.nintendo.net |
+| `iss` | `aauth-lp1.ndas.srv.nintendo.net` |
+| `exp` | Expires at |
+| `iat` | Issued at |
+| `jti` | JWT id |
 | `nintendo` | [Application information](#application-information) |
 
 ### Application Information
@@ -186,6 +200,7 @@ Only present for system titles:
 ## BaaS Access Tokens
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1.0.0/internal_certificates |
 | `kid` | `3083c1b2-5d68-434b-be32-11f915570500` |
 
@@ -196,9 +211,12 @@ Payload fields:
 | `sub` | `ed9e2f05d286f7b8` |
 | `aud` | `ed9e2f05d286f7b8` |
 | `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
+| `exp` | Expires at |
+| `iat` | Issued at |
+| `jti` | JWT id |
 | `typ` | Always `token` |
-| `bs:sts` | Status (always `[385]`) |
 | `bs:grt` | Grant type (always 1) |
+| `bs:sts` | Status (always `[385]`) |
 | `nintendo` | [Device information](#device-information-0) |
 
 ### Device Information
@@ -215,6 +233,12 @@ Payload fields:
 {
     "sub": "ed9e2f05d286f7b8",
     "aud": "ed9e2f05d286f7b8",
+    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
+    "exp": 1632687701,
+    "iat": 1632676901,
+    "jti": "878d0735-571a-4b94-82a6-2bf183114db1",
+    "typ": "token",
+    "bs:grt": 1,
     "bs:sts": [385],
     "nintendo": {
         "dt": "NX Prod 1",
@@ -222,19 +246,14 @@ Payload fields:
         "di": "68337aca28815cbb",
         "sn": "XAW10012345678",
         "ist": false
-    },
-    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
-    "typ": "token",
-    "bs:grt": 1,
-    "exp": 1632687701,
-    "iat": 1632676901,
-    "jti": "878d0735-571a-4b94-82a6-2bf183114db1"
+    }
 }
 ```
 
 ## BaaS User Tokens
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1.0.0/internal_certificates |
 | `kid` | `3083c1b2-5d68-434b-be32-11f915570500` |
 
@@ -245,40 +264,48 @@ Payload fields:
 | `sub` | User id (`%016x`) |
 | `aud` | `ed9e2f05d286f7b8` |
 | `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
+| `exp` | Expires at |
+| `iat` | Issued at |
+| `jti` | JWT id |
 | `typ` | Always `token` |
-| `bs:sts` | Status (always `[10414578180576298,272640,1,0,0,19316357715722240,16]`) |
 | `bs:grt` | Grant type (always 2) |
 | `bs:did` | Device account id |
+| `bs:sts` | Status (always `[10414578180576298,272640,1,0,0,19316357715722240,16]`) |
 
 Example:
 
 ```json
 {
-    "aud": "ed9e2f05d286f7b8",
     "sub": "b4922963e6b8deb2",
-    "bs:sts": [10414578180576298, 272640, 1, 0, 0, 19316357715722240, 16],
+    "aud": "ed9e2f05d286f7b8",
     "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
-    "typ": "token",
-    "bs:grt": 2,
     "exp": 1644766994,
     "iat": 1644756194,
+    "jti": "aedb91a6-1cf9-4a0e-bfbd-1ccdd191b4e3",
+    "typ": "token",
+    "bs:grt": 2,
     "bs:did": "2ded458f5e0beee2",
-    "jti": "aedb91a6-1cf9-4a0e-bfbd-1ccdd191b4e3"
+    "bs:sts": [10414578180576298, 272640, 1, 0, 0, 19316357715722240, 16]
 }
 ```
 
 ## ID Tokens
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1.0.0/certificates |
+| `kid` | Key id |
 
 Payload fields:
 
 | Field | Description |
 | --- | --- |
-| `aud` | Always `ed9e2f05d286f7b8` |
 | `sub` | User id (`%016x`) |
+| `aud` | Always `ed9e2f05d286f7b8` |
 | `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
+| `exp` | Expires at |
+| `iat` | Issued at |
+| `jti` | JWT id |
 | `typ` | Always `id_token` |
 | `bs:did` | Device account id (`%016x`) |
 | `nintendo` | [Application information](#application-information-1) (only present if an aauth token is provided) |
@@ -295,7 +322,6 @@ Payload fields:
 ```json
 {
     "aud": "ed9e2f05d286f7b8",
-    "sub": "b4922963e6b8deb2",
     "nintendo": {
         "at": 1644756194,
         "av": "0007",
@@ -325,6 +351,46 @@ Payload fields:
 | `iss` | `lp1.dragons.nintendo.net` |
 | `typ` | Always `id_token` |
 | `content` | [Application information](#application-information-2) |
+
+### Application Information
+| Field | Description |
+| --- | --- |
+| `title_id` | Title id (`%016x`) |
+| `na_id` | Nintendo account id (`%016x`) |
+| `ticket_id` | Ticket id (integer) |
+| `is_owned_rights` | Boolean |
+
+### Example
+```json
+{
+    "aud": "010040600c5ce000",
+    "device_id": "62659661e3fdfe11",
+    "iss": "lp1.dragons.nintendo.net",
+    "exp": 1667334879,
+    "iat": 1667248479,
+    "jti": "4df2e656-8e96-409a-8a7e-bd1dd1bbc572"
+    "content": {
+        "title_id": "010040600c5ce000",
+        "na_id": "72b0f0bdb31753d5",
+        "ticket_id": 72212894349604939,
+        "is_owned_rights": true
+    }
+}
+```
+
+## NPLN access token
+| Field | Value |
+| --- | --- |
+| `alg` | `ES256` |
+| `jku` | `jwkSets/nplnAccessToken` |
+
+Payload fields:
+
+| Field | Description |
+| --- | --- |
+| `sub` | NPLN user id |
+| `iss` | `default iss` |
+| `npln` | [NPLN information](#npln-information)
 
 ### Application Information
 | Field | Description |
