@@ -43,44 +43,110 @@ Many games also use flag 0x200, but its purpose is unknown.
 | This structure inherits from [Gathering](#gathering-structure) |
 | --- |
 
-| Type | Name | Only present on |
-| --- | --- | --- |
-| Uint32 | m_GameMode | |
-| [List]&lt;Uint32&gt; | m_Attribs | |
-| Bool | m_OpenParticipation | |
-| Uint32 | m_MatchmakeSystemType | |
-| [Buffer] | m_ApplicationBuffer | |
-| Uint32 | m_ParticipationCount | |
-| Uint8 | m_ProgressScore | NEX v3.5.0 and later |
-| [Buffer] | m_SessionKey | NEX v3.0.0 and later |
-| Uint32 | m_Option0 | NEX v3.5.0 and later |
-| [MatchmakeParam](#matchmakeparam-structure) | m_MatchmakeParam | NEX v4.0.0 and later |
-| [DateTime] | m_StartedTime | NEX v4.0.0 and later |
+In NEX version 2.x, the matchmake session looks as follows:
+
+| Type | Name |
+| --- | --- |
+| Uint32 | m_GameMode |
+| [List]&lt;Uint32&gt; | m_Attribs |
+| Bool | m_OpenParticipation |
+| Uint32 | m_MatchmakeSystemType |
+| [Buffer] | m_ApplicationBuffer |
+| Uint32 | m_ParticipationCount |
+
+In NEX version 3.0, the session key was added:
+
+| Type | Name |
+| --- | --- |
+| [Buffer] | m_SessionKey |
+
+In NEX version 3.5, two more fields were added. Note that the progress score field was inserted before the session key field:
+
+| Type | Name |
+| --- | --- |
+| Uint32 | m_GameMode |
+| [List]&lt;Uint32&gt; | m_Attribs |
+| Bool | m_OpenParticipation |
+| Uint32 | m_MatchmakeSystemType |
+| [Buffer] | m_ApplicationBuffer |
+| Uint32 | m_ParticipationCount |
+| Uint8 | m_ProgressScore |
+| [Buffer] | m_SessionKey |
+| Uint32 | m_Option0 |
+
+In NEX version 3.6, the revision number was increased to 1 and two more fields were added:
+
+| Type | Name |
+| --- | --- |
+| [MatchmakeParam](#matchmakeparam-structure) | m_MatchmakeParam |
+| [DateTime] | m_StartedTime |
+
+In NEX version 3.7, the revision number was increased to 2 and one more field was added:
+
+| Type | Name |
+| --- | --- |
 | [String] | m_UserPassword | NEX v4.0.0 and later |
-| Uint32 | m_ReferGid | NEX v4.0.0 and later |
-| Bool | m_UserPasswordEnabled | NEX v4.0.0 and later |
-| Bool | m_SystemPasswordEnabled | NEX v4.0.0 and later |
+
+In NEX version 3.8, the revision number was increased to 3 and three more fields were added:
+
+| Type | Name |
+| --- | --- |
+| Uint32 | m_ReferGid |
+| Bool | m_UserPasswordEnabled |
+| Bool | m_SystemPasswordEnabled |
+
+In NEX version 4.0, the revision number was set back to 0 and one more field was added:
+
+| Type | Name |
+| --- | --- |
 | [String] | m_Codeword | NEX v4.0.0 and later |
 
 ## MatchmakeSessionSearchCriteria ([Structure])
-| Type | Name | Only present on |
-| --- | --- | --- |
-| [List]&lt;[String]&gt; | m_Attribs | |
-| [String] | m_GameMode | |
-| [String] | m_MinParticipants | |
-| [String] | m_MaxParticipants | |
-| [String] | m_MatchmakeSystemType | |
-| Bool | m_VacantOnly | |
-| Bool | m_ExcludeLocked | |
-| Bool | m_ExcludeNonHostPid | |
-| Uint32 | m_SelectionMethod | |
-| Uint16 | m_VacantParticipants | NEX v3.5.0 and later |
-| [MatchmakeParam](#matchmakeparam-structure) | m_MatchmakeParam | NEX v4.0.0 and later |
-| Bool | m_ExcludeUserPasswordSet | NEX v4.0.0 and later |
-| Bool | m_ExcludeSystemPasswordSet | NEX v4.0.0 and later |
-| Uint32 | m_ReferGid | NEX v4.0.0 and later |
-| [String] | m_Codeword | NEX v4.0.0 and later |
-| [ResultRange] | m_ResultRange | NEX v4.0.0 and later |
+Up to NEX version 3.4, this structure looks as follows:
+
+| Type | Name |
+| --- | --- |
+| [List]&lt;[String]&gt; | m_Attribs |
+| [String] | m_GameMode |
+| [String] | m_MinParticipants |
+| [String] | m_MaxParticipants |
+| [String] | m_MatchmakeSystemType |
+| Bool | m_VacantOnly |
+| Bool | m_ExcludeLocked |
+| Bool | m_ExcludeNonHostPid |
+| Uint32 | m_SelectionMethod |
+
+In NEX version 3.5, one more field was added:
+
+| Type | Name |
+| --- | --- |
+| Uint16 | m_VacantParticipants |
+
+In NEX version 3.6, the revision number was increased to 1 and one more field was added:
+
+| Type | Name |
+| --- | --- |
+| [MatchmakeParam](#matchmakeparam-structure) | m_MatchmakeParam |
+
+In NEX version 3.7, the revision number was increased to 2 and two more fields were added:
+
+| Type | Name |
+| --- | --- |
+| Bool | m_ExcludeUserPasswordSet |
+| Bool | m_ExcludeSystemPasswordSet |
+
+In NEX version 3.8, the revision number was increased to 3 and one more field was added:
+
+| Type | Name |
+| --- | --- |
+| Uint32 | m_ReferGid |
+
+In NEX version 4.0, the revision number was set back to 0 and two more fields were added:
+
+| Type | Name |
+| --- | --- |
+| [String] | m_Codeword |
+| [ResultRange] | m_ResultRange |
 
 ## CreateMatchmakeSessionParam ([Structure])
 | Type | Name |
