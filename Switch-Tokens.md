@@ -38,7 +38,7 @@ The second part contains the information that's stored in the JWT, such as the u
 | Field | Description |
 | --- | --- |
 | `sub` | **Subject:** An id that identifies what the JWT is about, such as a user id. |
-| `aud` | **Audience:** An id that specifies the intended recipient of the JWT (which server). |
+| `aud` | **Audience:** An id that specifies the intended recipient of the JWT (server-side). |
 | `exp` | **Expiration Time:** A timestamp that specifies the expiration date of the JWT. |
 | `iat` | **Issued At:** A timestamp that specifies the time at which the token was generated. |
 | `iss` | **Issuer:** The server that generated the JWT. |
@@ -121,9 +121,9 @@ Payload fields:
 {
     "sub": "68337aca28815cbb",
     "aud": "8f849b5d34778d8e",
-    "iss": "dauth-lp1.ndas.srv.nintendo.net",
     "exp": 1632763301,
     "iat": 1632676901,
+    "iss": "dauth-lp1.ndas.srv.nintendo.net",
     "jti": "e59a0b0e-94e1-44aa-b5db-0fc0cf502ada",
     "nintendo": {
         "sn": "XAW10012345678",
@@ -147,9 +147,9 @@ Payload fields:
 | Field | Description |
 | --- | --- |
 | `sub` | Title id (`%016x`) |
-| `iss` | `aauth-lp1.ndas.srv.nintendo.net` |
 | `exp` | Expires at |
 | `iat` | Issued at |
+| `iss` | `aauth-lp1.ndas.srv.nintendo.net` |
 | `jti` | JWT id |
 | `nintendo` | [Application information](#application-information) |
 
@@ -210,9 +210,9 @@ Payload fields:
 | --- | --- |
 | `sub` | `ed9e2f05d286f7b8` |
 | `aud` | `ed9e2f05d286f7b8` |
-| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `exp` | Expires at |
 | `iat` | Issued at |
+| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `jti` | JWT id |
 | `typ` | Always `token` |
 | `bs:grt` | Grant type (always 1) |
@@ -233,9 +233,9 @@ Payload fields:
 {
     "sub": "ed9e2f05d286f7b8",
     "aud": "ed9e2f05d286f7b8",
-    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
     "exp": 1632687701,
     "iat": 1632676901,
+    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
     "jti": "878d0735-571a-4b94-82a6-2bf183114db1",
     "typ": "token",
     "bs:grt": 1,
@@ -263,9 +263,9 @@ Payload fields:
 | --- | --- |
 | `sub` | User id (`%016x`) |
 | `aud` | `ed9e2f05d286f7b8` |
-| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `exp` | Expires at |
 | `iat` | Issued at |
+| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `jti` | JWT id |
 | `typ` | Always `token` |
 | `bs:grt` | Grant type (always 2) |
@@ -278,9 +278,9 @@ Example:
 {
     "sub": "b4922963e6b8deb2",
     "aud": "ed9e2f05d286f7b8",
-    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
     "exp": 1644766994,
     "iat": 1644756194,
+    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
     "jti": "aedb91a6-1cf9-4a0e-bfbd-1ccdd191b4e3",
     "typ": "token",
     "bs:grt": 2,
@@ -302,9 +302,9 @@ Payload fields:
 | --- | --- |
 | `sub` | User id (`%016x`) |
 | `aud` | Always `ed9e2f05d286f7b8` |
-| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `exp` | Expires at |
 | `iat` | Issued at |
+| `iss` | https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com |
 | `jti` | JWT id |
 | `typ` | Always `id_token` |
 | `bs:did` | Device account id (`%016x`) |
@@ -321,38 +321,44 @@ Payload fields:
 ### Example
 ```json
 {
+    "sub": "b4922963e6b8deb2",
     "aud": "ed9e2f05d286f7b8",
-    "nintendo": {
-        "at": 1644756194,
-        "av": "0007",
-        "ai": "0100abf008968000",
-        "edi": "84e16d390427028b3788ef082d342ce0"
-    },
-    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
-    "typ": "id_token",
     "exp": 1644766994,
     "iat": 1644756194,
+    "iss": "https://e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com",
+    "jti": "164eea2b-508c-47d0-9d48-9eca1cac0f56",
+    "typ": "id_token",
     "bs:did": "2ded458f5e0beee2",
-    "jti": "164eea2b-508c-47d0-9d48-9eca1cac0f56"
+    "nintendo": {
+        "ai": "0100abf008968000",
+        "av": "0007",
+        "at": 1644756194,
+        "edi": "84e16d390427028b3788ef082d342ce0"
+    }
 }
 ```
 
 ## Contents Authorization Token for AAuth
 | Field | Value |
 | --- | --- |
+| `alg` | `RS256` |
 | `jku` | [`https:\/\/pubkey.lp1.dragons.nintendo.net\/cata\/v1\/jwks`](https://pubkey.lp1.dragons.nintendo.net/cata/v1/jwks) |
+| `kid` | Key id |
+| `typ` | `JWT` |
 
 Payload fields:
 
 | Field | Description |
 | --- | --- |
 | `aud` | Title id (`%016x`) |
-| `device_id` | Device id (`%016x`) |
+| `exp` | Expires at |
+| `iat` | Issued at |
 | `iss` | `lp1.dragons.nintendo.net` |
-| `typ` | Always `id_token` |
-| `content` | [Application information](#application-information-2) |
+| `jti` | JWT id |
+| `device_id` | Device id (`%016x`) |
+| `content` | [Content information](#content-information) |
 
-### Application Information
+### Content Information
 | Field | Description |
 | --- | --- |
 | `title_id` | Title id (`%016x`) |
@@ -364,11 +370,11 @@ Payload fields:
 ```json
 {
     "aud": "010040600c5ce000",
-    "device_id": "62659661e3fdfe11",
-    "iss": "lp1.dragons.nintendo.net",
     "exp": 1667334879,
     "iat": 1667248479,
+    "iss": "lp1.dragons.nintendo.net",
     "jti": "4df2e656-8e96-409a-8a7e-bd1dd1bbc572"
+    "device_id": "62659661e3fdfe11",
     "content": {
         "title_id": "010040600c5ce000",
         "na_id": "72b0f0bdb31753d5",
@@ -383,37 +389,53 @@ Payload fields:
 | --- | --- |
 | `alg` | `ES256` |
 | `jku` | `jwkSets/nplnAccessToken` |
+| `kid` | Key id |
 
 Payload fields:
 
 | Field | Description |
 | --- | --- |
 | `sub` | NPLN user id |
+| `exp` | Expires at |
+| `iat` | Issued at |
 | `iss` | `default iss` |
 | `npln` | [NPLN information](#npln-information)
 
-### Application Information
+### NPLN Information
 | Field | Description |
 | --- | --- |
-| `title_id` | Title id (`%016x`) |
-| `na_id` | Nintendo account id (`%016x`) |
-| `ticket_id` | Ticket id (integer) |
-| `is_owned_rights` | Boolean |
+| `tid` | Tenant id |
+| `aid` | NPLN account id |
+| `app_id` | Title id (`%016x`) |
+| `ext_id` | External id (`%016x`) |
+| `ext_id_type` | Always 1 (meaning `nsa_id_token`) |
+| `authorization` | Authorization information (#authorization-information) |
+
+### Authorization Information
+| Field | Description |
+| --- | --- |
+| `allow` | List of allowed services |
+| `deny` | List of denied services |
+| `nso_restricted` | Boolean |
 
 ### Example
 ```json
 {
-    "aud": "010040600c5ce000",
-    "device_id": "62659661e3fdfe11",
-    "iss": "lp1.dragons.nintendo.net",
-    "exp": 1667334879,
-    "iat": 1667248479,
-    "jti": "4df2e656-8e96-409a-8a7e-bd1dd1bbc572"
-    "content": {
-        "title_id": "010040600c5ce000",
-        "na_id": "72b0f0bdb31753d5",
-        "ticket_id": 72212894349604939,
-        "is_owned_rights": true
+    "sub":"u-qrz62qwckcdi64n2woom",
+    "exp": 1669741833,
+    "iat": 1669713033,
+    "iss": "default iss",
+    "npln": {
+        "tid":"t-50e39f8f-lp1",
+        "aid": "a-atqget1l7bndtkkkoq0m",
+        "app_id": "01008f6008c5e000",
+        "ext_id": "b4922963e6b8deb2",
+        "ext_id_type": 1,
+        "authorization": {
+            "allow": ["nn.npln.auth.**", "**"],
+            "deny": [],
+            "nso_restricted": false
+        },
     }
 }
 ```
