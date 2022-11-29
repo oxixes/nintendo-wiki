@@ -63,7 +63,7 @@ For development servers, lp1 is replaced by one of the following:
 #### Eagle Relay ([docs](Eagle-Protocol))
 * `d7d-<server name>.g.lp1.e.srv.nintendo.net`
 
-#### Game Server Availability ([Service-Status-Server])
+#### Game Server Availability ([docs](Service-Status-Server))
 * https://Service-status-lp1.cdn.nintendo.net
 
 #### Online Play Invitations ([docs](Online-Play-Invitation-Server))
@@ -85,7 +85,7 @@ For development servers, lp1 is replaced by one of the following:
 * https://ecs-lp1.hac.shop.nintendo.net
 * https://ias-lp1.hac.shop.nintendo.net
 
-#### eShop Applet ([docs](eShop-Applet-(Switch))
+#### eShop Applet ([docs](eShop-Applet-(Switch)))
 * https://bugyo.hac.lp1.eshop.nintendo.net
 * https://tagaya.hac.lp1.eshop.nintendo.net
 
