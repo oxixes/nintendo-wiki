@@ -188,7 +188,7 @@ If the error code is `invalid_parameter`, the response may contain more details 
 | 403 | `license_not_grantable` | | |
 | 403 | `rights_policy_not_allowed` | | |
 | 403 | `system_update_required` | | |
-| 404 | `license_archive_not_found` | | |
+| 404 | `license_archive_not_found` | ELicense archive is not found | |
 | 404 | `license_not_found` | ELicense is not found | |
 | 404 | `page_not_found` | Page not found | |
 | 404 | `promotion_policy_not_found` | | |
