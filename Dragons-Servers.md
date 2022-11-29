@@ -59,6 +59,7 @@ https://dragons.hac.lp1.dragons.nintendo.net:
 | Method | Path |
 | --- | --- |
 | POST | [`/v1/contents_authorization_token_for_aauth/issue`](#post-v1contents_authorization_token_for_aauthissue) |
+| POST | [`/v1/elicense_archives/publish`](#post-v1elicense_archivespublish) |
 
 Need more research:
 
@@ -66,7 +67,6 @@ Need more research:
 | --- |
 | `/quickTEST` |
 | `/v1/contents_authorization_token/issue` |
-| `/v1/elicense_archives/publish` |
 | `/v1/elicense_archives/<id>/report` |
 | `/v1/elicenses/eticket_token` |
 | `/v1/elicenses/exercise` |
@@ -103,10 +103,10 @@ Starting with system version 15.0.0, a contents authorization token is required 
 
 Note that the Switch sends the [headers](#headers) for this method in a different order and uses a different [user agent](#user-agents).
 
-| Field | Format | Description |
-| --- | --- | --- |
-| elicense_id | `\p{XDigit}{32}` | E-license id |
-| na_id | `\p{XDigit}{16}` | Nintendo account id |
+| Field | Description |
+| --- | --- |
+| elicense_id | E-license id (32 hex digits) |
+| na_id | Nintendo account id (16 hex digits) |
 
 Response on success:
 
@@ -145,6 +145,18 @@ Connection: keep-alive
 {"contents_authorization_token":"eyJqa3UiOiJodHRwczpcL1wvcHVia2V5LmxwMS5kcmFnb25zLm5pbnRlbmRvLm5ldFwvY2F0YVwvdjFcL2p3a3MiLCJraWQiOiI2YzI2MjRkOC0zMGQ0LTRlYjgtYWJjOC0wNmZiODMzYzhjNGIiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTAwNDA2MDBjNWNlMDAwIiwiZGV2aWNlX2lkIjoiNjI2NTk2NjFlM2ZkZmUxMSIsImlzcyI6ImxwMS5kcmFnb25zLm5pbnRlbmRvLm5ldCIsImV4cCI6MTY2NzMzNDg3OSwiaWF0IjoxNjY3MjQ4NDc5LCJqdGkiOiI0ZGYyZTY1Ni04ZTk2LTQwOWEtOGE3ZS1iZDFkZDFiYmM1NzIiLCJjb250ZW50Ijp7InRpdGxlX2lkIjoiMDEwMDQwNjAwYzVjZTAwMCIsIm5hX2lkIjoiNzJiMGYwYmRiMzE3NTNkNSIsInRpY2tldF9pZCI6NzIyMTI4OTQzNDk2MDQ5MzksImlzX293bmVkX3JpZ2h0cyI6dHJ1ZX19.MqMnkyEWuVp9TOtbpPhRJGcHRd-fCK_8rGa7rO0HeiC6pkIn7qafBzpc-TD1Xf_DYN_C0m9OXjlX0rVs0vosIzXsoqVDQodB6XAteRWfDNUc6odpW-rgqOiNpbIBymcpbRYOsdJh41zQjl_hpdM44UOR6ZgvL1hKoQVaw7XVz5NANig-WlKyNDVCcSsWhycyBuRkZOPb9OblTbvRkIzluRTFG9lxHCDnwczxGiaLoZjEgUrqIcWQJBUyOxB2UiL5sitK53GsHhFHxVZqTwjM7wl7nzrQaVDsp_Zc26hkIrUeuvDTBZHWXNPrte-nja5CZ-lN-UNIwe2j9N61baD9YQ"}
 ```
 
+## POST /v1/elicense_archives/publish
+| Field | Description |
+| --- | --- |
+| challenge | Challenge (16 hex digits) |
+| certificate | Device certificate (base64) |
+
+Response on success:
+
+| Field | Description |
+| --- | --- |
+| elicense_archive | E-license archive (base64) |
+
 ## Errors
 On error, the server sends the following response:
 
@@ -164,7 +176,7 @@ If the error code is `invalid_parameter`, the response may contain more details 
 | Status | Code | Title | Detail |
 | --- | --- | --- | --- |
 | 400 | `duplicate_rights_id` | | |
-| 400 | `invalid_device_certificate` | | |
+| 400 | `invalid_device_certificate` | Device certificate is invalid | |
 | 400 | `invalid_eticket_template` | | |
 | 400 | `invalid_parameter` | Parameter is invalid | |
 | 401 | `account_id_required` | | |
