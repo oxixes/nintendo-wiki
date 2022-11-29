@@ -328,11 +328,12 @@ For example, if a packet is split into four fragments, they will have the follow
 | Third | 3 |
 | Fourth | 0 |
 
-The maximum payload size depends on the implementation. It is generally set to the MTU minus the packet overhead.
+#### Fragment size
+The fragment size depends on the implementation. It is generally set to the MTU minus the packet overhead.
 
-In old NEX versions, which only support PRUDP v0, the MTU is hardcoded to 1000 and the maximum payload size seems to be set to mtu - 38, which would be 962.
+In old NEX versions, which only support PRUDP v0, the MTU is hardcoded to 1000 and the maximum payload size seems to be 962 bytes.
 
-Later, the MTU was increased to 1364, and the maximum payload size is set to mtu - 64. If PRUDP v0 is used, the maximum payload size is reduced by 36 more bytes.
+Later, the MTU was increased to 1364, and the maximum payload size is seems to be 1300 bytes, unless PRUDP v0 is used, in which case it's 1264 bytes.
 
 ### Connection signature
 If present, the connection signature is the first part of a HMAC based on the perceived ip and port of the other end point. Neither server nor client can verify this signature.
