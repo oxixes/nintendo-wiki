@@ -384,7 +384,7 @@ Payload fields:
 }
 ```
 
-## NPLN access token
+## NPLN Access Tokens
 | Field | Value |
 | --- | --- |
 | `alg` | `ES256` |
