@@ -34,4 +34,5 @@ The server always sends the full resource name, but the client may use `current`
 * `tenants/<id>/users/<id>`
 * `tenants/<id>/users/<id>/friendUsers/<id>`
 * `tenants/<id>/users/<id>/presence`
+* `tenants/<id>/users/<id>/tradeBoxes/<id>`
 * `tenants/<id>/users/<id>/violations/<type>`
