@@ -32,7 +32,7 @@ For development servers, lp1 is replaced by one of the following:
 * https://dc219b6b3aa8e06873733fda1def0e03-sb.baas.nintendo.com (sp1)
 * https://e03a97819c9711e59510d820a52f298a-sb.baas.nintendo.com (td1)
 
-#### Nintendo Accounts ([docs](Account-Server-(Switch))
+#### Nintendo Accounts ([docs](Account-Server-(Switch)))
 * https://accounts.nintendo.com
 * https://cdn.accounts.nintendo.com
 * https://api.accounts.nintendo.com
