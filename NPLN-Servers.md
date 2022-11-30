@@ -45,6 +45,7 @@ Splatoon 3 also implements some custom services:
 * `nn.npln.toyohr.v1.CoopScenario`
 * `nn.npln.toyohr.v1.FestService`
 * `nn.npln.toyohr.v1.GameRecord`
+* `nn.npln.toyohr.v1.LobbyMessaging`
 * `nn.npln.toyohr.v1.Locker`
 * `nn.npln.toyohr.v1.Replay`
 * `nn.npln.toyohr.v1.Schedule`
