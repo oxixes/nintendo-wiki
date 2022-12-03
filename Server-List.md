@@ -52,7 +52,7 @@ For development servers, lp1 is replaced by one of the following:
 * https://dashboard.d.npln.srv.nintendo.net (developer dashboard)
 
 #### Game Servers (NEX)
-* `g<game server id>-lp1.s.n.srv.nintendo.net` ([game server](NEX-Overview-(Game-Servers))
+* `g<game server id>-lp1.s.n.srv.nintendo.net` ([game server](NEX-Overview-(Game-Servers)))
 * `g<game server id>-lp1.r.n.srv.nintendo.net` (P2P relay)
 * `g<game server id>-lp1.p.srv.nintendo.net` ([P2P monitoring](Monitoring-Data-Protocol))
 
