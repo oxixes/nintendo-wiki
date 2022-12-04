@@ -25,7 +25,7 @@ The official library sets the user agent to `grpc-c++/1.31.1 grpc-c/11.0.0 (nint
 ## List of services
 Services are never modified in a backward incompatible way, but new methods and services may be added in the future.
 
-* `nn.npln.auth.v1.Auth`
+* [`nn.npln.auth.v1.Auth`](Auth-Service)
 * `nn.npln.friends.v1.Friends`
 * `nn.npln.friends.v1.PresenceService`
 * `nn.npln.gamesync.v1.Gamesync`
