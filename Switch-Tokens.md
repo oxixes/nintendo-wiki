@@ -318,6 +318,14 @@ Payload fields:
 | `at` | Application time (current timestamp) |
 | `edi` | Unique id (copied from aauth token) |
 
+Only present if the policy handler is `GAME_SERVER`:
+
+| Field | Description |
+| --- | --- |
+| `ph` | `GAME_SERVER` |
+| `opp` | `MEMBERSHIP_REQUIRED` |
+| `hm` | Bool, whether the user has an NSO membership |
+
 ### Example
 ```json
 {
