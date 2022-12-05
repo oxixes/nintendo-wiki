@@ -52,8 +52,8 @@ Example request:
 Example response:
 ```json
 {
-    "name": "u-qtb6z4jkvrndteijghom",
-    "account": "a-qartk5uwkh3noiajj6nm"
+    "name": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
+    "account": "accounts/a-qartk5uwkh3noiajj6nm"
 }
 ```
 
