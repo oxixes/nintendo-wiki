@@ -29,12 +29,12 @@ Every tenant also provides an anonymous user. This user is special because it do
 # Methods
 * [CreateUser](#createuser)
 * [IssueToken](#issuetoken)
-* RefreshToken
+* [RefreshToken](#refreshtoken)
 * [IssuePrearrangedUserToken](#issueprearrangedusertoken)
-* IssueAnonymousUserToken
-* RefreshAnonymousUserToken
-* ListUsers
-* DeleteUser
+* [IssueAnonymousUserToken](#issueanonymoususertoken)
+* [RefreshAnonymousUserToken](#refreshanonymoususertoken)
+* [ListUsers](#listusers)
+* [DeleteUser](#deleteuser)
 
 ## CreateUser
 This method creates a user on the given tenant.
@@ -86,6 +86,9 @@ Response:
 }
 ```
 
+## RefreshToken
+This method issues an access token using a refresh token.
+
 ## IssuePrearrangedUserToken
 This method issues an access token for a prearranged user. Every tenant provides 16 prearranged users per account.
 
@@ -99,3 +102,15 @@ Request:
     }
 }
 ```
+
+## IssueAnonymousUserToken
+This method issues an anonymous access token. Most services deny requests that are made by an anonymous user.
+
+## RefreshAnonymousUserToken
+This method issues an anonymous access token using a refresh token. Most services deny requests that are made by an anonymous user.
+
+## ListUsers
+This method lists all users that were created with [CreateUser](#createuser) under the current account. Prearranged users are not included in the list. This method requires an access token.
+
+## DeleteUser
+This method deletes a user that was created with [CreateUser](#createuser). Prearranged users cannot be deleted. This method requires an access token.
