@@ -7,7 +7,7 @@ Full name: `nn.npln.auth.v1.Auth`
 * [Methods](#methods)
 * [Source code](https://github.com/kinnay/NPLN-Protocols/blob/master/latest/proto/auth/v1/auth.proto)
 
-# Overview
+## Overview
 The auth service manages user accounts on an NPLN tenant. Before using another service, one must first obtain an access token from the auth service.
 
 #### External Ids
@@ -26,7 +26,7 @@ NPLN allows you to create an arbitrary number of **users** on a tenant. Every us
 
 Every tenant also provides an anonymous user. This user is special because it does not belong to a specific account. Most services deny requests that are made by an anonymous user.
 
-# Methods
+## Methods
 * [CreateUser](#createuser)
 * [IssueToken](#issuetoken)
 * [RefreshToken](#refreshtoken)
@@ -36,7 +36,7 @@ Every tenant also provides an anonymous user. This user is special because it do
 * [ListUsers](#listusers)
 * [DeleteUser](#deleteuser)
 
-## CreateUser
+### CreateUser
 This method creates a user on the given tenant.
 
 Request:
@@ -57,7 +57,7 @@ Response:
 }
 ```
 
-## IssueToken
+### IssueToken
 This method issues an access token for a user that was registered with [CreateUser](#createuser).
 
 Request:
@@ -86,10 +86,10 @@ Response:
 }
 ```
 
-## RefreshToken
+### RefreshToken
 This method issues an access token using a refresh token.
 
-## IssuePrearrangedUserToken
+### IssuePrearrangedUserToken
 This method issues an access token for a prearranged user. Every tenant provides 16 prearranged users per account.
 
 Request:
@@ -103,14 +103,14 @@ Request:
 }
 ```
 
-## IssueAnonymousUserToken
+### IssueAnonymousUserToken
 This method issues an anonymous access token. Most services deny requests that are made by an anonymous user.
 
-## RefreshAnonymousUserToken
+### RefreshAnonymousUserToken
 This method issues an anonymous access token using a refresh token. Most services deny requests that are made by an anonymous user.
 
-## ListUsers
+### ListUsers
 This method lists all users that were created with [CreateUser](#createuser) under the current account. Prearranged users are not included in the list. This method requires an access token.
 
-## DeleteUser
+### DeleteUser
 This method deletes a user that was created with [CreateUser](#createuser). Prearranged users cannot be deleted. This method requires an access token.
