@@ -103,6 +103,19 @@ Request:
 }
 ```
 
+```json
+{
+    "token": {
+        "user": "tenants/t-50e39f8f-lp1/users/u-axutxgrmymlr2cijghom",
+        "access_token": "eyJhbGciOiJFUzI1NiIsImprdSI6Imp3a1NldHMvbnBsbkFjY2Vzc1Rva2VuIiwia2lkIjoiMGRmOTAyZmEtMDU2Ny00ZmFmLThiZmYtNmQyNmY3YjY2Y2FmIn0.eyJleHAiOjE2NzAzMDcwNTIsImlhdCI6MTY3MDI3ODI1MiwiaXNzIjoiZGVmYXVsdCBpc3MiLCJucGxuIjp7ImFpZCI6ImEtcWFydGs1dXdraDNub2lhamo2bm0iLCJhcHBfaWQiOiIwMTAwOGY2MDA4YzVlMDAwIiwiYXV0aG9yaXphdGlvbiI6eyJhbGxvdyI6WyJubi5ucGxuLmF1dGguKioiLCIqKiJdLCJkZW55IjpbXSwibnNvX3Jlc3RyaWN0ZWQiOmZhbHNlfSwiZXh0X2lkIjoiOGNhOGQ3ODQyZjg2NWIyZiIsImV4dF9pZF90eXBlIjoxLCJ0aWQiOiJ0LTUwZTM5ZjhmLWxwMSJ9LCJzdWIiOiJ1LWF4dXR4Z3JteW1scjJjaWpnaG9tIn0.ZK2OTM_-7DR2ejz5A_4MOyGk3lUtlDm0jpVCH3ycPR5Mi6DYNiTnfYzeiZ6Yi4BL5rjQ5YNabbA5qyNz13OSew",
+        "refresh_token": "5d78c46e-2ad5-4975-b109-7962b7c7988a",
+        "ttl": {
+            "seconds": 28800
+        }
+    }
+}
+```
+
 ### IssueAnonymousUserToken
 This method issues an anonymous access token. Most services deny requests that are made by an anonymous user.
 
