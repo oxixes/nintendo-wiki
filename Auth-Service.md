@@ -43,7 +43,6 @@ The following methods require an access token:
 ### CreateUser
 This method creates a user on the given tenant.
 
-Request:
 ```json
 {
     "parent": "tenants/t-50e39f8f-lp1",
@@ -53,7 +52,6 @@ Request:
 }
 ```
 
-Response:
 ```json
 {
     "name": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
@@ -64,8 +62,6 @@ Response:
 ### IssueToken
 This method issues an access token for a user that was registered with [CreateUser](#createuser).
 
-Request:
-
 ```json
 {
     "user": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
@@ -74,8 +70,6 @@ Request:
     }
 }
 ```
-
-Response:
 
 ```json
 {
@@ -93,15 +87,12 @@ Response:
 ### RefreshToken
 This method issues an access token using a refresh token. Each refresh token can only be used once.
 
-Request:
 ```json
 {
     "user": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
     "refresh_token": "07da3ac7-1e0c-42e6-a6ba-f4cae9ed4bd3"
 }
 ```
-
-Response:
 
 ```json
 {
@@ -119,7 +110,6 @@ Response:
 ### IssuePrearrangedUserToken
 This method issues an access token for a prearranged user. Every tenant provides 16 prearranged users per account.
 
-Request:
 ```json
 {
     "tenant": "tenants/t-50e39f8f-lp1",
@@ -146,7 +136,6 @@ Request:
 ### IssueAnonymousUserToken
 This method issues an anonymous access token. Most services deny requests that are made by an anonymous user.
 
-Request:
 ```json
 {
     "tenant": "tenants/t-50e39f8f-lp1",
@@ -156,7 +145,6 @@ Request:
 }
 ```
 
-Response:
 ```json
 {
     "token": {
@@ -173,7 +161,6 @@ Response:
 ### RefreshAnonymousUserToken
 This method issues an anonymous access token using a refresh token. Each refresh token can only be used once.
 
-Request:
 ```json
 {
     "tenant": "tenants/t-50e39f8f-lp1",
@@ -181,7 +168,6 @@ Request:
 }
 ```
 
-Response:
 ```json
 {
     "token": {
@@ -198,14 +184,12 @@ Response:
 ### ListUsers
 This method lists all users that were created with [CreateUser](#createuser) under the current account. Prearranged users are not included in the list. This method requires an access token.
 
-Request:
 ```json
 {
     "parent": "tenants/current"
 }
 ```
 
-Response:
 ```json
 {
     "users": [
@@ -220,7 +204,6 @@ Response:
 ### DeleteUser
 This method deletes a user that was created with [CreateUser](#createuser). Prearranged users cannot be deleted. This method requires an access token.
 
-Request:
 ```json
 {
     "name": "tenants/current/users/u-qtb6z4jkvrndteijghom"
