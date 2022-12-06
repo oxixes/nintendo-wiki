@@ -91,7 +91,30 @@ Response:
 ```
 
 ### RefreshToken
-This method issues an access token using a refresh token.
+This method issues an access token using a refresh token. Each refresh token can only be used once.
+
+Request:
+```json
+{
+    "user": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
+    "refresh_token": "07da3ac7-1e0c-42e6-a6ba-f4cae9ed4bd3"
+}
+```
+
+Response:
+
+```json
+{
+    "token": {
+        "user": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
+        "access_token": "eyJhbGciOiJFUzI1NiIsImprdSI6Imp3a1NldHMvbnBsbkFjY2Vzc1Rva2VuIiwia2lkIjoiMGRmOTAyZmEtMDU2Ny00ZmFmLThiZmYtNmQyNmY3YjY2Y2FmIn0.eyJleHAiOjE2NzAzMDcwNTIsImlhdCI6MTY3MDI3ODI1MiwiaXNzIjoiZGVmYXVsdCBpc3MiLCJucGxuIjp7ImFpZCI6ImEtcWFydGs1dXdraDNub2lhamo2bm0iLCJhcHBfaWQiOiIwMTAwOGY2MDA4YzVlMDAwIiwiYXV0aG9yaXphdGlvbiI6eyJhbGxvdyI6WyJubi5ucGxuLmF1dGguKioiLCIqKiJdLCJkZW55IjpbXSwibnNvX3Jlc3RyaWN0ZWQiOmZhbHNlfSwiZXh0X2lkIjoiOGNhOGQ3ODQyZjg2NWIyZiIsImV4dF9pZF90eXBlIjoxLCJ0aWQiOiJ0LTUwZTM5ZjhmLWxwMSJ9LCJzdWIiOiJ1LXF0YjZ6NGprdnJuZHRlaWpnaG9tIn0.63CrNQWCLKKK8haWYf9DRLY8S3eUPtyhpecuoDLZVYui4Pz6RgpTRG3tlWperORYo_F1lNfJMWRIlhl2W2Xq2w",
+        "refresh_token": "5e3da902-4041-4300-9636-4f06e72e5523",
+        "ttl": {
+            "seconds": 28800
+        }
+    }
+}
+```
 
 ### IssuePrearrangedUserToken
 This method issues an access token for a prearranged user. Every tenant provides 16 prearranged users per account.
@@ -153,7 +176,7 @@ This method issues an anonymous access token using a refresh token. Each refresh
 Request:
 ```json
 {
-    "user": "tenants/t-50e39f8f-lp1",
+    "tenant": "tenants/t-50e39f8f-lp1",
     "refresh_token": "f20b5f44-5257-40e7-8f68-2956b094f668"
 }
 ```
