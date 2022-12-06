@@ -10,8 +10,10 @@ Full name: `nn.npln.matchmaking.v1.Matchmaker`
 ## Overview
 The matchmaker service is responsible for matchmaking.
 
+Matchmaking is started by creating a matchmaking ticket. Progress updates can be received by calling tracking the matchmaking ticket. Matchmaking can also be canceled prematurely. Depending, on the configuration, another user might need to accept you into the game session.
+
 ## Methods
-* CreateMatchmakingTicketRequest
-* TrackMatchmakingTicketRequest
-* CancelMatchmakingTicketRequest
-* CreateAcceptanceRequest
+* CreateMatchmakingTicket
+* TrackMatchmakingTicket
+* CancelMatchmakingTicket
+* CreateAcceptance
