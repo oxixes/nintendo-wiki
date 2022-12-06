@@ -33,7 +33,7 @@ Services are never modified in a backward incompatible way, but new methods and 
 * `nn.npln.leaderboard.v1.LeaderboardService`
 * `nn.npln.maintenance.v1.MaintenanceScheduleService`
 * `nn.npln.matchmaking.v1.GameSessionService`
-* `nn.npln.matchmaking.v1.Matchmaker`
+* [`nn.npln.matchmaking.v1.Matchmaker`](Matchmaker-Service)
 * `nn.npln.messaging.v1.Messaging`
 * `nn.npln.ugcstore.v1.Screening`
 * `nn.npln.ugcstore.v1.Ugcstore`
