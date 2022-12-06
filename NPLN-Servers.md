@@ -14,7 +14,7 @@ The following metadata fields may be included in requests:
 | --- | --- |
 | `authorization` | `bearer <access token>` |
 | `npln-tenant-id` | Tenant id (like `t-e1c218b5-lp1`) |
-| `uid` | User id (like `u-15p9o26ew2zitiv073ii`) |
+| `uid` | User id (like `u-qtb6z4jkvrndteijghom`) |
 
 The `npln-tenant-id` field is always required. The `authorization` and `uid` fields are only required if the request requires authorization.
 
