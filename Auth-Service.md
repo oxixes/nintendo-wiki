@@ -123,11 +123,61 @@ Request:
 ### IssueAnonymousUserToken
 This method issues an anonymous access token. Most services deny requests that are made by an anonymous user.
 
+Request:
+```json
+{
+    "tenant": "tenants/t-50e39f8f-lp1",
+    "external_id_token": {
+        "nsa_id_token": "eyJqa3UiOiJodHRwczovL2UwZDY3YzUwOWZiMjAzODU4ZWJjYjJmZTNmODhjMmFhLmJhYXMubmludGVuZG8uY29tLzEuMC4wL2NlcnRpZmljYXRlcyIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNTc0Zjc0MjctN2M1NC00ODUwLTg2ZjAtNzk0Yjg5NjU1ZTJiIn0.eyJhdWQiOiJlZDllMmYwNWQyODZmN2I4Iiwic3ViIjoiOGNhOGQ3ODQyZjg2NWIyZiIsIm5pbnRlbmRvIjp7ImF0IjoxNjcwMjc2MjU2LCJhdiI6IjAwMDEiLCJobSI6dHJ1ZSwicGgiOiJHQU1FX1NFUlZFUiIsImFpIjoiMDEwMDhmNjAwOGM1ZTAwMCIsImVkaSI6ImYxZjlkNzMyMGQ5YmEwZGVkMWFkZmQ2OTgxZWNmMWY0Iiwib3BwIjoiTUVNQkVSU0hJUF9SRVFVSVJFRCJ9LCJpc3MiOiJodHRwczovL2UwZDY3YzUwOWZiMjAzODU4ZWJjYjJmZTNmODhjMmFhLmJhYXMubmludGVuZG8uY29tIiwidHlwIjoiaWRfdG9rZW4iLCJleHAiOjE2NzAyODcwNTYsImlhdCI6MTY3MDI3NjI1NiwiYnM6ZGlkIjoiNTgxZWE3ODZhOTFmMTY4OSIsImp0aSI6IjY3NDNmMDllLWQ4OTEtNGY3YS05MDgzLTMwNzlkOTgxZTk0YiJ9.6DfNTQbTmkuA3bUPwMi3oQa06Tic2D8WB5vv-45zNFxa2l_0YbhpMarbNoxsTH2v7493GaUA520mh2f_HISN1yrjCA3C3YIGGr7NWoDd_Ew97JU1uV2b26klUom4XHADUnzHOoPCu5QwoB_8Dwa3ls25oSwy5hkcNiRnsfB_d2U14bCVwdnKjzbUAXgL7k2oTP2lV2j4aD8Pu5PhKeFuZdUo8gj-5_0sP2O3w1HyywdysIGDON7GYJ1mrc36sF7kB_MfHmYr65rSoFtqN_mHVYuxSGv1C3SwtZA2K_YFjahy2mjXubu68N7eatoFoP8xe2xbevf7Q5wfujHk5yJOqw"
+    }
+}
+```
+
+Response:
+```json
+{
+    "token": {
+        "user": "tenants/t-50e39f8f-dd1/users/u-anonymous",
+        "access_token": "eyJhbGciOiJFUzI1NiIsImprdSI6Imp3a1NldHMvbnBsbkFjY2Vzc1Rva2VuIiwia2lkIjoiMGRmOTAyZmEtMDU2Ny00ZmFmLThiZmYtNmQyNmY3YjY2Y2FmIn0.eyJleHAiOjE2NzAzMDcwNTIsImlhdCI6MTY3MDI3ODI1MiwiaXNzIjoiZGVmYXVsdCBpc3MiLCJucGxuIjp7ImFpZCI6ImEtcWFydGs1dXdraDNub2lhamo2bm0iLCJhcHBfaWQiOiIwMTAwOGY2MDA4YzVlMDAwIiwiYXV0aG9yaXphdGlvbiI6eyJhbGxvdyI6WyJubi5ucGxuLmF1dGguKioiLCIqKiJdLCJkZW55IjpbXSwibnNvX3Jlc3RyaWN0ZWQiOmZhbHNlfSwiZXh0X2lkIjoiOGNhOGQ3ODQyZjg2NWIyZiIsImV4dF9pZF90eXBlIjoxLCJ0aWQiOiJ0LTUwZTM5ZjhmLWxwMSJ9LCJzdWIiOiJ1LWFub255bW91cyJ9.ihimHHAyWHOwH2QQZEuK7hTryku95SpN6dlL52zPT69zNuWVriRIE08Px5-Lev-DB9cAZCknyuPcYO7JyiWE7w",
+        "refresh_token": "f20b5f44-5257-40e7-8f68-2956b094f668",
+        "ttl": {
+            "seconds": 28800
+        }
+    }
+}
+```
+
 ### RefreshAnonymousUserToken
 This method issues an anonymous access token using a refresh token. Most services deny requests that are made by an anonymous user.
 
 ### ListUsers
 This method lists all users that were created with [CreateUser](#createuser) under the current account. Prearranged users are not included in the list. This method requires an access token.
 
+Request:
+```json
+{
+    "parent": "tenants/current"
+}
+```
+
+Response:
+```json
+{
+    "users": [
+        {
+            "name": "tenants/t-50e39f8f-lp1/users/u-qtb6z4jkvrndteijghom",
+            "account": "accounts/a-qartk5uwkh3noiajj6nm"
+        }
+    ]
+}
+```
+
 ### DeleteUser
 This method deletes a user that was created with [CreateUser](#createuser). Prearranged users cannot be deleted. This method requires an access token.
+
+Request:
+```json
+{
+    "name": "tenants/current/users/u-qtb6z4jkvrndteijghom"
+}
+```
