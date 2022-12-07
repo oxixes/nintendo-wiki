@@ -12,8 +12,6 @@ The matchmaker service is responsible for matchmaking.
 
 Matchmaking is started by creating a matchmaking ticket. Progress updates can be received by tracking the matchmaking ticket.
 
-![](https://www.dropbox.com/s/cm0605w6fcrr004/matchmaking_ticket_states.png?raw=1)
-
 ## Methods
 * CreateMatchmakingTicket
 * TrackMatchmakingTicket
