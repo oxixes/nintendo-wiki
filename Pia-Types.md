@@ -147,7 +147,7 @@ In Pia version 5.10, the station connection info structure was removed, and a si
 ## ReliableSlidingWindow
 A reliable sliding window is used by various protocols to ensure that all messages arrive in the correct order. Large messages are fragmented. When a reliable sliding window is used, messages are wrapped as follows:
 
-*Up to 5.11:*
+*Up to 5.12:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
