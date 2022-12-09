@@ -162,8 +162,8 @@ A reliable sliding window is used by various protocols to ensure that all messag
 *5.14:*
 | Offset | Size | Description |
 | --- | --- | --- |
-| 0x0 | 2 | Unknown |
-| 0x2 | 2 | Unknown |
+| 0x0 | 2 | [Flags](#flags) |
+| 0x2 | 2 | Payload size |
 | 0x4 | 2 | Unknown |
 | 0x6 | 8 | Unknown |
 | 0xE | 8 | Unknown |
