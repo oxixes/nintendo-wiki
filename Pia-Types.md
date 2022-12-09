@@ -145,7 +145,7 @@ In Pia version 5.10, the station connection info structure was removed, and a si
 | [StationLocation](#stationlocation) | Private location |
 
 ## ReliableSlidingWindow
-A reliable sliding window is used by various protocols to ensure that all messages arrive in the correct order. Large messages are fragmented. When a reliable sliding window is used, the following header is added to messages:
+A reliable sliding window is used by various protocols to ensure that all messages arrive in the correct order. Large messages are fragmented. When a reliable sliding window is used, messages are wrapped as follows:
 
 *5.9:*
 
@@ -157,11 +157,12 @@ A reliable sliding window is used by various protocols to ensure that all messag
 | 0x8 | 4 | Sequence id |
 | 0xC | 4 | Acknowledgement id |
 | 0x10 | 8 | Extra acknowledgements |
+| 0x18 | | Payload |
 
 ### Flags
 | Flag | Description |
 | --- | --- |
-| 1 | Ignored (always set) |
+| 1 | Has payload |
 | 2 | Last fragment |
 
 [Constant id]: Pia-Terminology#constant-id
