@@ -7,6 +7,7 @@ This page describes common data structures that are used by the Pia library.
 2. [StationAddress](#stationaddress)
 3. [StationLocation](#stationlocation)
 4. [StationConnectionInfo](#stationconnectioninfo)
+5. [ReliableSlidingWindow](#reliableslidingwindow)
 
 ## InetAddress
 In version 5.11, a new encoding was introduced that is capable of representing IPv6 addresses. Even later Pia version still use the old encoding sometimes. Which encoding is used depends on the context.
@@ -142,6 +143,26 @@ In Pia version 5.10, the station connection info structure was removed, and a si
 | --- | --- |
 | [StationLocation](#stationlocation) | Public location |
 | [StationLocation](#stationlocation) | Private location |
+
+## ReliableSlidingWindow
+A reliable sliding window is used by various protocols to ensure that all messages arrive in the correct order. Large messages are fragmented. When a reliable sliding window is used, the following header is added to messages:
+
+*5.9:*
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 2 | [Flags](#flags) |
+| 0x2 | 2 | Payload size |
+| 0x4 | 4 | Unknown |
+| 0x8 | 4 | Sequence id |
+| 0xC | 4 | Acknowledgement id |
+| 0x10 | 8 | Extra acknowledgements |
+
+### Flags
+| Flag | Description |
+| --- | --- |
+| 1 | Unknown (always set) |
+| 2 | Last fragment |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
