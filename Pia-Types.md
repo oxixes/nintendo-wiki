@@ -153,7 +153,7 @@ A reliable sliding window is used by various protocols to ensure that all messag
 | --- | --- | --- |
 | 0x0 | 2 | [Flags](#flags) |
 | 0x2 | 2 | Payload size |
-| 0x4 | 4 | Unknown |
+| 0x4 | 4 | Padding |
 | 0x8 | 4 | Sequence id |
 | 0xC | 4 | Acknowledgement id |
 | 0x10 | 8 | Extra acknowledgements |
