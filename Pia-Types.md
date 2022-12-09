@@ -161,7 +161,7 @@ A reliable sliding window is used by various protocols to ensure that all messag
 ### Flags
 | Flag | Description |
 | --- | --- |
-| 1 | Unknown (always set) |
+| 1 | Ignored (always set) |
 | 2 | Last fragment |
 
 [Constant id]: Pia-Terminology#constant-id
