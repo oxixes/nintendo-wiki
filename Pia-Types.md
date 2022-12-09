@@ -147,7 +147,7 @@ In Pia version 5.10, the station connection info structure was removed, and a si
 ## ReliableSlidingWindow
 A reliable sliding window is used by various protocols to ensure that all messages arrive in the correct order. Large messages are fragmented. When a reliable sliding window is used, messages are wrapped as follows:
 
-*4.9 - 5.9:*
+*Up to 5.11:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -158,6 +158,42 @@ A reliable sliding window is used by various protocols to ensure that all messag
 | 0xC | 4 | Acknowledgement id |
 | 0x10 | 8 | Extra acknowledgements |
 | 0x18 | | Payload |
+
+*5.14:*
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 2 | Unknown |
+| 0x2 | 2 | Unknown |
+| 0x4 | 2 | Unknown |
+| 0x6 | 8 | Unknown |
+| 0xE | 8 | Unknown |
+| 0x16 | | Payload |
+
+*5.17 - 5.19:*
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 1 | Unknown |
+| 0x1 | 1 | Unknown |
+| 0x2 | 2 | Payload size |
+| 0x4 | 2 | Unknown |
+| 0x6 | 2 | Unknown |
+| 0x8 | 1 | Unknown (N) |
+| 0x9 | 8*N | Unknown |
+| | | Payload |
+
+*5.31:*
+
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 1 | Unknown |
+| 0x1 | 1 | Unknown |
+| 0x2 | 2 | Payload size |
+| 0x4 | 2 | Unknown |
+| 0x6 | 2 | Unknown |
+| 0x8 | 1 | Unknown |
+| 0x9 | 4*N | Unknown |
+| | | Payload |
 
 ### Flags
 | Flag | Description |
