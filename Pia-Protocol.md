@@ -197,6 +197,9 @@ Fields that are not present are copied from the previous message.
 | 0x2 | The message should be relayed to another console |
 | 0x4 | The message was relayed through another console |
 | 0x8 | The message may not be bundled with other messages in a single packet |
+| 0x10 | The message payload is zlib compressed. This was introduced around Pia version 5.14 and is only supported by the unreliable protocol and reliable sliding window messages. |
+
+Note: it seems like later pia versions use 0x20 for zlib compression instead.
 
 ### Station index
 Every console in a mesh gets its own station index. The following station index values are special:
