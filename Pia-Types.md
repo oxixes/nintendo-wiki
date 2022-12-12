@@ -164,7 +164,7 @@ A reliable sliding window is used by various protocols to ensure that all messag
 | --- | --- | --- |
 | 0x0 | 2 | [Flags](#flags) |
 | 0x2 | 2 | Payload size |
-| 0x4 | 2 | Unknown |
+| 0x4 | 2 | Sequence id |
 | 0x6 | 8 | Unknown |
 | 0xE | 8 | Unknown |
 | 0x16 | | Payload |
@@ -173,10 +173,10 @@ A reliable sliding window is used by various protocols to ensure that all messag
 
 | Offset | Size | Description |
 | --- | --- | --- |
-| 0x0 | 1 | Unknown |
-| 0x1 | 1 | Unknown |
+| 0x0 | 1 | [Flags](#flags) |
+| 0x1 | 1 | Stream id |
 | 0x2 | 2 | Payload size |
-| 0x4 | 2 | Unknown |
+| 0x4 | 2 | Sequence id |
 | 0x6 | 2 | Unknown |
 | 0x8 | 1 | Unknown (N) |
 | 0x9 | 8*N | Unknown |
@@ -186,10 +186,10 @@ A reliable sliding window is used by various protocols to ensure that all messag
 
 | Offset | Size | Description |
 | --- | --- | --- |
-| 0x0 | 1 | Unknown |
-| 0x1 | 1 | Unknown |
+| 0x0 | 1 | [Flags](#flags) |
+| 0x1 | 1 | Stream id |
 | 0x2 | 2 | Payload size |
-| 0x4 | 2 | Unknown |
+| 0x4 | 2 | Sequence id |
 | 0x6 | 2 | Unknown |
 | 0x8 | 1 | Unknown |
 | 0x9 | 4*N | Unknown |
