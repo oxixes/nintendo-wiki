@@ -106,6 +106,29 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
+*5.24 - 5.26:* Unknown
+
+*5.27 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (1) |
+| Uint8 | Unknown |
+| Uint8 | Unknown |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint8 | Number of available protocols (N) |
+| Uint8 (N*2) | [Protocol list](#protocol-list) |
+| Uint16 | Unknown |
+| [StationLocation] | Station location |
+| Bytes (32) | Unknown |
+| Uint32 | Unknown |
+| Uint8 | Unknown |
+| Uint8 | Unknown |
+| Uint8 | Number of players (P) |
+| PlayerInfo (xP) | Players |
+| Uint32 | Ack id |
+
 ### Protocol List
 The protocol list contains the following for every available protocol.
 
