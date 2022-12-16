@@ -39,7 +39,7 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | 5.24 - 5.26 | 1 |
 | 5.27 - 5.43 | 2 |
 
-## Connection request
+## Connection Request
 *3.3 - 4.10:*
 
 | Type | Description |
@@ -124,7 +124,7 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | Uint8 | Number of players |
 | Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
 | Uint8 | Number of player infos (P) |
-| PlayerInfo (P) | Player info |
+| [PlayerInfo](#player-info) (P) | Player info |
 | Uint32 | Ack id |
 
 ### Platform ID
@@ -141,7 +141,20 @@ The protocol list contains the following for every available protocol.
 | Uint8 | Protocol id |
 | Uint8 | Protocol version |
 
-## Connection response
+### Player Info
+*5.27 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Player name encoding (1=utf8, 2=utf16) |
+| Bytes (80) | Player name |
+| Uint8 | Account name encoding (1=utf8, 2=utf16) |
+| Bytes (40) | Account name |
+| Uint8 | Language |
+| Bytes (64) | Play history registration key |
+| Uint64 | Unknown |
+
+## Connection Response
 A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request. This is indicated by the [connection result](#connection-result).
 
 ### Connection response (accepted)
@@ -177,17 +190,6 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
 | Uint8 | Number of non-zero player infos |
 | [Player info](#player-info) (x4) | Player info |
-
-#### Player info
-| Type | Description |
-| --- | --- |
-| Bytes (80) | Player name |
-| Uint8 | Player name encoding (1=utf8, 2=utf16) |
-| Bytes (40) | Account name |
-| Uint8 | Account name encoding (1=utf8, 2=utf16) |
-| Uint8 | Language |
-| Bytes (64) | Play history registration key |
-| Uint64 | Unknown |
 
 ### Connection response (denying)
 *3.3 - 5.6:*
