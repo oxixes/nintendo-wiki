@@ -53,6 +53,8 @@ After acquiring the [StationLocation](Pia-Types#stationlocation) of another cons
 4. If your console does not want to accept the inverse connection request for some reason, it sends a denying connection response to the other console. Otherwise, it acknowledges the request and sends a [connection response](Station-Protocol#connection-response-accepted) to the other console.
 5. The other console sends a connection response to your console.
 
+In Pia version 5.24 and later, this process is simplified by removing the inverse connection request.
+
 ### NAT traversal
 If NEX is used for matchmaking it is often necessary to perform NAT traversal. This is not necessary in LDN and LAN mode, because the consoles are already on the same network in these modes.
 
