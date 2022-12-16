@@ -91,7 +91,7 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
-*5.19 - 5.23:*
+*5.19 - 5.26:*
 
 | Type | Description |
 | --- | --- |
@@ -106,28 +106,32 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | [StationLocation] | Station location |
 | Uint32 | Ack id |
 
-*5.24 - 5.26:* Unknown
-
 *5.27 - 5.43:*
 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type (1) |
-| Uint8 | Unknown |
-| Uint8 | Unknown |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | [Platform id](#platform-id) |
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id] |
 | Uint8 | Number of available protocols (N) |
 | Uint8 (N*2) | [Protocol list](#protocol-list) |
-| Uint16 | Unknown |
+| Uint16 | Size of station location |
 | [StationLocation] | Station location |
-| Bytes (32) | Unknown |
-| Uint32 | Unknown |
-| Uint8 | Unknown |
-| Uint8 | Unknown |
-| Uint8 | Number of players (P) |
-| PlayerInfo (xP) | Players |
+| Uint8 (32) | Identification token (ascii) |
+| Uint32 | Session id |
+| Uint8 | Number of players |
+| Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
+| Uint8 | Number of player infos (P) |
+| PlayerInfo (P) | Player info |
 | Uint32 | Ack id |
+
+### Platform ID
+| ID | Platform |
+| --- | --- |
+| 3 | Wii U |
+| 4 | Switch |
 
 ### Protocol List
 The protocol list contains the following for every available protocol.
@@ -218,6 +222,19 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | Uint16 | Always 0 |
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id] |
+
+*5.24 - 5.26:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (2) |
+| Uint8 | [Connection result](#connection-result) |
+| Uint8 | Protocol id that has unexpected protocol version |
+| Uint8 | Expected protocol version |
+| Uint16 | Always 0 |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint8 | Connection id |
 
 *5.27 - 5.43:*
 
