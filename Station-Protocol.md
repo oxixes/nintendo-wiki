@@ -111,7 +111,7 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type (1) |
-| Uint8 | [Connection result](#connection-result) |
+| Uint8 | [Connection result](#connection-result) (always 0) |
 | Uint8 | [Platform id](#platform-id) |
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id] |
@@ -127,71 +127,81 @@ In version 5.19, the `StationProtocol` was renamed to `MeshStationProtocol` and 
 | [PlayerInfo](#player-info) (P) | Player info |
 | Uint32 | Ack id |
 
-### Platform ID
-| ID | Platform |
-| --- | --- |
-| 3 | Wii U |
-| 4 | Switch |
-
-### Protocol List
-The protocol list contains the following for every available protocol.
-
-| Type | Description |
-| --- | --- |
-| Uint8 | Protocol id |
-| Uint8 | Protocol version |
-
-### Player Info
-*5.27 - 5.43:*
-
-| Type | Description |
-| --- | --- |
-| Uint8 | Player name encoding (1=utf8, 2=utf16) |
-| Bytes (80) | Player name |
-| Uint8 | Account name encoding (1=utf8, 2=utf16) |
-| Bytes (40) | Account name |
-| Uint8 | Language |
-| Bytes (64) | Play history registration key |
-| Uint64 | Unknown |
-
 ## Connection Response
-A connection response can either [accept](#connection-response-accepted) or [deny](#connection-response-denying) the connection request. This is indicated by the [connection result](#connection-result).
+A connection response can either [accept](#accepted) or [deny](#denying) the connection request. This is indicated by the [connection result](#connection-result).
 
-### Connection response (accepted)
+### Accepted
+
+*3.3 - 4.10:*
 
 | Type | Description |
 | --- | --- |
 | Uint8 | Message type (2) |
-| Uint8 | [Result](#connection-result) |
-| Uint8 | Version |
-| Uint8 | Always 3 on Wii U, and 4 on Switch. |
-| | Version-dependent data |
+| Uint8 | [Connection result](#connection-result) (accepted) |
+| Uint8 | [Version number](#version-numbers) |
+| Uint8 | [Platform id](#platform-id) |
+| Uint8 (32) | Identification token (ascii) |
+| [PlayerInfo](#player-info) | Player info |
 | Uint32 | Ack id |
 
-*Version 2 - 5:*
+*5.2 - 5.6:*
 
 | Type | Description |
 | --- | --- |
-| Uint8 (x32) | Identification token (ascii) |
-| Uint16 (x16) | Name (utf16-be) |
-| Uint8 | Name length |
-| Uint8 | Language |
-
-*Version 7 - 9:*
-
-| Type | Description |
-| --- | --- |
-| Uint8 | Unknown (0, 1 or 2) |
-| Uint64 | NEX principal id (pid). *Only present in version 8 and 9.* |
-| Uint32 | NEX connection id (cid). *Only present in version 8 and 9.* |
-| Uint8 (x32) | Identification token (ascii) |
+| Uint8 | Message type (1) |
+| Uint8 | [Connection result](#connection-result) (accepted) |
+| Uint8 | [Version number](#version-numbers) |
+| Uint8 | [Platform id](#platform-id) |
+| Uint8 | [Fragment id](#fragment-id) |
+| Uint8 (32) | Identification token (ascii) |
 | Uint32 | Session id |
 | Uint8 | Number of players |
 | Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
-| Uint8 | Number of non-zero player infos |
-| [Player info](#player-info) (x4) | Player info |
+| Uint8 | Number of player infos (P) |
+| [PlayerInfo](#player-info) (up to P) | Player info, may be [fragmented](#fragment-id). |
+| Uint32 | Ack id |
 
-### Connection response (denying)
+*5.7 - 5.9:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (1) |
+| Uint8 | [Connection result](#connection-result) (accepted) |
+| Uint8 | [Version number](#version-numbers) |
+| Uint8 | [Platform id](#platform-id) |
+| Uint8 | [Fragment id](#fragment-id) |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint8 (32) | Identification token (ascii) |
+| Uint32 | Session id |
+| Uint8 | Number of players |
+| Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
+| Uint8 | Number of player infos (P) |
+| [PlayerInfo](#player-info) (up to P) | Player info, may be [fragmented](#fragment-id). |
+| Uint32 | Ack id |
+
+*5.27 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Message type (1) |
+| Uint8 | [Connection result](#connection-result) (accepted) |
+| Uint8 | [Platform id](#platform-id) |
+| Uint64 | [Constant id] |
+| Uint32 | [Variable id] |
+| Uint8 | Number of available protocols (N) |
+| Uint8 (N*2) | [Protocol list](#protocol-list) |
+| Uint16 | Size of station location |
+| [StationLocation] | Station location |
+| Uint8 (32) | Identification token (ascii) |
+| Uint32 | Session id |
+| Uint8 | Number of players |
+| Uint8 | Number of participants. This is either 1 or equal to the number of players, depending on whether each player should count as a participant in the session. |
+| Uint8 | Number of player infos (P) |
+| [PlayerInfo](#player-info) (P) | Player info |
+| Uint32 | Ack id |
+
+### Denying
 *3.3 - 5.6:*
 
 | Type | Description |
@@ -248,13 +258,6 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | Uint64 | [Constant id] |
 | Uint32 | [Variable id] |
 
-### Connection result
-| Value | Description |
-| --- | --- |
-| 0 | Accepted |
-| 1 | Connection denied |
-| 2 | Incompatible version |
-
 ## Disconnection request
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -271,6 +274,87 @@ A connection response can either [accept](#connection-response-accepted) or [den
 | 0x0 | 1 | Message type |
 | 0x1 | 3 | Padding |
 | 0x4 | 4 | Ack id |
+
+## Platform ID
+| ID | Platform |
+| --- | --- |
+| 3 | Wii U |
+| 4 | Switch |
+
+## Connection Result
+| Value | Description |
+| --- | --- |
+| 0 | Accepted |
+| 1 | Connection denied |
+| 2 | Incompatible version |
+
+## Fragment ID
+In some Pia versions, the connection response may be fragmented, depending on the maximum payload size.
+
+| ID | Description |
+| --- | --- |
+| 0 | The player info array contains all players. |
+| 1 | The player info array contains the first two players. |
+| 2 | The player info array contains the last two players. |
+
+## Protocol List
+The protocol list contains the following for every available protocol.
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Protocol id |
+| Uint8 | Protocol version |
+
+## Player Info
+*3.3 - 3.10:*
+| Type | Description |
+| --- | --- |
+| Uint16 (16) | Player name (utf16) |
+| Uint8 | Player name length |
+| Uint8 | Language |
+| Uint16 | Padding |
+
+*4.5 - 4.10:*
+| Type | Description |
+| --- | --- |
+| Uint16 (16) | Player name (utf16) |
+| Uint8 | Player name length |
+| Uint8 | Language |
+| Uint32 | Unknown |
+| Uint16 | Padding |
+
+*5.2 - 5.6:*
+| Type | Description |
+| --- | --- |
+| Bytes (80) | Player name |
+| Uint8 | Player name encoding (1=utf8, 2=utf16) |
+| Bytes (40) | Account name |
+| Uint8 | Account name encoding (1=utf8, 2=utf16) |
+| Uint8 | Language |
+| Bytes (64) | Play history registration key |
+
+*5.7 - 5.9:*
+| Type | Description |
+| --- | --- |
+| Bytes (80) | Player name |
+| Uint8 | Player name encoding (1=utf8, 2=utf16) |
+| Bytes (40) | Account name |
+| Uint8 | Account name encoding (1=utf8, 2=utf16) |
+| Uint8 | Language |
+| Bytes (64) | Play history registration key |
+| Uint64 | Unknown |
+
+*5.27 - 5.43:*
+
+| Type | Description |
+| --- | --- |
+| Uint8 | Player name encoding (1=utf8, 2=utf16) |
+| Bytes (80) | Player name |
+| Uint8 | Account name encoding (1=utf8, 2=utf16) |
+| Bytes (40) | Account name |
+| Uint8 | Language |
+| Bytes (64) | Play history registration key |
+| Uint64 | Unknown |
 
 [Constant id]: Pia-Terminology#constant-id
 [Variable id]: Pia-Terminology#variable-id
