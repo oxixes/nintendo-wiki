@@ -17,7 +17,7 @@ The ugcstore service managed user-generated content.
 * CommitDocuments
 * IssueAttachmentUri
 * BulkIssueAttachmentUri
-* IssueUploadUri
+* [IssueUploadUri](#issueuploaduri)
 * CreateDocumentShortAlias
 * GetDocumentShortAlias
 
