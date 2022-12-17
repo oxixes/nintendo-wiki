@@ -29,6 +29,7 @@ All peer-to-peer packets are sent through UDP. The packet format is described [h
 * [[Reliable Protocol]]
 * [[Unreliable Protocol]]
 * Clone Protocol
+* Sync Protocol
 
 ### Session management
 A group of connected consoles is called a mesh. Every mesh has a single "host" that controls the mesh. Initially, the console that created the mesh is the host. Once the host leaves the mesh, a new host is selected through "host migration". The host performs important tasks such as processing join requests by newcomers. The host may also perform some game-specific tasks. For example, in Mario Kart 8, the host decides which track is chosen by the track roulette.
