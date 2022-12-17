@@ -22,8 +22,6 @@ The ugcstore service managed user-generated content.
 * GetDocumentShortAlias
 
 ### IssueUploadUri
-This method creates a user on the given tenant.
-
 ```json
 {
     "parent": "tenants/current"
