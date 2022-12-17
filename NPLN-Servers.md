@@ -36,7 +36,7 @@ Services are never modified in a backward incompatible way, but new methods and 
 * [`nn.npln.matchmaking.v1.Matchmaker`](Matchmaker-Service)
 * `nn.npln.messaging.v1.Messaging`
 * `nn.npln.ugcstore.v1.Screening`
-* `nn.npln.ugcstore.v1.Ugcstore`
+* [`nn.npln.ugcstore.v1.Ugcstore`](Ugcstore-Service)
 
 Splatoon 3 also implements some custom services:
 
