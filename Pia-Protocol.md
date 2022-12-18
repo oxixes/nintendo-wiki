@@ -62,7 +62,7 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | 0x10 | 8 | [AES-GCM nonce](#encryption) |
 | 0x18 | 8 | [AES-GCM authentication tag](#encryption) (first 8 bytes) |
 
-*6.16 - 6.23:*
+*6.16 - 6.25:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -83,6 +83,7 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | 5.23 - 5.26 | 5 |
 | 5.27 - 5.43 | 9 |
 | 6.16 - 6.23 | 11 |
+| 6.25 | 12 |
 
 ### Connection ID
 During connection establishment, both consoles generate a random number between 2 and 255. This is the connection id. If packets are sent to a specific address, rather than station index, the connection id is set to 0.
