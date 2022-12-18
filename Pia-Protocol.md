@@ -98,7 +98,7 @@ Let's say the session timer of A is at 234 when A sends a packet to B. It takes 
 ![](https://www.dropbox.com/s/4fbobmcugbbokr3/rtt.png?raw=1)
 
 ### Footer
-The footer is only in LDN mode when a packet is sent to more than one console. It contains the [variable id] of all receiving consoles.
+The footer is only in LDN mode when a packet is sent to more than one console. It contains the [variable id](Pia-Terminology#variable-id) of all receiving consoles.
 
 ## Messages
 This part of the packet may be [encrypted](#encryption). A packet may contain more than one message  (the number of messages is determined from the size of packet).
