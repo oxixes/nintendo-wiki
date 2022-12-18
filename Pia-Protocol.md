@@ -1,6 +1,6 @@
 These packets are usually sent directly from one console to another through UDP, with no server in between. Everything is encoded in big-endian byte order.
 
-All packets consist of an unencrypted [header](#header), which is followed by one or more [messages](#messages), and sometimes an unencrypted footer.
+All packets consist of an unencrypted [header](#header), which is followed by one or more [messages](#messages), and sometimes an unencrypted [footer](#footer).
 
 ## Header
 *Up to 5.6:*
@@ -58,7 +58,7 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | 0x5 | 4 | Destination [variable id](Pia-Terminology#variable-id) |
 | 0x9 | 4 | Source [variable id](Pia-Terminology#variable-id) |
 | 0xD | 2 | [Packet id](#packet-id) |
-| 0xF | 1 | Footer size |
+| 0xF | 1 | [Footer size](#footer) |
 | 0x10 | 8 | [AES-GCM nonce](#encryption) |
 | 0x18 | 8 | [AES-GCM authentication tag](#encryption) (first 8 bytes) |
 
@@ -71,7 +71,7 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | 0x5 | 2 | Destination [variable id](Pia-Terminology#variable-id) |
 | 0x7 | 2 | Source [variable id](Pia-Terminology#variable-id) |
 | 0x9 | 2 | [Packet id](#packet-id) |
-| 0xB | 1 | Footer size |
+| 0xB | 1 | [Footer size](#footer) |
 | 0xC | 8 | [AES-GCM nonce](#encryption) |
 | 0x14 | 8 | [AES-GCM authentication tag](#encryption) (first 8 bytes) |
 
@@ -96,6 +96,9 @@ The session timer contains the number of milliseconds since the start of the ses
 Let's say the session timer of A is at 234 when A sends a packet to B. It takes 2 milliseconds until the packet arrives at B. B receives 234 from A even though the session timer of A is now at 236. 10 milliseconds later, B sends a packet to A with 244 (234 + 10) in the RTT timer field. Again, it takes 2 milliseconds until the packet arrives at A. At this point, the session timer of A is at 248, but it receives 244 in the RTT timer field, so it knows that it takes 4 milliseconds for a packet to travel back and forth between A and B.
 
 ![](https://www.dropbox.com/s/4fbobmcugbbokr3/rtt.png?raw=1)
+
+### Footer
+The footer is only in LDN mode when a packet is sent to more than one console. It contains the [variable id] of all receiving consoles.
 
 ## Messages
 This part of the packet may be [encrypted](#encryption). A packet may contain more than one message  (the number of messages is determined from the size of packet).
