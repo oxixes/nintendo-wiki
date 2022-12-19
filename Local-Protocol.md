@@ -58,7 +58,7 @@ The following version numbers are advertised during the [connection request](Sta
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 8 x 9 | [Local nodes](#local-node) |
-| 0x48 | 1 | Unknown |
+| 0x48 | 1 | Host migration state |
 
 ## Local node
 *5.2 - 5.31:*
@@ -66,7 +66,7 @@ The following version numbers are advertised during the [connection request](Sta
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 8 | [Local address](#local-address) |
-| 0x8 | 1 | Unknown |
+| 0x8 | 1 | Host migration ranking |
 
 ## Local address
 *5.2 - 5.31:*
