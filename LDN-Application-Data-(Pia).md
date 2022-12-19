@@ -13,19 +13,7 @@ The application data starts with a short header, which is followed by game-speci
 | 0xC | 8 | Always 0 |
 | 0x14 | | [Application data](#application-data) |
 
-5.9:
-
-| Offset | Size | Description |
-| --- | --- | --- |
-| 0x0 | 4 | Session id (random) |
-| 0x4 | 4 | CRC32 of user password |
-| 0x8 | 1 | [System communication version](#system-communication-version) |
-| 0x9 | 1 | Header size (20) |
-| 0xA | 2 | Padding |
-| 0xC | 8 | Always 0 |
-| 0x14 | | [Application data](#application-data) |
-
-5.10 - 5.18:
+5.9 - 5.18:
 
 | Offset | Size | Description |
 | --- | --- | --- |
