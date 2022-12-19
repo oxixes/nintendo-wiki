@@ -20,7 +20,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x0 | 1 | Version number (1) |
 | 0x1 | 1 | Message type |
 | 0x2 | 2 | Payload size |
-| 0x4 | 6 | Unknown |
+| 0x4 | 6 | Always 0 |
 | 0xA | 2 | Padding |
 
 ## Update session message
