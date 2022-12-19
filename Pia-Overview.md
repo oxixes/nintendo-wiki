@@ -26,8 +26,9 @@ With Pia version 6, a new game server technology was introduced:
 ### Protocol
 All peer-to-peer packets are sent through UDP. The packet format is described [here](Pia-Protocol). Once a connection between consoles has been established they talk to each other through a bunch of [protocols](Pia-Protocols). Most of these are only used internally by Pia to set up and manage the connections. The following protocols may be used to exchange game-specific data:
 
-* [[Reliable Protocol]]
 * [[Unreliable Protocol]]
+* [[Reliable Protocol]]
+* Stream Broadcast Reliable Protocol
 * Clone Protocol
 * Sync Protocol
 
