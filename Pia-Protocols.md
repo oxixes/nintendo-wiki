@@ -40,3 +40,5 @@ Also, the clone protocol used to be single protocol, but was split into several 
 | 0x8000 | 0xA4 | [Monitoring Data Protocol](Monitoring-Data-Protocol) |
 | 0x8200 | 0xA8 | Relay Service Protocol |
 |        | 0xAC | WAN NAT Protocol |
+|        | 0xB0 | Reckoning 1D |
+|        | 0xB4 | Reckoning 3D |
