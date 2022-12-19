@@ -15,6 +15,8 @@ The following version numbers are advertised during the [connection request](Sta
 | 5.19 - 5.43 | 0 |
 
 ## Local message header
+*5.2 - 5.31:*
+
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 1 | Version number (1) |
@@ -24,6 +26,19 @@ The following version numbers are advertised during the [connection request](Sta
 | 0xA | 2 | Padding |
 
 ## Update session message
+*5.2:*
+| Offset | Size | Description |
+| --- | --- | --- |
+| 0x0 | 12 | [Local message header](#local-message-header) |
+| 0xC | 4 | Unknown |
+| 0x10 | 4 | Unknown |
+| 0x14 | 4 | Unknown |
+| 0x18 | 1 | Unknown |
+| 0x19 | 7 | Padding |
+| 0x20 | | [Payload](#update-session-payload) |
+
+*5.9 - 5.31:*
+
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 12 | [Local message header](#local-message-header) |
@@ -38,18 +53,24 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x30 | | [Payload](#update-session-payload) |
 
 ### Update session payload
+*5.2 - 5.31:*
+
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 8 x 9 | [Local nodes](#local-node) |
 | 0x48 | 1 | Unknown |
 
 ## Local node
+*5.2 - 5.31:*
+
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 8 | [Local address](#local-address) |
 | 0x8 | 1 | Unknown |
 
 ## Local address
+*5.2 - 5.31:*
+
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 6 | [Inet address](Pia-Types#inetaddress) |
