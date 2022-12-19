@@ -15,7 +15,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 5.19 - 5.43 | 0 |
 
 ## Local message header
-*5.2 - 5.31:*
+*5.2 - 5.37:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x19 | 7 | Padding |
 | 0x20 | | [Payload](#update-session-payload) |
 
-*5.9 - 5.31:*
+*5.9 - 5.37:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -53,7 +53,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x30 | | [Payload](#update-session-payload) |
 
 ### Update session payload
-*5.2 - 5.31:*
+*5.2 - 5.37:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x48 | 1 | Host migration state |
 
 ## Local node
-*5.2 - 5.31:*
+*5.2 - 5.37:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ The following version numbers are advertised during the [connection request](Sta
 | 0x8 | 1 | Host migration ranking |
 
 ## Local address
-*5.2 - 5.31:*
+*5.2 - 5.37:*
 
 | Offset | Size | Description |
 | --- | --- | --- |
