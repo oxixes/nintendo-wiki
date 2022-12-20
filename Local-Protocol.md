@@ -30,10 +30,10 @@ The following version numbers are advertised during the [connection request](Sta
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 12 | [Local message header](#local-message-header) |
-| 0xC | 4 | Unknown |
-| 0x10 | 4 | Unknown |
-| 0x14 | 4 | Unknown |
-| 0x18 | 1 | Unknown |
+| 0xC | 4 | Sequence id |
+| 0x10 | 4 | Network id |
+| 0x14 | 4 | Host variable id |
+| 0x18 | 1 | Allow participating state |
 | 0x19 | 7 | Padding |
 | 0x20 | | [Payload](#update-session-payload) |
 
