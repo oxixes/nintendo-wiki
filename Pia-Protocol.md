@@ -67,7 +67,7 @@ All packets consist of an unencrypted [header](#header), which is followed by on
 | Offset | Size | Description |
 | --- | --- | --- |
 | 0x0 | 4 | Magic number: `32 AB 98 64` |
-| 0x4 | 1 | This byte consists of two parts:<br>`0x80`: Encryption enabled<br>`0x7F`: [Version number](#version) (11) |
+| 0x4 | 1 | This byte consists of two parts:<br>`0x80`: Encryption enabled<br>`0x7F`: [Version number](#version) (11 or 12) |
 | 0x5 | 2 | Destination [variable id](Pia-Terminology#variable-id) |
 | 0x7 | 2 | Source [variable id](Pia-Terminology#variable-id) |
 | 0x9 | 2 | [Packet id](#packet-id) |
