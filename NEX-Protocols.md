@@ -33,6 +33,7 @@ See also: [[RMC Protocol]]
 | 112 | [Ranking](Ranking-Protocol) |
 | 115 | [Data store](Data-Store-Protocol) |
 | 116 | [Debug](Debug-Protocol) |
+| 119 | [Service item](Service-Item-Protocol) |
 | 120 | [Matchmake referee](Matchmake-Referee-Protocol) |
 | 121 | [Subscriber](Subscriber-Protocol) |
 | 122 | [Ranking 2](Ranking-Protocol-2) |
