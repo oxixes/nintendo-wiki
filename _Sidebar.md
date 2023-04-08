@@ -31,6 +31,7 @@
       * [Ranking](Ranking-Protocol)
       * [Ranking 2](Ranking-Protocol-2)
       * [Screening](Screening-Protocol)
+      * [Service Item](Service-Item-Protocol)
       * [Subscriber](Subscriber-Protocol)
       * [Utility](Utility-Protocol)
   * [[Kerberos Authentication]]
