@@ -33,21 +33,6 @@
       * [Screening](Screening-Protocol)
       * [Subscriber](Subscriber-Protocol)
       * [Utility](Utility-Protocol)
-    * Ubisoft
-      * [Game Session](Game-Session-Protocol)
-      * [Localization](Localization-Protocol)
-      * [News](News-Protocol)
-      * [Offline Game Notifications](Offline-Game-Notification-Protocol)
-      * [Player Stats](Player-Stats-Protocol)
-      * [Privileges](Privileges-Protocol)
-      * [Simple Authentication](Simple-Authentication-Protocol)
-      * [Tracking 3](Tracking-Protocol-3)
-      * [Ubi Account Mangement](Ubi-Account-Management-Protocol)
-      * [User Account Mangement](User-Account-Management-Protocol)
-      * [Uplay Win](Uplay-Win-Protocol)
-      * [User Storage](User-Storage-Protocol)
-      * [User Storage Admin](User-Storage-Admin-Protocol)
-      * [Web Notification Storage](Web-Notification-Storage-Protocol)
   * [[Kerberos Authentication]]
   * [[Hpp Server]]
 * [NPLN](NPLN-Servers)
