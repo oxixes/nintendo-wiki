@@ -495,7 +495,7 @@ Revision 1:
 ## ServiceItemAccountRight ([Structure])
 | Type | Name |
 | --- | --- |
-| Uint32 | pid |
+| [PID] | pid |
 | [ServiceItemLimitation](#serviceitemlimitation-structure) | limitation |
 | [List]&lt;[ServiceItemRightBinary](#serviceitemrightbinary-structure)&gt; | rightBinaries |
 
